@@ -8,22 +8,22 @@ import activity from '../icons/activity-heart.png'
 import '../App.css'
 
 const Item = styled(Paper)(({ theme }) => ({
-    width: 230,
+    width: 240,
     height: 30,
     padding: theme.spacing(2),
     display: 'flex',
     alignSelf: 'center',
     alignItems: 'center',
     backgroundColor: 'transparent',
+    boxShadow: 'none'
 }));
 
 function Agenda() {
   return (
     <div class="agenda">
         <Box>
-            <Grid container spacing={0}>
-                
-                <Grid item xs={1.5}>
+            <Grid container spacing={1}>
+                <Grid item>
                     <Item>
                         <img src={calendar} width={40}></img>
                         <div>
@@ -33,7 +33,7 @@ function Agenda() {
                     </Item>
                 </Grid>
                 
-                <Grid item xs={2}></Grid>
+                <Grid item>
                     <Item>
                         <img src={activity} width={40}></img>
                         <div>
@@ -42,6 +42,7 @@ function Agenda() {
                         </div>
                     </Item>
                 </Grid>
+            </Grid>
         </Box>
     </div>
   )

@@ -32,9 +32,21 @@
     overflow: hidden;
 }
 
+.under {
+    overflow: hidden;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
 .agenda h4 {
     color: black;
     margin-top: 0px;
     margin-bottom: 0px;
     margin-left: 10px;
+    letter-spacing: 0.5px;
+}
+
+.card h2 {
+    color: white;
+    margin-top: 10px;
 }

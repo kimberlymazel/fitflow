@@ -37,7 +37,7 @@ function Navigation() {
           }}
         >
             <Stack 
-              spacing={3}
+              spacing={1.5}
               paddingTop={2}
             >
               <Item>
