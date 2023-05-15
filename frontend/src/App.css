@@ -3,3 +3,8 @@
 * {
     font-family: 'Quicksand', sans-serif;
 }
+
+.right {
+    margin-left: auto; 
+    margin-right: 0;
+}
