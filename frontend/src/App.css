@@ -10,10 +10,16 @@
 }
 
 .bottom {
-    margin-top: auto;
-    margin-bottom: 0;
+    position: fixed;
+    bottom: 0;
 }
 
 .nav h3 {
     color: white;
+    margin-left: 10px;
+}
+
+.bottom h3{
+    margin-left: 30px;
+    margin-bottom: 30px;
 }

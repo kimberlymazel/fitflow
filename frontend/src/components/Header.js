@@ -11,7 +11,7 @@ function Header() {
         sx={{
           height: 40,
           display: 'flex',
-          alignItems: "center"
+          alignItems: "center",
         }}
         p={2}
       >

@@ -15,11 +15,12 @@ import schedule from '../icons/schedule.png'
 const Item = styled(Paper)(({ theme }) => ({
   width: 250,
   height: 30,
-  padding: theme.spacing(2.5),
+  padding: theme.spacing(1.8),
   display: 'flex',
   alignSelf: 'center',
   alignItems: 'center',
-  backgroundColor: '#5A1BB9'
+  backgroundColor: 'transparent',
+  borderRadius: 20
 }));
 
 function Navigation() {
@@ -28,12 +29,17 @@ function Navigation() {
         <Box
           sx={{
             alignSelf: "left",
-            backgroundColor: '#5A1BB9',
             width: 300,
             height: 610
           }}
+          style={{
+            background: 'linear-gradient(to bottom, #5A1BB9, #9801CC)'
+          }}
         >
-            <Stack spacing={2}>
+            <Stack 
+              spacing={3}
+              paddingTop={2}
+            >
               <Item>
                 <img src={dashboard} width={30}></img>
                 <h3>Dashboard</h3>
