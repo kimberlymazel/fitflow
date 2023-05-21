@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
-import '../App.css'
+import '../style/App.css'
 
 import dashboard from '../icons/dashboard.png'
 import tracker from '../icons/tracker.png'
@@ -24,7 +24,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function Navigation() {
   return (
-    <div class="nav">
+    <div className="nav">
         <Box
           sx={{
             alignSelf: "left",
@@ -65,7 +65,7 @@ function Navigation() {
               </Item>
             </Stack>
 
-            <div class="bottom">
+            <div className="bottom">
               <h3>Contact us</h3>
             </div>
         </Box>
