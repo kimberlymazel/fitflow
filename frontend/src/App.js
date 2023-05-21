@@ -1,7 +1,7 @@
 import Header from './components/Header'
 import Navigation from './components/Navigation'
 import Agenda from './components/Agenda'
-import Card from './components/Card'
+import Carousel from './components/Carousel'
 import './App.css'
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
         <Agenda></Agenda>
         
         <div class="under">
-          <Card></Card>
+          <Carousel></Carousel>
         </div>
       </div>
 
