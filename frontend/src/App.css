@@ -4,13 +4,17 @@
     font-family: 'Quicksand', sans-serif;
 }
 
-.right {
-    margin-left: auto; 
-    margin-right: 0;
+.App {
+    overflow: hidden;
 }
 
 .bottom {
     bottom: 0;
+}
+
+.righticon {
+    margin-left: auto; 
+    margin-right: 0;
 }
 
 .nav h3 {
@@ -27,12 +31,16 @@
     float: left;
 }
 
+.middle {
+    float: left;
+    width: 50%;
+}
+
 .right {
-    overflow: hidden;
+    float: left;
 }
 
 .under {
-    overflow: hidden;
     margin-top: 5px;
     margin-left: 20px;
     margin-bottom: 10px;
@@ -52,8 +60,8 @@
 }
 
 .carousel {
+    width: 560px;
     overflow: auto;
-    width: 550px;
 }
 
 .today h3 {

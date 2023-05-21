@@ -1,9 +1,9 @@
 import Paper from '@mui/material/Paper'
 import { styled } from '@mui/material/styles'
 
-const Standard = styled(Paper)(({ theme }) => ({
-    width: 240,
-    height: 120,
+const Long = styled(Paper)(({ theme }) => ({
+    width: 250,
+    height: 560,
     padding: theme.spacing(2),
     display: 'flex-inline',
     alignSelf: 'center',
@@ -11,4 +11,4 @@ const Standard = styled(Paper)(({ theme }) => ({
     borderRadius: 20
 }));
 
-export default Standard
+export default Long

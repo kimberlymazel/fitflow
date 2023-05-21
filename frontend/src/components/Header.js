@@ -23,7 +23,7 @@ function Header() {
           ></img>
         </div>
 
-        <div class="right">
+        <div class="righticon">
           <img 
             src={logout}
             height={40}

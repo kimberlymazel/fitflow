@@ -2,7 +2,7 @@ import Paper from '@mui/material/Paper'
 import { styled } from '@mui/material/styles'
 
 const Wide = styled(Paper)(({ theme }) => ({
-    width: 510,
+    width: 530,
     height: 160,
     padding: theme.spacing(2),
     display: 'flex-inline',

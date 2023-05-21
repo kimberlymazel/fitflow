@@ -4,6 +4,7 @@ import Agenda from './components/Agenda'
 import Carousel from './components/Carousel'
 import Activity from './components/Activity'
 import Today from './components/Today'
+import Profile from './components/Profile'
 import './App.css'
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
         <Navigation></Navigation>
       </div>
 
-      <div class="right">
+      <div class="middle">
         <Agenda></Agenda>
         
         <div class="under">
@@ -31,7 +32,9 @@ function App() {
         </div>
       </div>
 
-      
+      <div class="right">
+          <Profile></Profile>
+      </div>
     </div>
   );
 }
