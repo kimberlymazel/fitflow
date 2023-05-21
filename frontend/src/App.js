@@ -2,6 +2,8 @@ import Header from './components/Header'
 import Navigation from './components/Navigation'
 import Agenda from './components/Agenda'
 import Carousel from './components/Carousel'
+import Activity from './components/Activity'
+import Today from './components/Today'
 import './App.css'
 
 function App() {
@@ -18,6 +20,14 @@ function App() {
         
         <div class="under">
           <Carousel></Carousel>
+        </div>
+
+        <div class="under">
+          <Activity></Activity>
+        </div>
+
+        <div class="under">
+          <Today></Today>
         </div>
       </div>
 

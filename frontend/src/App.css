@@ -10,7 +10,6 @@
 }
 
 .bottom {
-    position: fixed;
     bottom: 0;
 }
 
@@ -21,7 +20,7 @@
 
 .bottom h3 {
     margin-left: 30px;
-    margin-bottom: 30px;
+    margin-top: 110px;
 }
 
 .left {
@@ -34,8 +33,9 @@
 
 .under {
     overflow: hidden;
-    margin-top: 20px;
+    margin-top: 5px;
     margin-left: 20px;
+    margin-bottom: 10px;
 }
 
 .agenda h4 {
@@ -46,7 +46,17 @@
     letter-spacing: 0.5px;
 }
 
-.card h2 {
+.carousel h2 {
     color: white;
     margin-top: 10px;
+}
+
+.carousel {
+    overflow: auto;
+    width: 550px;
+}
+
+.today h3 {
+    color: darkorange;
+    margin-top: 0px;
 }

@@ -1,14 +1,15 @@
 import Paper from '@mui/material/Paper'
 import { styled } from '@mui/material/styles'
 
-const Standard = styled(Paper)(({ theme }) => ({
-    width: 230,
-    height: 120,
+const Wide = styled(Paper)(({ theme }) => ({
+    width: 510,
+    height: 160,
     padding: theme.spacing(2),
     display: 'flex-inline',
     alignSelf: 'center',
     alignItems: 'center',
-    borderRadius: 20
+    borderRadius: 20,
+    backgroundColor: 'purple'
 }));
 
-export default Standard
+export default Wide
