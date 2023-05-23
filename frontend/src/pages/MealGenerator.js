@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import MealList from "../components/MealList"
-import Header from '../components/Header';
-import Navigation from '../components/Navigation';
+import MealList from "../components/mealplan/MealList"
+import Header from '../components/general/Header';
+import Navigation from '../components/general/Navigation';
 
 export const MealGenerator = () => {
     const [mealData, setMealData] = useState(null);

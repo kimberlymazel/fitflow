@@ -4,7 +4,7 @@
     font-family: 'Quicksand', sans-serif;
 }
 
-.Dashboard {
+.dashboard .tracker {
     overflow: hidden;
 }
 
@@ -67,4 +67,14 @@
 .today h3 {
     color: darkorange;
     margin-top: 0px;
+}
+
+.goals {
+    color: #5E19BA;
+    margin-left: 20px;
+}
+
+.goals h3 {
+    color: #5E19BA;
+    margin-bottom: 8px;
 }

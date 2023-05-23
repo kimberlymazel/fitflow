@@ -1,15 +1,15 @@
-import Header from './components/Header'
-import Navigation from './components/Navigation'
-import Agenda from './components/Agenda'
-import Carousel from './components/Carousel'
-import Activity from './components/Activity'
-import Today from './components/Today'
-import Profile from './components/Profile'
-import './style/App.css'
+import Header from '../components/general/Header'
+import Navigation from '../components/general/Navigation'
+import Agenda from '../components/dashboard/Agenda'
+import Carousel from '../components/dashboard/Carousel'
+import Activity from '../components/dashboard/Activity'
+import Today from '../components/dashboard/Today'
+import Profile from '../components/dashboard/Profile'
+import '../style/App.css'
 
 export const Dashboard = () => {
   return (
-    <div className="Dashboard">
+    <div className="dashboard">
       <Header></Header>
 
       <div class="left">

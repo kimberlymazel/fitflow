@@ -1,8 +1,8 @@
 import React from 'react'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
-import Standard from './cards/Standard'
-import '../App.css'
+import Standard from '../cards/Standard'
+import '../../style/App.css'
 
 function Today() {
   return (

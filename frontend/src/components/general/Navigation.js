@@ -1,15 +1,15 @@
 import React from 'react'
 import Box from '@mui/material/Box'
 import Stack from '@mui/material/Stack'
-import Thin from './cards/Thin'
-import '../App.css'
+import Thin from '../cards/Thin'
+import '../../style/App.css'
 
-import dashboard from '../icons/dashboard.png'
-import tracker from '../icons/tracker.png'
-import calculator from '../icons/calculator.png'
-import mealplan from '../icons/mealplan.png'
-import workout from '../icons/workout.png'
-import schedule from '../icons/schedule.png'
+import dashboard from '../../icons/dashboard.png'
+import tracker from '../../icons/tracker.png'
+import calculator from '../../icons/calculator.png'
+import mealplan from '../../icons/mealplan.png'
+import workout from '../../icons/workout.png'
+import schedule from '../../icons/schedule.png'
 
 function Navigation() {
   return (

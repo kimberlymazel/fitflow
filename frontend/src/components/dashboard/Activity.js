@@ -1,6 +1,6 @@
 import React from 'react'
-import Wide from './cards/Wide'
-import '../App.css'
+import Wide from '../cards/Wide'
+import '../../style/App.css'
 
 function Activity() {
   return (

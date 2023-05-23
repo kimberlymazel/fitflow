@@ -1,5 +1,5 @@
 import React from 'react'
-import Long from './cards/Long'
+import Long from '../cards/Long'
 
 function Profile() {
   return (

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import WorkoutList from "../components/WorkoutList"
+import WorkoutList from "../components/workouts/WorkoutList"
 
 export const WorkoutGenerator = () => {
     const [workoutData, setWorkoutData] = useState([]);

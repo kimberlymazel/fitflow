@@ -1,10 +1,10 @@
 import React from 'react'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
-import calendar from '../icons/calendar.png'
-import activity from '../icons/activity-heart.png'
-import Thin from './cards/Thin'
-import '../App.css'
+import calendar from '../../icons/calendar.png'
+import activity from '../../icons/activity-heart.png'
+import Thin from '../cards/Thin'
+import '../../style/App.css'
 
 function Agenda() {
   return (

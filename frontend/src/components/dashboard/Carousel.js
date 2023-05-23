@@ -1,12 +1,12 @@
 import React from 'react'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
-import exercise from '../icons/dailyexercise.png'
-import intake from '../icons/calorieintake.png'
-import water from '../icons/waterintake.png'
-import progress from '../icons/progresstracker.png'
-import Standard from './cards/Standard'
-import '../App.css'
+import exercise from '../../icons/dailyexercise.png'
+import intake from '../../icons/calorieintake.png'
+import water from '../../icons/waterintake.png'
+import progress from '../../icons/progresstracker.png'
+import Standard from '../cards/Standard'
+import '../../style/App.css'
 
 function Carousel() {
   return (

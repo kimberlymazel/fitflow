@@ -1,8 +1,8 @@
 import React from 'react'
 import Box from '@mui/material/Box'
-import logo from '../icons/logo.png'
-import logout from '../icons/log-out.png'
-import '../style/App.css'
+import logo from '../../icons/logo.png'
+import logout from '../../icons/log-out.png'
+import '../../style/App.css'
 
 function Header() {
   return (
