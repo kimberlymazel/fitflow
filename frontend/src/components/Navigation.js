@@ -13,7 +13,7 @@ import schedule from '../icons/schedule.png'
 
 function Navigation() {
   return (
-    <div class="nav">
+    <div className="nav">
         <Box
           sx={{
             alignSelf: "left",
@@ -59,7 +59,7 @@ function Navigation() {
               </Thin>
             </Stack>
 
-            <div class="bottom">
+            <div className="bottom">
               <h3>Contact us</h3>
             </div>
         </Box>

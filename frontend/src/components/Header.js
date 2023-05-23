@@ -2,7 +2,7 @@ import React from 'react'
 import Box from '@mui/material/Box'
 import logo from '../icons/logo.png'
 import logout from '../icons/log-out.png'
-import '../App.css'
+import '../style/App.css'
 
 function Header() {
   return (
@@ -23,7 +23,7 @@ function Header() {
           ></img>
         </div>
 
-        <div class="righticon">
+        <div className="righticon">
           <img 
             src={logout}
             height={40}
