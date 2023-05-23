@@ -1,5 +1,6 @@
 import React from 'react'
 import Long from '../cards/Long'
+import '../../style/dashboard.css'
 
 function Profile() {
   return (

@@ -1,0 +1,22 @@
+.agenda h4 {
+    color: black;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    letter-spacing: 0.5px;
+}
+
+.carousel h2 {
+    color: white;
+    margin-top: 10px;
+}
+
+.carousel {
+    width: 560px;
+    overflow: auto;
+}
+
+.today h3 {
+    color: darkorange;
+    margin-top: 0px;
+}

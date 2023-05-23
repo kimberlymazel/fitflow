@@ -1,6 +1,6 @@
 import React from 'react'
 import Wide from '../cards/Wide'
-import '../../style/App.css'
+import '../../style/dashboard.css'
 
 function Activity() {
   return (

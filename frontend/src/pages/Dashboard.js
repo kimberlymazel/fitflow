@@ -9,7 +9,7 @@ import '../style/App.css'
 
 export const Dashboard = () => {
   return (
-    <div className="dashboard">
+    <div className="Dashboard">
       <Header></Header>
 
       <div class="left">

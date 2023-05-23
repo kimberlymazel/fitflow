@@ -1,5 +1,6 @@
 import './style/App.css'
 import { MealGenerator } from './pages/MealGenerator';
+import { MealPlanGenerator } from './pages/MealPlanGenerator';
 import { WorkoutGenerator } from './pages/WorkoutGenerator';
 import { Dashboard } from './pages/Dashboard';
 import { Tracker } from './pages/Tracker';
@@ -13,6 +14,7 @@ function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/tracker" element={<Tracker />} />
             <Route exact path="/meal-generator" element={<MealGenerator />} />
+            <Route exact path="/meal-plan" element={<MealPlanGenerator />} />
             <Route exact path="/workout-generator" element={<WorkoutGenerator />} />
           </Routes>
         </BrowserRouter>

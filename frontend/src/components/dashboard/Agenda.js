@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid'
 import calendar from '../../icons/calendar.png'
 import activity from '../../icons/activity-heart.png'
 import Thin from '../cards/Thin'
-import '../../style/App.css'
+import '../../style/dashboard.css'
 
 function Agenda() {
   return (

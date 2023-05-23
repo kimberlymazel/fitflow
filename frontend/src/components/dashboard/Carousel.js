@@ -6,7 +6,7 @@ import intake from '../../icons/calorieintake.png'
 import water from '../../icons/waterintake.png'
 import progress from '../../icons/progresstracker.png'
 import Standard from '../cards/Standard'
-import '../../style/App.css'
+import '../../style/dashboard.css'
 
 function Carousel() {
   return (

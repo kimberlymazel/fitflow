@@ -2,7 +2,7 @@ import React from 'react'
 import Box from '@mui/material/Box'
 import Stack from '@mui/material/Stack'
 import Thin from '../cards/Thin'
-import '../../style/App.css'
+import '../../style/general.css'
 
 import dashboard from '../../icons/dashboard.png'
 import tracker from '../../icons/tracker.png'
