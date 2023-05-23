@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../components/general/Header'
 import Navigation from '../components/general/Navigation'
 import Goals from '../components/tracker/Goals'
+import Checkin from '../components/tracker/Checkin'
 
 export const Tracker = () => {
   return (
@@ -14,22 +15,11 @@ export const Tracker = () => {
 
         <div class="middle">
             <Goals></Goals>
-        
-            <div class="under">
-            
-            </div>
 
-            <div class="under">
-            
-            </div>
-
-            <div class="under">
-            
-            </div>
         </div>
 
         <div class="right">
-            
+            <Checkin></Checkin>
         </div>
     </div>
   )
