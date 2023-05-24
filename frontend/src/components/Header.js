@@ -2,7 +2,7 @@ import React from 'react'
 import Box from '@mui/material/Box'
 import logo from '../icons/logo.png'
 import logout from '../icons/log-out.png'
-import '../style/App.css'
+import '../App.css'
 
 function Header() {
   return (
@@ -11,7 +11,7 @@ function Header() {
         sx={{
           height: 40,
           display: 'flex',
-          alignItems: "center"
+          alignItems: "center",
         }}
         p={2}
       >
@@ -23,7 +23,7 @@ function Header() {
           ></img>
         </div>
 
-        <div className="right">
+        <div class="righticon">
           <img 
             src={logout}
             height={40}

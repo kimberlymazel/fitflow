@@ -1,9 +1,8 @@
 import React from 'react'
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Stack from '@mui/material/Stack';
-import { styled } from '@mui/material/styles';
-import '../style/App.css'
+import Box from '@mui/material/Box'
+import Stack from '@mui/material/Stack'
+import Thin from './cards/Thin'
+import '../App.css'
 
 import dashboard from '../icons/dashboard.png'
 import tracker from '../icons/tracker.png'
@@ -12,60 +11,55 @@ import mealplan from '../icons/mealplan.png'
 import workout from '../icons/workout.png'
 import schedule from '../icons/schedule.png'
 
-const Item = styled(Paper)(({ theme }) => ({
-  width: 250,
-  height: 30,
-  padding: theme.spacing(2.5),
-  display: 'flex',
-  alignSelf: 'center',
-  alignItems: 'center',
-  backgroundColor: '#5A1BB9'
-}));
-
 function Navigation() {
   return (
-    <div className="nav">
+    <div class="nav">
         <Box
           sx={{
             alignSelf: "left",
-            backgroundColor: '#5A1BB9',
             width: 300,
             height: 610
           }}
+          style={{
+            background: 'linear-gradient(to bottom, #5A1BB9, #9801CC)'
+          }}
         >
-            <Stack spacing={2}>
-              <Item>
+            <Stack 
+              spacing={1.5}
+              paddingTop={2}
+            >
+              <Thin>
                 <img src={dashboard} width={30}></img>
                 <h3>Dashboard</h3>
-              </Item>
+              </Thin>
               
-              <Item>
+              <Thin>
                 <img src={tracker} width={30}></img>
                 <h3>Tracker</h3>
-              </Item>
+              </Thin>
 
-              <Item>
+              <Thin>
                 <img src={calculator} width={30}></img>
                 <h3>Calculator</h3>
-              </Item>
+              </Thin>
 
-              <Item>
+              <Thin>
                 <img src={mealplan} width={30}></img>
                 <h3>Meal Plan</h3>
-              </Item>
+              </Thin>
 
-              <Item>
+              <Thin>
                 <img src={workout} width={30}></img>
                 <h3>Workouts</h3>
-              </Item>
+              </Thin>
 
-              <Item>
+              <Thin>
                 <img src={schedule} width={30}></img>
                 <h3>Schedules</h3>
-              </Item>
+              </Thin>
             </Stack>
 
-            <div className="bottom">
+            <div class="bottom">
               <h3>Contact us</h3>
             </div>
         </Box>
