@@ -31,7 +31,7 @@ function Goals() {
   }
 
   return (
-    <div class="carousel" style={{paddingLeft:'20px'}}>
+    <div class="carousel" style={{paddingLeft:'20px', marginTop:"-10px"}}>
         <Box>
             <Grid 
                 container spacing={2}
@@ -39,7 +39,7 @@ function Goals() {
                 sx={{ overflow: "auto" }}
             >
                 <Grid item>
-                 <h2 style={{color: '#531EB7', fontSize:18, marginBottom:5}}>Fitness Goal</h2>
+                 <h2 style={{color: '#531EB7', fontSize:16, marginBottom:3}}>Fitness Goal</h2>
                     <Standard
                         style={{
                             background: 'linear-gradient(to right, #6DAFFD, #0079E9)'
@@ -62,7 +62,7 @@ function Goals() {
                 </Grid>
                 
                 <Grid item>
-                <h2 style={{color: '#531EB7', fontSize:18, marginBottom:5}}>Calorie Goal</h2>
+                <h2 style={{color: '#531EB7', fontSize:16, marginBottom:3}}>Calorie Goal</h2>
                     <Standard
                         style={{
                             background: 'linear-gradient(to right, #F279E6, #EB4A67)'

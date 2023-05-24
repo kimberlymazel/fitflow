@@ -8,7 +8,8 @@ const Long = styled(Paper)(({ theme }) => ({
     display: 'flex-inline',
     alignSelf: 'center',
     alignItems: 'center',
-    borderRadius: 20
+    borderRadius: 20,
+    marginTop:"10px"
 }));
 
 export default Long

@@ -6,6 +6,7 @@ import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt
 import SentimentSatisfiedIcon from '@mui/icons-material/SentimentSatisfied';
 import SentimentDissatisfiedIcon from '@mui/icons-material/SentimentDissatisfied';
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
+
 function Checkin() {
   const [sleepData, setSleepData]=useState(0)
   const [waterData, setWaterData]=useState(0)
@@ -59,8 +60,10 @@ function Checkin() {
             </div>
             <h2 style={{color: '#531EB7', fontSize:16, paddingLeft:10 ,marginTop:'16px'}}>Coach consultation</h2> 
             <h2 style={{color: 'black', fontSize:11, paddingLeft:10 ,marginTop:'-10px'}}>With fitflow, lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua!</h2> 
-            <Button style={{backgroundColor:"#FFB454", color:"#531EB7",borderRadius:"20px",height:"30px", width:"100%", marginLeft:"auto", marginRight:"auto", paddingLeft:"20px", paddingRight:"30px", textTransform: 'none', fontWeight:"550", fontFamily: 'Quicksand', }}>Get fitflow premium</Button>
+            <Button style={{backgroundColor:"#FFB454", color:"#531EB7",borderRadius:"20px",height:"30px", width:"100%", marginLeft:"auto", marginRight:"auto", paddingLeft:"20px", paddingRight:"30px", textTransform: 'none', fontWeight:"550", fontFamily: 'Quicksand'}}>Get fitflow premium</Button>
         </Long>
+        
+        
     </div>
   )
 }

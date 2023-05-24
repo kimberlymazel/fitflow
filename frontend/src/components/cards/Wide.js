@@ -9,7 +9,9 @@ const Wide = styled(Paper)(({ theme }) => ({
     alignSelf: 'center',
     alignItems: 'center',
     borderRadius: 20,
-    backgroundColor: 'purple'
+    backgroundColor: 'purple',
+    border:"none",
+    boxShadow:"none"
 }));
 
 export default Wide

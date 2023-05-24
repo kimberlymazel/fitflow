@@ -8,7 +8,9 @@ const Standard = styled(Paper)(({ theme }) => ({
     display: 'flex-inline',
     alignSelf: 'center',
     alignItems: 'center',
-    borderRadius: 20
+    borderRadius: 20,
+    border:"none",
+    boxShadow:"none"
 }));
 
 export default Standard
