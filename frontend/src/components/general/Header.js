@@ -31,6 +31,9 @@ function Header() {
         </div>
         
       </Box>
+      <div style={{width:"100%", height:"2px", background:'linear-gradient(to right, #5B1AB9, #FFFFFF)', marginTop:"-5px"} }>
+
+      </div>
     </div>
     
   )

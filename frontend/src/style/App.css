@@ -14,6 +14,7 @@
 
 .left {
     float: left;
+    width: 20%;
 }
 
 .middle {
@@ -23,6 +24,9 @@
 
 .right {
     float: left;
+    width: 30%;
+    
+    
 }
 
 .under {

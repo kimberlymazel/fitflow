@@ -36,17 +36,27 @@ function LineGraph() {
         }
     }
     return (
-        <div style={{marginTop:"5px"}}>
+        <div style={{ margin:"-20px 20px 10px 10px"}}>
             <div className='titleAndToday'>
                 <h2 style={{color: '#531EB7', fontSize:16, marginBottom:5}}>Fitness activity history</h2>
             </div>
-            <Wide className='linechart' style={{backgroundColor:"white", boxShadow:"1px 1px 3px 1px #C7C9C6"}}>
+            <div className='linechart' 
+                style={{backgroundColor:"white", 
+                boxShadow:"1px 1px 3px 1px #C7C9C6",
+                width: "100%",
+                height: "100%",
+                display: 'flex-inline',
+                alignSelf: 'center',
+                alignItems: 'center',
+                borderRadius: 20,
+
+                }}>
                 <Line
                     data={data}
                     options={options}
-                    style={{width:"100%", maxHeight:160}}
+                    style={{width:"100%", maxHeight:'100%', margin:"10px 10px 10px 10px"}}
                 />
-            </Wide>
+            </div>
         </div>
 
     )

@@ -15,24 +15,23 @@ export const Tracker = () => {
             <Navigation></Navigation>
         </div>
 
-        <div class="middle">
-            <Goals></Goals>
+      <div class="middle">
+          <Goals></Goals>
 
-        <div class="under">
-        <LineGraph></LineGraph>
-        </div>
+          <div class="under">
+            <LineGraph></LineGraph>
+          </div>
 
-        <div class="under">
-          <Rate></Rate>
-        </div>
-
+          <div class="under">
+            <Rate></Rate>
+          </div>
       </div>
 
-
-
-
         <div class="right">
+          <div class="heightadjust" style={{height:'100vh'}}>
             <Checkin></Checkin>
+          </div>
+
         </div>
 
    
