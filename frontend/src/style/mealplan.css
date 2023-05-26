@@ -50,4 +50,16 @@
 
 .drop h3 {
     margin-right: 5%;
+    color: #7248C3;
+}
+
+.buttondiv {
+    margin-top: 5%;
+    text-align: center;
+}
+
+.meal {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }

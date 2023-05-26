@@ -16,7 +16,6 @@ export const MealPlanGenerator = () => {
 
             <div class="right">
                 <Categories></Categories>
-                <DropDown></DropDown>
             </div>
         </div>
     )

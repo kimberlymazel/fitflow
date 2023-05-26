@@ -1,9 +1,13 @@
-import * as React from 'react'
+import React, {useState} from 'react';
 import Small from '../cards/Small'
 import Box from '@mui/material/Box'
 import '../../style/mealplan.css'
 import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
+import Stack from '@mui/material/Stack'
+import TextField from '@mui/material/TextField'
+import Button from '@mui/material/Button'
+import MealList from "./MealList"
 
 import anything from '../../icons/anything.png'
 import paleo from '../../icons/paleo.png'
@@ -12,11 +16,30 @@ import vegan from '../../icons/vegan.png'
 import keto from '../../icons/keto.png'
 
 function Categories() {
-    const [selectedDiet, setSelectedDiet] = React.useState('anything');
+    const [selectedDiet, setSelectedDiet] = useState('anything');
+    const [mealData, setMealData] = useState(null);
+    const [calories, setCalories] = useState(2000);
     
-    const handleOptionChange = (event, newSelect) => {
+    const handleDiet = (event, newSelect) => {
         setSelectedDiet(newSelect);
     };
+
+    function handleCalorie(e){
+        setCalories(e.target.value);
+    }
+    
+    function getMealData(){
+        fetch(
+            `https://api.spoonacular.com/mealplanner/generate?apiKey=d6ff71253b57408ba9d445343d1c9b7c&timeFrame=day&targetCalories=${calories}&diet=${selectedDiet}`
+        )
+        .then((response) => response.json())
+        .then((data) => {
+            setMealData(data);
+        })
+        .catch(() => {
+            console.log("error");
+        });
+    }
 
     return (
         <div className="categories">
@@ -28,11 +51,12 @@ function Categories() {
             >
                 <ToggleButtonGroup
                     value={selectedDiet}
-                    exclusive
-                    onChange={handleOptionChange}
-                    className="toggle"
+                    exclusive="true"
+                    onChange={handleDiet}
                 >
-                    <ToggleButton value="anything">
+                    <ToggleButton 
+                        value="anything" 
+                    >
                         <Small
                             style={{
                                 background: '#B497ED'
@@ -44,7 +68,9 @@ function Categories() {
                     </ToggleButton>
 
 
-                    <ToggleButton value="paleo">
+                    <ToggleButton 
+                        value="paleo"
+                    >
                         <Small
                             style={{
                                 background: '#A781F0'
@@ -89,6 +115,36 @@ function Categories() {
                     </ToggleButton>
                 </ToggleButtonGroup>
             </Box>
+
+            <Box>
+                <Stack>
+                    <div className="drop">
+                        <div className="right-align">
+                            <h3>I want to eat</h3>
+                            <TextField
+                                type="number"
+                                label="# Calories"
+                                sx={{width: 300}}
+                                onChange={handleCalorie}
+                            >
+                            </TextField>
+                        </div>
+
+                        <div className="buttondiv">
+                            <Button 
+                                variant="contained" 
+                                onClick={getMealData}
+                                style={{
+                                    backgroundColor: "#EA9C39"
+                                }}
+                            >
+                                Generate
+                            </Button>
+                        </div>
+                    </div>
+                </Stack>
+            </Box>
+            {mealData && <MealList mealData={mealData}/>}
         </div>
     ) 
 }
