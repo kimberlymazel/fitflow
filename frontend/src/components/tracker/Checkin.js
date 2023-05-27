@@ -12,7 +12,7 @@ function Checkin() {
   const [waterData, setWaterData]=useState(0)
   const [stepsData, setStepsData]=useState(0)
   return (
-    <div style={{height:"100%"}}>
+    <div style={{height:"100%", maxWidth:"100%"}}>
         <div
             style={{
                 background: '#FFFFFF',
@@ -68,7 +68,7 @@ function Checkin() {
                 <h2 style={{color: 'black', fontSize:15, paddingLeft:'5px', paddingRight:"10px",marginTop:'15px'}}>{stepsData}</h2> 
             </div>
             <h2 style={{color: '#531EB7', fontSize:"160%", paddingLeft:10 ,marginTop:'40px'}}>Coach consultation</h2> 
-            <h2 style={{color: 'black', fontSize:16, paddingLeft:10 ,marginTop:'-10px'}}>With fitflow, lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua!</h2> 
+            <h2 style={{color: 'black', fontSize:16, paddingLeft:10 ,marginTop:'-10px'}}>With fitflow premium, you can get access to collaborate with licensed professionals to help you in improving your health and keeping you fit!</h2> 
             <Button style={{fontSize:"18px",backgroundColor:"#FFB454", color:"#531EB7",borderRadius:"20px", marginTop:"0px",height:"40px", width:"100%", marginLeft:"auto", marginRight:"auto", paddingLeft:"20px", paddingRight:"30px", textTransform: 'none', fontWeight:"550", fontFamily: 'Quicksand'}}>Get fitflow premium</Button>
         </div>
         

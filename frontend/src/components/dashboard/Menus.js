@@ -22,7 +22,7 @@ function Menu() {
     navigate("/meal-plan");
     }
   return (
-    <div>
+    <div style={{maxWidth:"100%"}}>
         <div className='slider' style={{marginLeft:"30px",display:"grid",gridAutoFlow:"column", width:'93%', overflowX:"auto", overflowY:"hidden"}}>
             <div onClick={toWorkout}  id="dailyexercise" className='menu item' style={{borderRadius:"20px",boxShadow:"2px 2px 2px 2px lightgrey",width:"400px",margin:"10px 15px 10px 0px", padding:"10px 10px 10px 10px", height:"80%", background: 'linear-gradient(to right, #E78403, #F9D601)'}}>
                 <img src={exercise} height={"110px"} style={{padding:"5px 30px 0px 20px"}}></img>

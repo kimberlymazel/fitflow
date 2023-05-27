@@ -61,7 +61,7 @@ function LineGraph() {
         datasets: data.datasets.filter((dataset) => dataset.label === activeDataset),
       };
     return (
-        <div style={{ margin:"20px 20px 10px 30px"}}>
+        <div style={{ margin:"20px 20px 10px 30px",maxWidth:"100%"}}>
             <h2 style={{color: 'black', fontSize:20, marginBottom:5, marginLeft:"5px"}}>Activity · This Week</h2>
             <div className='linechart' 
                 style={{backgroundColor:"white", 
