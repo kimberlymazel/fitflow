@@ -46,7 +46,7 @@ function Navigation() {
   }
 
   return (
-    <div className="nav" style={{height:"110vh", width:"100%"}}>
+    <div className="nav" style={{height:"125vh", width:"100%"}}>
         <Box
           sx={{
             alignSelf: "left",
@@ -56,7 +56,8 @@ function Navigation() {
           style={{
             background: 'linear-gradient(to bottom, #5A1BB9, #9801CC)',
             fontSize:"16px",
-            height:"100%"
+            height:"100%",
+            overflow:"hidden",
           }}
         >
             <div
@@ -69,13 +70,13 @@ function Navigation() {
                 overflow:"hidden",
                 }}
             >
-                <Button onClick={toDashboard} startIcon={<GridViewOutlinedIcon style={{fontSize:"40px"}}/>} style={{overflow:"hidden",color:"white", marginTop:"20%",marginRight:"-10%", fontFamily:"Quicksand", textTransform:"none", fontSize:"26px", maxWidth:240}}>Dashboard</Button>
-                <Button onClick={toTracker} startIcon={<AlignVerticalBottomOutlinedIcon style={{fontSize:"40px"}}/>} style={{overflow:"hidden",marginLeft:"-22px",color:"white", marginTop:"20%",marginRight:"-10%", fontFamily:"Quicksand", textTransform:"none", fontSize:"26px",maxWidth:240}}>Tracker</Button>
-                <Button onClick={toCalculator} startIcon={<CalculateOutlinedIcon style={{fontSize:"40px"}}/>} style={{overflow:"hidden",marginLeft:"-4px",color:"white", marginTop:"20%", marginRight:"-10%", fontFamily:"Quicksand", textTransform:"none", fontSize:"26px",maxWidth:240}}>Calculator</Button>
-                <Button onClick={toMealPlan} startIcon={<RestaurantOutlinedIcon style={{fontSize:"40px"}}/>} style={{overflow:"hidden",marginLeft:"-10px",color:"white", marginTop:"20%",marginRight:"-10%", fontFamily:"Quicksand", textTransform:"none", fontSize:"26px",maxWidth:240}}>Meal Plan</Button>
-                <Button onClick={toWorkouts} startIcon={<FitnessCenterOutlinedIcon style={{fontSize:"40px"}}/>} style={{overflow:"hidden",marginLeft:"-10px",color:"white", marginTop:"20%",marginRight:"-10%", fontFamily:"Quicksand", textTransform:"none", fontSize:"26px",maxWidth:240}}>Workouts</Button>
-                <Button onClick={toSchedule} startIcon={<CalendarMonthOutlinedIcon style={{fontSize:"40px"}}/>} style={{overflow:"hidden",marginLeft:"-3px",color:"white",marginTop:"20%", marginRight:"-10%", fontFamily:"Quicksand", textTransform:"none", fontSize:"26px",maxWidth:240}}>Schedules</Button>
-                <Button onClick={toContacts} startIcon={<CallOutlinedIcon style={{fontSize:"40px"}}/>} style={{overflow:"hidden",marginLeft:"5px",color:"white",marginTop:"20%", marginRight:"-10%", fontFamily:"Quicksand", textTransform:"none", fontSize:"26px",maxWidth:240}}>Contact Us</Button>
+                <Button onClick={toDashboard} startIcon={<GridViewOutlinedIcon style={{fontSize:"40px"}}/>} style={{overflow:"hidden",color:"white", marginTop:"20%",marginRight:"-10%", fontFamily:"Quicksand", textTransform:"none", fontSize:"170%", maxWidth:240}}>Dashboard</Button>
+                <Button onClick={toTracker} startIcon={<AlignVerticalBottomOutlinedIcon style={{fontSize:"40px"}}/>} style={{overflow:"hidden",marginLeft:"-22px",color:"white", marginTop:"20%",marginRight:"-10%", fontFamily:"Quicksand", textTransform:"none", fontSize:"170%",maxWidth:240}}>Tracker</Button>
+                <Button onClick={toCalculator} startIcon={<CalculateOutlinedIcon style={{fontSize:"40px"}}/>} style={{overflow:"hidden",marginLeft:"-4px",color:"white", marginTop:"20%", marginRight:"-10%", fontFamily:"Quicksand", textTransform:"none", fontSize:"170%",maxWidth:240}}>Calculator</Button>
+                <Button onClick={toMealPlan} startIcon={<RestaurantOutlinedIcon style={{fontSize:"40px"}}/>} style={{overflow:"hidden",marginLeft:"-10px",color:"white", marginTop:"20%",marginRight:"-10%", fontFamily:"Quicksand", textTransform:"none", fontSize:"170%",maxWidth:240}}>Meal Plan</Button>
+                <Button onClick={toWorkouts} startIcon={<FitnessCenterOutlinedIcon style={{fontSize:"40px"}}/>} style={{overflow:"hidden",marginLeft:"-10px",color:"white", marginTop:"20%",marginRight:"-10%", fontFamily:"Quicksand", textTransform:"none", fontSize:"170%",maxWidth:240}}>Workouts</Button>
+                <Button onClick={toSchedule} startIcon={<CalendarMonthOutlinedIcon style={{fontSize:"40px"}}/>} style={{overflow:"hidden",marginLeft:"-3px",color:"white",marginTop:"20%", marginRight:"-10%", fontFamily:"Quicksand", textTransform:"none", fontSize:"170%",maxWidth:240}}>Schedules</Button>
+                <Button onClick={toContacts} startIcon={<CallOutlinedIcon style={{fontSize:"40px"}}/>} style={{overflow:"hidden",marginLeft:"5px",color:"white",marginTop:"20%", marginRight:"-10%", fontFamily:"Quicksand", textTransform:"none", fontSize:"170%",maxWidth:240}}>Contact Us</Button>
 
             </div>
         </Box>

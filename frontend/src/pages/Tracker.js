@@ -28,7 +28,7 @@ export const Tracker = () => {
       </div>
 
         <div class="right">
-          <div class="heightadjust" style={{height:'100vh'}}>
+          <div class="heightadjust" style={{height:'120vh'}}>
             <Checkin></Checkin>
           </div>
 
