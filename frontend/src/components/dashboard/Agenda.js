@@ -8,7 +8,7 @@ import '../../style/dashboard.css'
 
 function Agenda() {
   return (
-    <div class="agenda">
+    <div className="agenda">
         <Box marginLeft={"30px"} marginTop={"-5px"} marginBottom={"16px"}>
             <Grid container spacing={1}>
                 <Grid item>

@@ -6,7 +6,7 @@ import '../../style/dashboard.css'
 
 function Today() {
   return (
-    <div class="today">
+    <div className="today">
         <Box>
             <Grid 
                 container spacing={2}
