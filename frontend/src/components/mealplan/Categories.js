@@ -144,7 +144,10 @@ function Categories() {
                     </div>
                 </Stack>
             </Box>
-            {mealData && <MealList mealData={mealData}/>}
+
+            <div className="generated">
+                {mealData && <MealList mealData={mealData}/>}
+            </div>
         </div>
     ) 
 }
