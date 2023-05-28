@@ -4,7 +4,11 @@ import logo from '../../icons/logo.png'
 import logout from '../../icons/log-out.png'
 import '../../style/general.css'
 
+import { useAuth } from "../../hooks/useAuth";
+
 function Header() {
+  const { logout } = useAuth();
+
   return (
     <div>
       <Box 
@@ -23,7 +27,7 @@ function Header() {
           ></img>
         </div>
 
-        <div className="righticon">
+        <div className="righticon" onClick={logout}>
           <img 
             src={logout}
             height={40}

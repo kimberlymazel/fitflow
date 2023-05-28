@@ -10,7 +10,7 @@ import '../../style/dashboard.css'
 
 function Carousel() {
   return (
-    <div class="carousel">
+    <div className="carousel">
         <Box>
             <Grid 
                 container spacing={2}
