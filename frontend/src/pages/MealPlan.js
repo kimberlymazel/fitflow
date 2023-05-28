@@ -4,7 +4,7 @@ import Header from '../components/general/Header'
 import Navigation from '../components/general/Navigation'
 import MPGenerator from '../components/mealplan/MPGenerator'
 
-export const MealPlanGenerator = () => {
+export const MealPlan = () => {
     return(
         <div className="mealplan">
             <Header></Header>

@@ -56,6 +56,12 @@ function MPGenerator() {
                 >
                     <ToggleButton 
                         value="anything" 
+                        sx={{
+                            width: 10
+                        }}
+                        style={{
+                            backgroundColor: 'blue'
+                        }}
                     >
                         <Small
                             style={{

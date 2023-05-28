@@ -1,7 +1,7 @@
 import './style/App.css'
-import { MealGenerator } from './pages/MealGenerator';
-import { MealPlanGenerator } from './pages/MealPlanGenerator';
+import { MealPlan } from './pages/MealPlan';
 import { WorkoutGenerator } from './pages/WorkoutGenerator';
+import { WorkoutGen } from './pages/WorkoutGen';
 import { Dashboard } from './pages/Dashboard';
 import { Tracker } from './pages/Tracker';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -108,8 +108,8 @@ function App() {
             <Route path="/register" element={<Register />}/>
             <Route path="/" element={<Dashboard />} />
             <Route path="/tracker" element={<Tracker />} />
-            <Route exact path="/meal-generator" element={<MealGenerator />} />
-            <Route exact path="/meal-plan" element={<MealPlanGenerator />} />
+            <Route exact path="/meal-plan" element={<MealPlan />} />
+            <Route exact path="/workouts" element={<WorkoutGen />} />
             <Route exact path="/workout-generator" element={<WorkoutGenerator />} />
             
           </Routes>

@@ -24,7 +24,7 @@ export const WorkoutGenerator = () => {
             return prevSelectedOptions.filter(item => item !== option);
           }
         });
-      };
+    };
 
     function handleChange(e){
         setTime(e.target.value);

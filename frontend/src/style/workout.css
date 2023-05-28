@@ -1,0 +1,43 @@
+.workout {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.workout .left {
+    float: left;
+    width: 20vw;
+}
+
+.workout .right {
+    float: left;
+    width: 75%;  
+    height: 100vh;
+    overflow: auto;
+}
+
+.wo-generator {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.wo-generator h1 {
+    color: #7248C3;
+    margin-bottom: 0;
+    font-size: 3.5vh;
+}
+
+.wo-generator h2 {
+    color: #7248C3;
+    margin-right: 2vh;
+}
+
+.wo-generator h3 {
+    color: #EA9C39;
+    margin-top: 1%;
+}
+
+.time {
+    display: inline-flex;
+    align-items: center;
+}
+
