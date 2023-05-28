@@ -15,7 +15,7 @@ import vegetarian from '../../icons/vegetarian.png'
 import vegan from '../../icons/vegan.png'
 import keto from '../../icons/keto.png'
 
-function Categories() {
+function MPGenerator() {
     const [selectedDiet, setSelectedDiet] = useState('anything');
     const [mealData, setMealData] = useState(null);
     const [calories, setCalories] = useState(2000);
@@ -42,7 +42,7 @@ function Categories() {
     }
 
     return (
-        <div className="categories">
+        <div className="mp-generator">
             <h1>Create a meal plan</h1>
             <h3>Reach your diet and nutritional goals
                 with our meal plan generator</h3>
@@ -152,4 +152,4 @@ function Categories() {
     ) 
 }
 
-export default Categories
+export default MPGenerator

@@ -1,12 +1,12 @@
 import React from 'react'
-import '../style/mealplan.css'
+import '../style/workout.css'
 import Header from '../components/general/Header'
 import Navigation from '../components/general/Navigation'
-import MPGenerator from '../components/mealplan/MPGenerator'
+import WOGenerator from '../components/mealplan/WOGenerator'
 
-export const MealPlanGenerator = () => {
+export const WorkoutGen = () => {
     return(
-        <div className="mealplan">
+        <div className="workout">
             <Header></Header>
 
             <div class="left">
@@ -14,8 +14,10 @@ export const MealPlanGenerator = () => {
             </div>
 
             <div class="right">
-                <MPGenerator></MPGenerator>
+                <WOGenerator></WOGenerator>
             </div>
         </div>
     )
 }
+
+export default WorkoutGen

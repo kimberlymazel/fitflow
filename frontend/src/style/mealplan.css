@@ -1,35 +1,46 @@
 .mealplan {
+    height: 100vh;
     overflow: hidden;
 }
 
 .mealplan .left {
     float: left;
+    width: 20vw;
 }
 
 .mealplan .right {
     float: left;
     width: 75%;  
-    height: 125vh;
+    height: 100vh;
     overflow: auto;
 }
 
-.categories {
+.nutrients h1 {
+    color: #7248C3;
+}
+
+.nutrients h2 {
+    color: #EA9C39
+}
+
+.mp-generator {
     align-items: center;
     padding-left: 2%;
     padding-right: 2%;
 }
 
-.categories h1 {
+.mp-generator h1 {
     color: #7248C3;
     margin-bottom: 0;
+    font-size: 3.5vh;
 }
 
-.categories h3 {
+.mp-generator h3 {
     color: #EA9C39;
     margin-top: 1%;
 }
 
-.categories h5 {
+.mp-generator h5 {
     color: white;
     margin-top: 10%;
     text-align: center;
@@ -75,12 +86,15 @@
 
 .desc h1 {
     color: white;
+    font-size: 2.8vh;
 }
 
 .desc li {
     list-style-type: none;
+    font-size: 2vh;
 }
 
 .generated {
-    padding: 5%;
+    padding: 1%;
+    padding-bottom: 8%
 }

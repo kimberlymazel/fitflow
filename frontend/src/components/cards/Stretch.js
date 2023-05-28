@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles'
 
 const Stretch = styled(Paper)(({ theme }) => ({
     width: '100%',
-    height: 200,
+    height: 250,
     padding: theme.spacing(2),
     display: 'flex-inline',
     alignSelf: 'center',

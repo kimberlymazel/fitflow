@@ -1,5 +1,6 @@
 import React from 'react';
 import Meal from "./Meal";
+import '../../style/mealplan.css'
 
 export default function MealList({ mealData }) {
     const nutrients = mealData.nutrients;
@@ -9,7 +10,8 @@ export default function MealList({ mealData }) {
     return (
         <main>
             <section className="nutrients">
-                <h1>Macros</h1>
+                <h1>Today's Meal Plan</h1>
+                <h2>Macros</h2>
                 <ul>
                     <li>Calories: {nutrients.calories.toFixed(0)}</li>
                     <li>Carbohydrates: {nutrients.carbohydrates.toFixed(0)}</li>
