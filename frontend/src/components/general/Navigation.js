@@ -34,7 +34,7 @@ function Navigation() {
   }
   const toWorkouts = (e) => {
     e.preventDefault();
-    navigate("/workout-generator");
+    navigate("/workouts");
   }
   const toSchedule = (e) => {
     e.preventDefault();

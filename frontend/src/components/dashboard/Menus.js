@@ -11,7 +11,7 @@ function Menu() {
     const navigate= useNavigate();
     const toWorkout = (e) => {
         e.preventDefault();
-        navigate("/workout-generator");
+        navigate("/workouts");
       }
     const toTracker = (e) => {
     e.preventDefault();
