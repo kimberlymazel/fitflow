@@ -1,7 +1,7 @@
 import React from 'react'
 import Box from '@mui/material/Box'
 import logo from '../../icons/logo.png'
-import logout from '../../icons/log-out.png'
+import logoutlogo from '../../icons/log-out.png'
 import '../../style/general.css'
 
 import { useAuth } from "../../hooks/useAuth";
@@ -29,7 +29,7 @@ function Header() {
 
         <div className="righticon" onClick={logout}>
           <img 
-            src={logout}
+            src={logoutlogo}
             height={40}
           ></img>
         </div>
