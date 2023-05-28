@@ -36,7 +36,7 @@ function LineGraph() {
         }
     }
     return (
-        <div style={{ margin:"-20px 20px 10px 10px"}}>
+        <div style={{ margin:"-20px 20px 10px 10px",maxWidth:"100%"}}>
             <div className='titleAndToday'>
                 <h2 style={{color: '#531EB7', fontSize:16, marginBottom:5}}>Fitness activity history</h2>
             </div>

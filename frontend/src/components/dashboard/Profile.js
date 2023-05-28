@@ -8,7 +8,7 @@ import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 
 function Profile() {
   return (
-    <div style={{height:"100%"}}>
+    <div style={{height:"100%", maxWidth:"100%"}}>
         <div
             style={{
                 background: '#FFFFFF',
@@ -31,7 +31,7 @@ function Profile() {
             </div>
             
             <h2 style={{textAlign:"center",color: 'black', fontSize:"160%", paddingLeft:10 ,marginTop:'-3%'}}> Kang Haerin</h2> 
-            <h2 style={{textAlign:"center",color: '#E78203', fontSize:'120%', paddingLeft:10 ,marginTop:'-5%'}}>@hae_tokki</h2> 
+            <h2 style={{textAlign:"center",color: '#E78203', fontSize:'120%', paddingLeft:10 ,marginTop:'-15px'}}>@hae_tokki</h2> 
             <div className='line' style={{backgroundColor:"#B2BBAA", width:"100%", height:"1px", marginBottom:"10px",marginLeft:"auto", marginRight:"auto"}}></div>
             <div className='personalinfo' style={{display:"flex",justifyContent:"center", alignItems:"center", gap:"40px",marginLeft:"auto", marginRight:"auto" }}>
                 <div className='infoitem' style={{marginTop:"10px", display:"flex-inline", justifyContent:"center", alignItems:"center"}}>
