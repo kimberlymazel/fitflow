@@ -46,7 +46,7 @@ export const Login = () => {
                   <h3 style={{color:"#531EB7", fontSize:"140%", fontWeight:600, marginTop:"20px", marginBottom:"9px"}}>Email</h3>
                   <div className={errors.password ? "error" : ""} style={{display:"flex", flexDirection:"column"}}>
                     <input
-                      placeholder="Password"
+                      placeholder="Enter password"
                       type="password"
                       {...register("password", {
                         required: "*This is required field",
@@ -62,10 +62,10 @@ export const Login = () => {
                   </div>
 
                   <button disabled={isSubmitting} type="submit" style={{width:"100%",fontSize:"20px", background:"#531EB7", color:"white", border:"white",borderRadius:"5px", margin:"10px 0px 10px 0px",boxShadow:"2px 2px 2px 2px lightgrey", padding:"10px 5px 10px 5px"}}>
-                    {isSubmitting ? "Logging in..." : "Log in"}
+                    {isSubmitting ? "Logging in..." : "Login"}
                   </button>
                   </form>
-                <button onClick={() => navigate("/register", { replace: true })}  style={{width:"100%",fontSize:"20px", background:"white", color:"#531EB7",fontWeight:"600", borderColor:"lightgrey",borderRadius:"5px", margin:"0px 0px 10px 0px",boxShadow:"2px 3px 2px 2px lightgrey", padding:"10px 5px 10px 5px"}}>
+                <button onClick={() => navigate("/register", { replace: true })}  style={{width:"100%",fontSize:"20px", background:"white", color:"black",fontWeight:"600", borderColor:"lightgrey",borderRadius:"5px", margin:"0px 0px 10px 0px",boxShadow:"2px 3px 2px 2px lightgrey", padding:"10px 5px 10px 5px"}}>
                   Create a new account
                 </button>
             </div>
