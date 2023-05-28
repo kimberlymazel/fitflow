@@ -15,7 +15,7 @@ function Goals() {
     labels:[],
     datasets:[{
         labels :[] ,
-        data:[5,10],
+        data:[5203,4797],
         backgroundColor :['white', '#6DAFFD'],
         borderColor:['white', '#6DAFFD'],
     }]
@@ -33,7 +33,7 @@ function Goals() {
   return (
     <div class="carousel" style={{paddingLeft:'20px', display:"flex",width:"100%"}}>
         <div class="right" style={{width:"50%", margin:"0px 10px 10px 5px"}}>
-            <h2 style={{color: '#531EB7', fontSize:16, marginBottom:3}}>Fitness Goal</h2>
+            <h2 style={{color: '#531EB7', fontSize:16, marginBottom:3}}>Cardio Goal</h2>
                 <div
                     style={{
                         background: 'linear-gradient(to right, #6DAFFD, #0079E9)',
@@ -57,8 +57,8 @@ function Goals() {
                         </div>
                         <div className='rightdonutpart'style={{marginLeft:'20%',marginTop:6}}>
                             <h2 style={{color: 'white', fontSize:13, marginLeft :"-30px",marginTop:-1}}>Completed</h2>
-                            <h2 style={{color: 'white', fontSize:30, marginLeft :"-30px",marginTop:-10}}>5 km</h2>
-                            <h2 style={{color: 'white', fontSize:13, marginLeft :"-30px",marginTop:-22}}>out of 15 km </h2>
+                            <h2 style={{color: 'white', fontSize:30, marginLeft :"-30px",marginTop:-10}}>5.203</h2>
+                            <h2 style={{color: 'white', fontSize:13, marginLeft :"-30px",marginTop:-22}}>out of 10.000 steps </h2>
                         </div>
                     </div>
                 </div>

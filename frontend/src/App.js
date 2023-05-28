@@ -6,6 +6,7 @@ import { Dashboard } from './pages/Dashboard';
 import { Tracker } from './pages/Tracker';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Login } from "./components/auth/Login";
+import { Info } from "./components/auth/Info";
 import { Register } from "./components/auth/Register";
 
 import { Authenticated } from "./components/auth/Authenticated";
@@ -106,6 +107,7 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login />}/>
             <Route path="/register" element={<Register />}/>
+            <Route path="/info" element={<Info />}/>
             <Route path="/" element={<Dashboard />} />
             <Route path="/tracker" element={<Tracker />} />
             <Route exact path="/meal-plan" element={<MealPlan />} />
