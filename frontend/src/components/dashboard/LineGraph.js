@@ -1,10 +1,13 @@
 import React from 'react'
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement }from "chart.js"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
 import { Button } from '@mui/material';
+import { CircularProgress } from '@mui/material';
+
+import axiosInstance from "../../services/axios";
 
 ChartJS.register(
     LineElement, 
@@ -17,14 +20,38 @@ function LineGraph() {
     const [activeDataset, setActiveDataset] = useState('Hours');
     const handleButtonClick = (dataset) => {
       setActiveDataset(dataset);
-    };    
+    };   
+    const [trackingData, setTrackingData] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+      const fetchData = async () => {
+          setLoading(true);
+          axiosInstance
+          .get('/tracker/calories-burnt-weekly')
+          .then((response) => {
+              setTrackingData(response.data);
+          })
+          .catch((error) => {
+              console.error(error);
+          })
+          .finally(() => {
+              setLoading(false)
+          });
+      };
     
+      fetchData();
+    }, []);
+
+    const stepsTakenData = trackingData.map(data => data.steps_taken);
+    const caloriesConsumedData = trackingData.map(data => data.calories_consumed);
+
     const data = {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         datasets: [
           {
             label: 'Hours',
-            data: [5, 3, 5, 7, 2, 0, 1],
+            data: stepsTakenData,
             backgroundColor: 'white',
             borderColor: '#1DD0E4',
             pointBorderColor: '#1DD0E4',
@@ -33,7 +60,7 @@ function LineGraph() {
           },
           {
             label: 'Calories',
-            data: [+219, -113, -49, 192, 92, -130, 63],
+            data: caloriesConsumedData,
             backgroundColor: 'white',
             borderColor: '#FF9105',
             pointBorderColor: '#FF9105',
@@ -74,8 +101,11 @@ function LineGraph() {
                 borderRadius: 20,
                 paddingTop:"8px"
                 }}>
-
-                <Line style={{margin:"5px 20px 0px 20px"}}data={activeData} options={options} />
+                {loading ? (
+                    <CircularProgress color="inherit" />
+                ) : (
+                  <Line style={{margin:"5px 20px 0px 20px"}}data={activeData} options={options} />
+                )}
                 <Button startIcon={<FitnessCenterIcon style={{fontSize:"35px"}}/>} style={{textTransform:"none", fontSize:"18px", fontFamily:"Quicksand",borderRadius:"10px",boxShadow:"1px 1px 1px 1px lightgrey",color:"white",backgroundColor:"#FF8F00", margin:"10px 10px 10px 20px"}} onClick={() => handleButtonClick('Hours')}>Exercises</Button>
                 <Button startIcon={<RestaurantIcon style={{fontSize:"35px"}}/>} style={{textTransform:"none", fontSize:"18px",fontFamily:"Quicksand",borderRadius:"10px",boxShadow:"1px 1px 1px 1px lightgrey",color:"white", backgroundColor:"#2DD8D3", margin:"10px 10px 10px 5px"}} onClick={() => handleButtonClick('Calories')}>Calories</Button>
             </div>

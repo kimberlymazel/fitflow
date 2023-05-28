@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement }from "chart.js"
 import Wide from '../cards/Wide'
+import { CircularProgress } from '@mui/material';
+
+import axiosInstance from "../../services/axios";
 
 ChartJS.register(
     LineElement, 
@@ -11,11 +14,35 @@ ChartJS.register(
 )
 
 function LineGraph() {
+    const [trackingData, setTrackingData] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            setLoading(true);
+            axiosInstance
+            .get('/tracker/calories-burnt-weekly')
+            .then((response) => {
+                setTrackingData(response.data);
+            })
+            .catch((error) => {
+                console.error(error);
+            })
+            .finally(() => {
+                setLoading(false)
+            });
+        };
+      
+        fetchData();
+      }, []);
+
+    const stepsTakenData = trackingData.map(data => data.steps_taken);
+
     const data ={
         labels:['Mon', 'Tue', 'Wed', 'Thu', 'Fri', "Sat", "Sun"],
         datasets: [{
             labels: 'Hours',
-            data:[5,3,5,7,2,0,1],
+            data:stepsTakenData,
             backgroundColor: "white",
             borderColor:"#92C13C",
             pointBorderColor:'#92C13C',
@@ -31,7 +58,7 @@ function LineGraph() {
         scales: {
             y:{
                 min: 0,
-                max : 24
+                max : Math.max(...stepsTakenData) + 100
             }
         }
     }
@@ -51,11 +78,15 @@ function LineGraph() {
                 borderRadius: 20,
 
                 }}>
-                <Line
+                {loading ? (
+                    <CircularProgress color="inherit" />
+                ) : (
+                    <Line
                     data={data}
                     options={options}
                     style={{width:"100%", maxHeight:'100%', margin:"10px 10px 10px 10px"}}
-                />
+                    />
+                )}
             </div>
         </div>
 

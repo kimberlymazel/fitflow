@@ -17,7 +17,7 @@ function App() {
     return (
       <div className="App">
         {/* uncomment the following for auth */}
-        {/* <>
+        <>
         <AuthProvider>
           <BrowserRouter>
             <AuthConsumer>
@@ -101,9 +101,9 @@ function App() {
             </AuthConsumer>
           </BrowserRouter>
         </AuthProvider>
-        </> */}
+        </>
 
-        <BrowserRouter>
+        {/* <BrowserRouter>
           <Routes>
             <Route path="/login" element={<Login />}/>
             <Route path="/register" element={<Register />}/>
@@ -115,7 +115,7 @@ function App() {
             <Route exact path="/workout-generator" element={<WorkoutGenerator />} />
             
           </Routes>
-        </BrowserRouter>
+        </BrowserRouter> */}
       </div>
   
     );

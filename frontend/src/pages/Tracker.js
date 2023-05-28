@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '../components/general/Header'
 import Navigation from '../components/general/Navigation'
 import Goals from '../components/tracker/Goals'
-import Checkin from '../components/tracker/Checkin'
+import {Checkin} from '../components/tracker/Checkin'
 import LineGraph from '../components/tracker/LineGraph'
 import Rate from '../components/tracker/Rate'
 
