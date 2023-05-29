@@ -1,8 +1,9 @@
 import React from 'react'
+import "../../style/workout.css"
 
 export default function WorkoutList({ workoutData }) {
   return (
-    <div>
+    <div className="list">
         <main>
             <h3>Warm Up:</h3>
             <ul>
