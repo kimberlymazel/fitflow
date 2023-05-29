@@ -11,6 +11,10 @@ class User(Document):
     hashed_password: str
     first_name: Optional[str] = None 
     last_name: Optional[str] = None
+    weight: Optional[float] = None
+    height: Optional[float] = None
+    cardio_goal: Optional[int] = None
+    calorie_goal: Optional[float] = None
     disabled: Optional[bool] = None
     
     

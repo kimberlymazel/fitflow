@@ -14,7 +14,11 @@ class UserService:
         user_in = User(
             username=user.username,
             email=user.email,
-            hashed_password=get_password(user.password)
+            hashed_password=get_password(user.password),
+            weight=user.weight,
+            height=user.height,
+            cardio_goal=user.cardio_goal,
+            calorie_goal=user.calorie_goal
         )
         await user_in.save()
         return user_in

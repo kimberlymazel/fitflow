@@ -5,7 +5,6 @@ import loginillustration from '../../icons/loginillustration.svg'
 import logo from '../../icons/logo.png'
 import '../../style/auth/register.css'
 
-import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
   
 export const Register = () => {
@@ -18,20 +17,20 @@ export const Register = () => {
   
     const onSubmit = async (values) => {
       try {
-        await axiosInstance.post("/users/create", values);
-        showToast('success', 'Account created successfully.');
-        navigate("/login", { replace: true });
+        navigate("/info", {
+          state: {
+            email: values.email,
+            username: values.username,
+            password: values.password,
+          },
+          replace: true,
+        });
+        // await axiosInstance.post("/users/create", values);
+        // navigate("/info", { replace: true });
       } catch (err) {
-        showToast('error', err.response.data.detail);
+          console.error(err);
       }
     };
-
-    const showToast = (status, message) => {
-        toast[status](message, {
-          position: toast.POSITION.TOP_RIGHT,
-          autoClose: 1500
-        });
-      };
 
     return (
       <div className="register">
@@ -103,9 +102,16 @@ export const Register = () => {
                   {isSubmitting ? 'Creating account...' : 'Register'}
                 </button>
               </form>
+<<<<<<< Updated upstream
                 <button onClick={() => navigate('/login', { replace: true })} className="loginbtnregis">Log in to an existing account</button>
                 <ToastContainer />
               </div>
+=======
+              <button onClick={() => navigate('/login', { replace: true })} width="100%" style={{width:"100%",fontSize:"20px", background:"white", color:"black",fontWeight:"600", borderColor:"lightgrey",borderRadius:"5px", margin:"0px 0px 10px 0px",boxShadow:"2px 3px 2px 2px lightgrey", padding:"10px 5px 10px 5px"}}>
+                Log in to an existing account
+              </button>
+                </div>
+>>>>>>> Stashed changes
           </div>
         </div>
 

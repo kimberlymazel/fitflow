@@ -54,6 +54,14 @@ function App() {
                           </PublicRoute>
                         }
                       />
+                      <Route
+                        path="/info"
+                        element={
+                          <PublicRoute>
+                            <Info />
+                          </PublicRoute>
+                        }
+                      />
                       <Route 
                         path="/"
                         element={
