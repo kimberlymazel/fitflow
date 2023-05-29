@@ -8,6 +8,7 @@ import FormGroup from '@mui/material/FormGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Button from '@mui/material/Button'
 import WorkoutList from "./WorkoutList"
+import workout from "../../icons/workout-header.svg"
 
 function WOGenerator() {
   const [workoutData, setWorkoutData] = useState([]);
@@ -61,11 +62,11 @@ function WOGenerator() {
       <div className="header">
         <img src={workout}></img>
       </div>
-      <h1>Create a workout routine</h1>
-      <h3>Answer a few simple questions and we'll
-              generate a unique routine just for you</h3>
-
+      
       <div className="input">
+        <h1>Create a workout routine</h1>
+        <h3>Answer a few simple questions and we'll
+                generate a unique routine just for you</h3>
         <div className="time">
           <h2>Time</h2>
           <TextField
