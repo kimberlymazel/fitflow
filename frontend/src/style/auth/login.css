@@ -1,0 +1,137 @@
+.login{
+    height:100vh;
+    display:flex;
+}
+
+.leftsection{
+    height:100%;
+    width:100%;
+    background-color: white;
+    padding:40px 40px 0px 0px;
+    margin-left:40px
+}
+
+.logincontainer{
+    margin:70px 20px 20px 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginboxtitle{
+    color:#531EB7;
+    font-size:250%;
+    font-weight: 900;
+}
+
+.inputtitle1{
+    color:#531EB7;
+    font-size: 140%;
+    font-weight: 600;
+    margin-top: -25px;
+    margin-bottom: 9px;
+}
+
+.emailinputfield{
+    width: 400px;
+    font-size: 20px;
+    border-radius: 5px;
+    border-color: #AAAAAA ;
+    padding:5px 5px 5px 5px;
+    margin-bottom: 6px;
+}
+
+.inputtitle2{
+    color:#531EB7;
+    font-size: 140%;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 9px;
+}
+.passinputfield{
+    width: 400px;
+    font-size: 20px;
+    border-radius: 5px;
+    border-color: #AAAAAA ;
+    padding:5px 5px 5px 5px;
+    margin-bottom: 6px;
+}
+.rememberme{
+    display: flex;
+}
+.remembermetitle{
+    color:#5D5D5D;
+    font-size: 90%;
+    font-weight: 600;
+    margin-left: 2px;
+    margin-bottom: 9px;
+    margin-top: 9px;
+}
+
+.loginbtn{
+    width:100%;
+    font-size: 20px;
+    background-color:#531EB7 ;
+    color:white;
+    border: white;
+    border-radius: 5px;
+    margin: 10px 0px 10px 0px;
+    box-shadow: 2px 2px 2px 2px lightgrey;
+    padding: 10px 5px 10px 5px;
+}
+
+.registerbtn{
+    width: 100%;
+    font-size: 20px;
+    background-color: white;
+    color: black;
+    font-weight: 600;
+    border-color: lightgrey;
+    border-radius: 5px;
+    margin:0px 0px 10px 0px;
+    box-shadow: 2px 3px 2px 2px lightgrey;
+    padding: 10px 5px 10px 5px;
+}
+
+.illustration{
+    height: 100%;
+    width: 120%;
+    background:linear-gradient(to bottom, #531EB7, #9900CC) ;
+    padding: 30px 30px 0px 0px;
+    overflow: hidden;
+}
+
+.welcometitle{
+    color:white;
+    font-size: 300%;
+    margin-left: 12%;
+    margin-top: 5%;
+}
+
+.welcomedesc{
+    color: white;
+    font-size: 200%;
+    margin-left: 13%;
+    margin-top: -3%;
+    font-weight: 400;
+}
+
+.illuscontainer{
+    margin-top: 6%;
+    margin-left: 30px;
+    margin-right: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.halfcircledeco{
+    height: 70%;
+    margin-top: -45%;
+    width: 105%;
+    background:linear-gradient(to bottom right, #ED8500, #8B01A1);
+    box-shadow:6px 2px 4px 4px #700396;
+    border-radius:500% 500% 0 0;
+    
+}

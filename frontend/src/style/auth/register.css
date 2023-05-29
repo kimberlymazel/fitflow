@@ -1,0 +1,139 @@
+.register {
+    height: 100vh;
+    display: flex;
+}
+
+.leftregister{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    padding: 40px 40px 0px 0px;
+    margin-left: 40px;
+}
+
+.regiscontainer{
+    margin:70px 20px 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.regisboxtitle{
+    color:#531EB7;
+    font-size: 250%;
+    font-weight: 900;
+}
+.emailregisinputtitle{
+    color:#531EB7;
+    font-size: 140%;
+    font-weight: 600;
+    margin-top: -25px;
+    margin-bottom: 9px;
+}
+.emailinputfieldregis{
+    width: 400px;
+    font-size: 20px;
+    border-radius: 5px;
+    border-color: #AAAAAA;
+    padding: 5px 5px 5px 5px;
+    margin-bottom: 6px;
+}
+.usernameregisinputtitle{
+    color: #531EB7;
+    font-size: 140%;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 9px;
+}
+.usernameinputfieldregis{
+    width: 400px;
+    font-size: 20px;
+    border-radius: 5px;
+    border-color: #AAAAAA;
+    padding: 5px 5px 5px 5px;
+    margin-bottom: 6px;
+}
+
+.passwordregisinputtitle{
+    color: #531EB7;
+    font-size: 140%;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 9px;
+}
+
+.passwordinputfieldregis{
+    width: 400px;
+    font-size: 20px;
+    border-radius: 5px;
+    border-color: #AAAAAA;
+    padding: 5px 5px 5px 5px;
+    margin-bottom: 6px;
+}
+
+.registerbtnregis{
+    width: 100%;
+    font-size: 20px;
+    background-color: #531EB7;
+    color: white;
+    border: white;
+    border-radius: 5px;
+    margin: 20px 0px 10px 0px;
+    box-shadow:2px 2px 2px 2px lightgrey ;
+    padding: 10px 5px 10px 5px;
+}
+
+.loginbtnregis{
+    width: 100%;
+    font-size: 20px;
+    background-color: white;
+    color: black;
+    font-weight: 600;
+    border-color: lightgrey;
+    margin-bottom: 10px;
+    box-shadow: 2px 3px 2px 2px lightgrey;
+    padding: 10px 5px 10px 5px;
+    border-radius: 5px;
+}
+
+.illustrationregis{
+    height: 100%;
+    width: 120%;
+    background:linear-gradient(to bottom, #820BC5, #531EB7) ;
+    padding: 30px 30px 0px 0px;
+    overflow: hidden;
+}
+
+.illusregiswelcome{
+    color: white;
+    font-size: 300%;
+    margin-left: 12%;
+    margin-top: 5%;
+}
+
+.illusregisready{
+    color: white;
+    font-size: 200%;
+    margin-left: 13%;
+    margin-top: -3%;
+    font-weight: 400;
+}
+
+.illusimagediv{
+    margin-top: 6%;
+    margin-left: 30px;
+    margin-right: auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.regishalfcircledeco{
+    height: 70%;
+    margin-top: -45%;
+    width: 105%;
+    background: linear-gradient(to bottom right, #8B01A1, #ED8500);
+    box-shadow:6px 2px 4px 4px #700396 ;
+    border-radius: 500% 500% 0 0;
+}
