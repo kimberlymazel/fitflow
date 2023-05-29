@@ -58,113 +58,117 @@ function WOGenerator() {
 
   return (
     <div className="wo-generator">
-        <h1>Create a workout routine</h1>
-        <h3>Answer a few simple questions and we'll
-                generate a unique routine just for you</h3>
+      <div className="header">
+        <img src={workout}></img>
+      </div>
+      <h1>Create a workout routine</h1>
+      <h3>Answer a few simple questions and we'll
+              generate a unique routine just for you</h3>
 
-        <Box>
-          <div className="time">
-            <h2>Time</h2>
-            <TextField
-              type="number"
-              label="in minutes"
-              sx={{width: 300}}
-              onChange={handleTime}
-            >
-            </TextField>
-          </div>
-
-          <div className="location">
-            <h2>Location</h2>
-            <ToggleButtonGroup
-              value={location}
-              exclusive="true"
-              onChange={handleLocation}
-            >
-              <ToggleButton 
-                value="gym" 
-                sx={{
-                  width: '10vw'
-                }}
-                style={{
-                  backgroundColor: '#D9D9D9'
-                }}
-              >
-                <h2>Gym</h2>
-              </ToggleButton>
-
-              <ToggleButton 
-                value="home"
-                sx={{
-                  width: '10vw'
-                }}
-                style={{
-                  backgroundColor: '#D9D9D9'
-                }}
-              >
-                <h2>At Home</h2>
-              </ToggleButton>        
-            </ToggleButtonGroup>
-          </div>
-
-          <div className="equipment">
-            <h2>Equipment</h2>
-            <FormGroup>
-              <FormControlLabel
-                value="treadmill"
-                control={<Checkbox checked={selectedEquipments.includes('treadmill')} />}
-                onChange={(event) => handleCheck(event, setSelectedEquipments)}
-                label="Treadmill"
-                labelPlacement="end"
-              />
-
-              <FormControlLabel
-                value="dumbbells"
-                control={<Checkbox checked={selectedEquipments.includes('dumbbells')} />}
-                onChange={(event) => handleCheck(event, setSelectedEquipments)}
-                label="Dumbbells"
-                labelPlacement="end"
-              />
-            </FormGroup>
-          </div>
-
-          <div className="muscles">
-            <h2>Target Muscles</h2>
-            <FormGroup>
-              <FormControlLabel
-                value="biceps"
-                control={<Checkbox checked={selectedMuscles.includes('biceps')} />}
-                onChange={(event) => handleCheck(event, setSelectedMuscles)}
-                label="Biceps"
-                labelPlacement="end"
-              />
-
-              <FormControlLabel
-                value="shoulders"
-                control={<Checkbox checked={selectedMuscles.includes('shoulders')} />}
-                onChange={(event) => handleCheck(event, setSelectedMuscles)}
-                label="Shoulders"
-                labelPlacement="end"
-              />
-            </FormGroup>
-          </div>
-
-          <div className="buttondiv">
-              <Button 
-                  variant="contained" 
-                  onClick={getWorkoutData}
-                  style={{
-                      backgroundColor: "#EA9C39"
-                  }}
-              >
-                  Generate
-              </Button>
-          </div>
-        </Box>
-
-        <div className="generated">
-          {workoutData && <WorkoutList workoutData={workoutData}/>}
+      <div className="input">
+        <div className="time">
+          <h2>Time</h2>
+          <TextField
+            type="number"
+            label="in minutes"
+            sx={{width: 300}}
+            onChange={handleTime}
+          >
+          </TextField>
         </div>
+
+        <div className="location">
+          <h2>Location</h2>
+          <ToggleButtonGroup
+            value={location}
+            exclusive="true"
+            onChange={handleLocation}
+          >
+            <ToggleButton 
+              value="gym" 
+              sx={{
+                width: '10vw'
+              }}
+              style={{
+                backgroundColor: '#D9D9D9'
+              }}
+            >
+              <h2>Gym</h2>
+            </ToggleButton>
+
+            <ToggleButton 
+              value="home"
+              sx={{
+                width: '10vw'
+              }}
+              style={{
+                backgroundColor: '#D9D9D9'
+              }}
+            >
+              <h2>At Home</h2>
+            </ToggleButton>        
+          </ToggleButtonGroup>
+        </div>
+
+        <div className="equipment">
+          <h2>Equipment</h2>
+          <FormGroup>
+            <FormControlLabel
+              value="treadmill"
+              control={<Checkbox checked={selectedEquipments.includes('treadmill')} />}
+              onChange={(event) => handleCheck(event, setSelectedEquipments)}
+              label="Treadmill"
+              labelPlacement="end"
+            />
+
+            <FormControlLabel
+              value="dumbbells"
+              control={<Checkbox checked={selectedEquipments.includes('dumbbells')} />}
+              onChange={(event) => handleCheck(event, setSelectedEquipments)}
+              label="Dumbbells"
+              labelPlacement="end"
+            />
+          </FormGroup>
+        </div>
+
+        <div className="muscles">
+          <h2>Target Muscles</h2>
+          <FormGroup>
+            <FormControlLabel
+              value="biceps"
+              control={<Checkbox checked={selectedMuscles.includes('biceps')} />}
+              onChange={(event) => handleCheck(event, setSelectedMuscles)}
+              label="Biceps"
+              labelPlacement="end"
+            />
+
+            <FormControlLabel
+              value="shoulders"
+              control={<Checkbox checked={selectedMuscles.includes('shoulders')} />}
+              onChange={(event) => handleCheck(event, setSelectedMuscles)}
+              label="Shoulders"
+              labelPlacement="end"
+            />
+          </FormGroup>
+        </div>
+
+        <div className="buttondiv">
+            <Button 
+                variant="contained" 
+                onClick={getWorkoutData}
+                style={{
+                    backgroundColor: "#EA9C39"
+                }}
+            >
+                Generate
+            </Button>
+        </div>
+      </div>
+
+      <div className="generated">
+        <h2>Generated Workout</h2>
+        {workoutData && <WorkoutList workoutData={workoutData}/>}
+      </div>
     </div>
   )
 }

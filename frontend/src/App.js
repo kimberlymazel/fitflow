@@ -16,7 +16,6 @@ import { AuthConsumer, AuthProvider } from "./context/JWTAuthContext";
 function App() {
     return (
       <div className="App">
-        {/* uncomment the following for auth */}
         <>
         <AuthProvider>
           <BrowserRouter>
@@ -71,23 +70,15 @@ function App() {
                         }
                       />
                       <Route
-                        path="/meal-generator"
-                        element={
-                          <Authenticated>
-                            <MealGenerator />
-                          </Authenticated>
-                        }
-                      />
-                      <Route
                         path="/meal-plan"
                         element={
                           <Authenticated>
-                            <MealPlanGenerator />
+                            <MealPlan />
                           </Authenticated>
                         }
                       />
                       <Route
-                        path="/workout-generatorn"
+                        path="/workout-generator"
                         element={
                           <Authenticated>
                             <WorkoutGenerator />
@@ -102,8 +93,9 @@ function App() {
           </BrowserRouter>
         </AuthProvider>
         </>
-
-        {/* <BrowserRouter>
+        
+        {/*
+        <BrowserRouter>
           <Routes>
             <Route path="/login" element={<Login />}/>
             <Route path="/register" element={<Register />}/>
@@ -113,11 +105,11 @@ function App() {
             <Route exact path="/meal-plan" element={<MealPlan />} />
             <Route exact path="/workouts" element={<WorkoutGen />} />
             <Route exact path="/workout-generator" element={<WorkoutGenerator />} />
-            
           </Routes>
-        </BrowserRouter> */}
+        </BrowserRouter>
+        */}
+        
       </div>
-  
     );
   }
 
