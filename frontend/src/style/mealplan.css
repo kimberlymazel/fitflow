@@ -10,7 +10,7 @@
 
 .mealplan .right {
     float: left;
-    width: 75%;  
+    width: 80%;  
     height: 100vh;
     overflow: auto;
 }

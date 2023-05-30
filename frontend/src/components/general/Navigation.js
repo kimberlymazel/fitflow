@@ -1,7 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Box from '@mui/material/Box'
-import Stack from '@mui/material/Stack'
-import Thin from '../cards/Thin'
 import '../../style/general.css'
 import { Button } from '@mui/material';
 import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
@@ -11,11 +9,13 @@ import RestaurantOutlinedIcon from '@mui/icons-material/RestaurantOutlined';
 import FitnessCenterOutlinedIcon from '@mui/icons-material/FitnessCenterOutlined';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
-import {useNavigate } from "react-router-dom";
+import {useNavigate, useLocation } from "react-router-dom";
 
 
 function Navigation() {
-  const navigate= useNavigate();
+  const navigate = useNavigate();
+  const currentRoute = useLocation();
+
   const toDashboard = (e) => {
     e.preventDefault();
     navigate("/");
@@ -46,7 +46,7 @@ function Navigation() {
   }
 
   return (
-    <div className="nav" style={{height:"125vh", width:"100%"}}>
+    <div className="nav">
         <Box
           sx={{
             alignSelf: "left",
@@ -60,24 +60,101 @@ function Navigation() {
             overflow:"hidden",
           }}
         >
-            <div
-              style={{
-                display:"flex",
-                flexDirection:"column",
-                justifyContent:"left",
-                width:240,
-                paddingLeft:"10%",
-                overflow:"hidden",
-                }}
-            >
-                <Button onClick={toDashboard} startIcon={<GridViewOutlinedIcon style={{fontSize:"40px"}}/>} style={{overflow:"hidden",color:"white", marginTop:"20%",marginRight:"-10%", fontFamily:"Quicksand", textTransform:"none", fontSize:"170%", maxWidth:240}}>Dashboard</Button>
-                <Button onClick={toTracker} startIcon={<AlignVerticalBottomOutlinedIcon style={{fontSize:"40px"}}/>} style={{overflow:"hidden",marginLeft:"-22px",color:"white", marginTop:"20%",marginRight:"-10%", fontFamily:"Quicksand", textTransform:"none", fontSize:"170%",maxWidth:240}}>Tracker</Button>
+            <div className="buttons">
+                <Button 
+                  onClick={toDashboard}
+                  startIcon={<GridViewOutlinedIcon style={{fontSize:"40px"}}/>} 
+                  style={{
+                    overflow:"hidden",
+                    color: "white", 
+                    marginTop:"20%",
+                    marginRight:"-10%", 
+                    fontFamily:"Quicksand", 
+                    textTransform:"none", 
+                    fontSize:"170%", 
+                    maxWidth:240,
+                  }}
+                >
+                      Dashboard
+                </Button>
+                
+                <Button 
+                  onClick={toTracker}
+                  startIcon={<AlignVerticalBottomOutlinedIcon style={{fontSize:"40px"}}/>}
+                  style={{
+                    overflow:"hidden",
+                    marginLeft:"-22px", 
+                    marginTop:"20%",
+                    marginRight:"-10%", 
+                    fontFamily:"Quicksand", 
+                    textTransform:"none", 
+                    fontSize:"170%",
+                    maxWidth:240,
+                    backgroundColor: currentRoute.pathname.includes("tracker") ? "white" : "transparent",
+                    color: currentRoute.pathname.includes("tracker") ? "#5E19BA" : "white"
+                  }}
+                  >
+                  Tracker
+                </Button>
                 {/* <Button onClick={toCalculator} startIcon={<CalculateOutlinedIcon style={{fontSize:"40px"}}/>} style={{overflow:"hidden",marginLeft:"-4px",color:"white", marginTop:"20%", marginRight:"-10%", fontFamily:"Quicksand", textTransform:"none", fontSize:"170%",maxWidth:240}}>Calculator</Button> */}
-                <Button onClick={toMealPlan} startIcon={<RestaurantOutlinedIcon style={{fontSize:"40px"}}/>} style={{overflow:"hidden",marginLeft:"-10px",color:"white", marginTop:"20%",marginRight:"-10%", fontFamily:"Quicksand", textTransform:"none", fontSize:"170%",maxWidth:240}}>Meal Plan</Button>
-                <Button onClick={toWorkouts} startIcon={<FitnessCenterOutlinedIcon style={{fontSize:"40px"}}/>} style={{overflow:"hidden",marginLeft:"-10px",color:"white", marginTop:"20%",marginRight:"-10%", fontFamily:"Quicksand", textTransform:"none", fontSize:"170%",maxWidth:240}}>Workouts</Button>
+                
+                <Button 
+                  onClick={toMealPlan}
+                  startIcon={<RestaurantOutlinedIcon style={{fontSize:"40px"}}/>} 
+                  style={{
+                    overflow:"hidden",
+                    marginLeft:"-10px",
+                    marginTop:"20%",
+                    marginRight:"-10%", 
+                    fontFamily:"Quicksand",
+                    textTransform:"none",
+                    fontSize:"170%",
+                    maxWidth:240,
+                    backgroundColor: currentRoute.pathname.includes("meal-plan") ? "white" : "transparent",
+                    color: currentRoute.pathname.includes("meal-plan") ? "#5E19BA" : "white"
+                    }}
+                  >
+                  Meal Plan
+                </Button>
+                
+                <Button 
+                  onClick={toWorkouts} 
+                  startIcon={<FitnessCenterOutlinedIcon style={{fontSize:"40px"}}/>} 
+                  style={{
+                    overflow:"hidden",
+                    marginLeft:"-10px",
+                    marginTop:"20%",
+                    marginRight:"-10%",
+                    fontFamily:"Quicksand",
+                    textTransform:"none",
+                    fontSize:"170%",
+                    maxWidth:240,
+                    backgroundColor: currentRoute.pathname.includes("workouts") ? "white" : "transparent",
+                    color: currentRoute.pathname.includes("workouts") ? "#5E19BA" : "white"
+                    }}
+                  >
+                    Workouts
+                  </Button>
                 {/* <Button onClick={toSchedule} startIcon={<CalendarMonthOutlinedIcon style={{fontSize:"40px"}}/>} style={{overflow:"hidden",marginLeft:"-3px",color:"white",marginTop:"20%", marginRight:"-10%", fontFamily:"Quicksand", textTransform:"none", fontSize:"170%",maxWidth:240}}>Schedules</Button> */}
-                <Button onClick={toContacts} startIcon={<CallOutlinedIcon style={{fontSize:"40px"}}/>} style={{overflow:"hidden",marginLeft:"5px",color:"white",marginTop:"20%", marginRight:"-10%", fontFamily:"Quicksand", textTransform:"none", fontSize:"170%",maxWidth:240}}>Contact Us</Button>
-
+                
+                <Button
+                  onClick={toContacts}
+                  startIcon={<CallOutlinedIcon style={{fontSize:"40px"}}/>} 
+                  style={{
+                    overflow:"hidden",
+                    marginLeft:"5px",
+                    marginTop:"20%",
+                    marginRight:"-10%",
+                    fontFamily:"Quicksand",
+                    textTransform:"none",
+                    fontSize:"170%",
+                    maxWidth:240,
+                    backgroundColor: currentRoute.pathname.includes("contacts") ? "white" : "transparent",
+                    color: currentRoute.pathname.includes("contacts") ? "#5E19BA" : "white"
+                  }}
+                >
+                  Contact Us
+                </Button>
             </div>
         </Box>
     </div>

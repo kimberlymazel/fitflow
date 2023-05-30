@@ -50,6 +50,7 @@
     height: 70vh;
     float: left;
     background-image: linear-gradient(to bottom, rgba(241,158,41), rgba(145,10,154));
+    box-shadow:2px 2px 2px 3px rgba(199, 201, 198);
 }
 
 .generated-wo h2 {
