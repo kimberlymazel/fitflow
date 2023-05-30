@@ -16,7 +16,7 @@ tracker_router = APIRouter()
 async def list(current_user: User = Depends(get_current_user)):
     return await TrackerService.list_trackers(current_user)
 
-@tracker_router.post('/create', summary="insert new tracking", response_model=Tracker)
+@tracker_router.post('/create', summary="insert new tracking", response_model=TrackerOut)
 async def create_tracker(data: TrackerCreate, current_user: User = Depends(get_current_user)):
     return await TrackerService.create_tracker(current_user, data)
 

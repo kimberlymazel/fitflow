@@ -10,7 +10,7 @@ class Tracker(Document):
     date: datetime = Field(default_factory=datetime.utcnow)
     calories_burnt: float = None
     calories_consumed: float = None
-    mood: Optional[int] = None
+    mood: Optional[str] = None
     hours_slept: int = None
     water_drank: int = None
     steps_taken: int = None

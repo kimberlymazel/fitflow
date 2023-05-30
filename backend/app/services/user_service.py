@@ -4,6 +4,8 @@ from app.schemas.user_schema import UserAuth
 from app.models.user_model import User
 from app.core.security import get_password, verify_password
 import pymongo
+from fastapi import APIRouter, HTTPException, status, UploadFile, File
+from bson import Binary
 
 from app.schemas.user_schema import UserUpdate
 
@@ -15,6 +17,7 @@ class UserService:
             username=user.username,
             email=user.email,
             hashed_password=get_password(user.password),
+            age=user.age,
             weight=user.weight,
             height=user.height,
             cardio_goal=user.cardio_goal,
@@ -51,3 +54,14 @@ class UserService:
     
         await user.update({"$set": data.dict(exclude_unset=True)})
         return user
+
+    @staticmethod
+    async def user_image_upload(id: UUID, profile_picture: UploadFile = File(...)):
+        user = await User.find_one(User.user_id == id)
+        if user:
+            image_data = await profile_picture.read()
+            binary_image_data = Binary(image_data)
+            await user.update({"$set": {"profile_picture": binary_image_data}})
+            return user
+        else:
+            return {"message": "User not found"}

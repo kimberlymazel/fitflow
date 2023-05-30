@@ -2,20 +2,25 @@ from typing import Optional
 from datetime import datetime
 from uuid import UUID, uuid4
 from beanie import Document, Indexed
-from pydantic import Field, EmailStr
+from pydantic import Field, EmailStr, validator
 
 class User(Document):
+    arbitrary_types_allowed = True
+
     user_id: UUID = Field(default_factory=uuid4)
     username: Indexed(str, unique=True)
     email: Indexed(EmailStr, unique=True)
     hashed_password: str
     first_name: Optional[str] = None 
     last_name: Optional[str] = None
+    age: Optional[int] = None 
     weight: Optional[float] = None
     height: Optional[float] = None
     cardio_goal: Optional[int] = None
     calorie_goal: Optional[float] = None
+    created_at: datetime = Field(default_factory=datetime.utcnow)
     disabled: Optional[bool] = None
+    profile_picture: Optional[bytes] = None
     
     
     def __repr__(self) -> str:
@@ -39,6 +44,6 @@ class User(Document):
     @classmethod
     async def by_email(self, email: str) -> "User":
         return await self.find_one(self.email == email)
-    
+
     class Settings:
         name = "users"
