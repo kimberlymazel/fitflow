@@ -1,13 +1,74 @@
-import React, { useState }  from 'react'
+import React, { useState, useEffect, useRef }  from 'react'
 ;import threedots from '../../icons/threedots.png'
 import profilepic from '../../icons/profilepic.png'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 
+import axiosInstance from "../../services/axios";
 
 function Profile() {
-  return (
+    const [userData, setUserData] = useState([]);
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [image, setImage] = useState(null);
+    const inputRef = useRef(null);
+    const [isHovered, setIsHovered] = useState(false);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            axiosInstance
+            .get('/users/me')
+            .then((response) => {
+                setUserData(response.data);
+            })
+            .catch((error) => {
+                console.error(error);
+            })
+        };
+
+        const fetchImage = async () => {
+            axiosInstance
+            .get('/users/image', {
+                responseType: "blob",
+            })
+            .then((response) => {
+                setImage(URL.createObjectURL(response.data));
+                console.log(response.data)
+            })
+            .catch((error) => {
+                console.error(error);
+            })
+          };
+      
+        fetchData();
+        fetchImage();
+      }, []);
+
+    const handleImageUpload = (event) => {
+        const file = event.target.files[0];
+        setSelectedImage(file);
+      };
+
+    const handleProfilePictureUpload = () => {
+        if (selectedImage) {
+          const formData = new FormData();
+          formData.append('profile_picture', selectedImage);
+    
+          axiosInstance
+            .post('/users/image', formData)
+            .then((response) => {
+              // Handle successful upload
+              console.log('Profile picture uploaded:', response.data);
+              setImage(URL.createObjectURL(selectedImage));
+            })
+            .catch((error) => {
+              // Handle upload error
+              console.error('Error uploading profile picture:', error);
+            });
+        }
+      };
+    
+    return (
     <div style={{height:"100%", maxWidth:"100%"}}>
         <div
             style={{
@@ -26,26 +87,56 @@ function Profile() {
             }}
         >
             <h2 style={{color: '#531EB7', fontSize:'130%', paddingLeft:10 ,marginTop:'-2%'}}>Profile</h2> 
-            <div className='profpic' style={{marginTop:"-20px",marginBottom:"26px",marginLeft:"auto", marginRight:"auto", display:"flex", justifyContent:"center", borderRadius:"100px",alignItems:"center"}}>
-                <img src={profilepic} height={200} borderRadius={"100px"} ></img>
+            
+            {/* profile pic */}
+            <div>
+                <input
+                    type="file"
+                    accept="image/*"
+                    onChange={handleImageUpload}
+                    style={{ display: 'none' }}
+                    ref={inputRef}
+                />
+                <div 
+                    className='profpic'
+                    style={{
+                        marginTop:"-20px",
+                        marginBottom:"26px",
+                        marginLeft:"auto",
+                        marginRight:"auto", display:"flex",
+                        justifyContent:"center",
+                        borderradius:"100px",
+                        alignItems:"center"
+                        }}
+                    onClick={() => inputRef.current.click()}
+                    >
+                    <img
+                        src={image}
+                        height={200}
+                        width={200}
+                        style={{ borderRadius: "100%" }}
+                        alt="Profile" 
+                    />
+                </div>
+                <button onClick={handleProfilePictureUpload}>Upload</button>
             </div>
             
-            <h2 style={{textAlign:"center",color: 'black', fontSize:"160%", paddingLeft:10 ,marginTop:'-3%'}}> Kang Haerin</h2> 
-            <h2 style={{textAlign:"center",color: '#E78203', fontSize:'120%', paddingLeft:10 ,marginTop:'-15px'}}>@hae_tokki</h2> 
+            <h2 style={{textAlign:"center",color: 'black', fontSize:"160%", paddingLeft:10 ,marginTop:'-3%'}}> {userData.first_name} {userData.last_name}</h2> 
+            <h2 style={{textAlign:"center",color: '#E78203', fontSize:'120%', paddingLeft:10 ,marginTop:'-15px'}}>@{userData.username}</h2> 
             <div className='line' style={{backgroundColor:"#B2BBAA", width:"100%", height:"1px", marginBottom:"10px",marginLeft:"auto", marginRight:"auto"}}></div>
             <div className='personalinfo' style={{display:"flex",justifyContent:"center", alignItems:"center", gap:"40px",marginLeft:"auto", marginRight:"auto" }}>
                 <div className='infoitem' style={{marginTop:"10px", display:"flex-inline", justifyContent:"center", alignItems:"center"}}>
-                    <h2 style={{color: '#531EB7', fontSize:"140%",marginTop:'0%'}}>59 kg</h2> 
+                    <h2 style={{color: '#531EB7', fontSize:"140%",marginTop:'0%'}}>{userData.weight} kg</h2> 
                     <h2 style={{color: 'black', fontSize:"100%",marginTop:'-10px'}}>Weight</h2> 
                 </div>
                 <div className='divline' style={{backgroundColor:"#B2BBAA", width:"1px", height:"60px"}}></div>
                 <div className='infoitem' style={{marginTop:"10px",display:"flex-inline", justifyContent:"center", alignItems:"center"}}>
-                    <h2 style={{color: '#531EB7', fontSize:"140%",marginTop:'0%'}}>165 cm</h2> 
+                    <h2 style={{color: '#531EB7', fontSize:"140%",marginTop:'0%'}}>{userData.height} cm</h2> 
                     <h2 style={{color: 'black', fontSize:"100%", marginTop:'-10px'}}>Height</h2> 
                 </div>
                 <div className='divline' style={{backgroundColor:"#B2BBAA", width:"1px", height:"60px"}}></div>
                 <div className='infoitem' style={{marginTop:"10px",display:"flex-inline", justifyContent:"center", alignItems:"center"}}>
-                    <h2 style={{color: '#531EB7', fontSize:"140%", marginTop:'0%'}}>16</h2> 
+                    <h2 style={{color: '#531EB7', fontSize:"140%", marginTop:'0%'}}>{userData.age}</h2> 
                     <h2 style={{color: 'black', fontSize:"100%", marginTop:'-10px'}}>Age</h2> 
                 </div>
             </div>
