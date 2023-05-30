@@ -102,8 +102,10 @@ export const Register = () => {
                   {isSubmitting ? 'Creating account...' : 'Register'}
                 </button>
               </form>
-                <button onClick={() => navigate('/login', { replace: true })} className="loginbtnregis">Log in to an existing account</button>
-              </div>
+              <button onClick={() => navigate('/login', { replace: true })} width="100%" style={{width:"100%",fontSize:"20px", background:"white", color:"black",fontWeight:"600", borderColor:"lightgrey",borderRadius:"5px", margin:"0px 0px 10px 0px",boxShadow:"2px 3px 2px 2px lightgrey", padding:"10px 5px 10px 5px"}}>
+                Log in to an existing account
+              </button>
+                </div>
           </div>
         </div>
 
