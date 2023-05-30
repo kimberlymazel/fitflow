@@ -41,7 +41,6 @@ export const Info = () => {
             <img src={halfcircle}></img>
         </div>
 
-
         {/*==========Personal Info section==========*/}
         <div className='infobox' onSubmit={handleSubmit(onSubmit)}>
             <h2 className='infoboxtitledesc'>You're almost ready!</h2> 
