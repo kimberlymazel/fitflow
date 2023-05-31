@@ -6,6 +6,7 @@ import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
 import { Button } from '@mui/material';
 import { CircularProgress } from '@mui/material';
+import '../../style/dashboard/linegraph.css'
 
 import axiosInstance from "../../services/axios";
 
@@ -88,26 +89,38 @@ function LineGraph() {
         datasets: data.datasets.filter((dataset) => dataset.label === activeDataset),
       };
     return (
-        <div style={{ margin:"20px 20px 10px 30px",maxWidth:"100%"}}>
-            <h2 style={{color: 'black', fontSize:20, marginBottom:5, marginLeft:"5px"}}>Activity · This Week</h2>
-            <div className='linechart' 
-                style={{backgroundColor:"white", 
-                boxShadow:"1px 1px 3px 1px #C7C9C6",
-                width: "100%",
-                height: "100%",
-                display: 'flex-inline',
-                alignSelf: 'center',
-                alignItems: 'center',
-                borderRadius: 20,
-                paddingTop:"8px"
-                }}>
+        <div className="linechartcontdash">
+            <h2 className="activitytitle">Activity · This Week</h2>
+            <div className='linechartdash'>
                 {loading ? (
                     <CircularProgress color="inherit" />
                 ) : (
                   <Line style={{margin:"5px 20px 0px 20px"}}data={activeData} options={options} />
                 )}
-                <Button startIcon={<FitnessCenterIcon style={{fontSize:"35px"}}/>} style={{textTransform:"none", fontSize:"18px", fontFamily:"Quicksand",borderRadius:"10px",boxShadow:"1px 1px 1px 1px lightgrey",color:"white",backgroundColor:"#FF8F00", margin:"10px 10px 10px 20px"}} onClick={() => handleButtonClick('Hours')}>Exercises</Button>
-                <Button startIcon={<RestaurantIcon style={{fontSize:"35px"}}/>} style={{textTransform:"none", fontSize:"18px",fontFamily:"Quicksand",borderRadius:"10px",boxShadow:"1px 1px 1px 1px lightgrey",color:"white", backgroundColor:"#2DD8D3", margin:"10px 10px 10px 5px"}} onClick={() => handleButtonClick('Calories')}>Calories</Button>
+                <Button startIcon={<FitnessCenterIcon style={{fontSize:"35px"}}/>} 
+                  style={{
+                    textTransform:"none", 
+                    fontSize:"18px", 
+                    fontFamily:"Quicksand",
+                    borderRadius:"10px",
+                    boxShadow:"1px 1px 1px 1px lightgrey",
+                    color:"white",
+                    backgroundColor:"#FF8F00", 
+                    margin:"10px 10px 10px 20px"
+                    }} onClick={() => handleButtonClick('Hours')}>Exercises</Button>
+
+                <Button startIcon={<RestaurantIcon style={{fontSize:"35px"}}/>} 
+                  style={{
+                    textTransform:"none", 
+                    fontSize:"18px",
+                    fontFamily:"Quicksand",
+                    borderRadius:"10px",
+                    boxShadow:"1px 1px 1px 1px lightgrey",
+                    color:"white", 
+                    backgroundColor:"#2DD8D3",
+                    margin:"10px 10px 10px 5px"
+                    }} onClick={() => handleButtonClick('Calories')}>Calories</Button>
+
             </div>
         </div>
 

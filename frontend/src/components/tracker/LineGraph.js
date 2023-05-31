@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement }from "chart.js"
-import Wide from '../cards/Wide'
 import { CircularProgress } from '@mui/material';
+import '../../style/tracker/linegraph.css'
 
 import axiosInstance from "../../services/axios";
 
@@ -63,11 +63,10 @@ function LineGraph() {
         }
     }
     return (
-        <div style={{ margin:"-20px 20px 10px 10px",maxWidth:"100%"}}>
-            <div className='titleAndToday'>
-                <h2 style={{color: '#531EB7', fontSize:16, marginBottom:5}}>Fitness activity history</h2>
-            </div>
-            <div className='linechart' 
+        <div className="trackerlinegraphwhole">
+            <h2 className="fitnessgraohtitle">Fitness activity history</h2>
+
+            <div className='trackerlinechart' 
                 style={{backgroundColor:"white", 
                 boxShadow:"1px 1px 3px 1px #C7C9C6",
                 width: "100%",

@@ -1,0 +1,23 @@
+.linechartcontdash{
+    margin: 20px 20px 10px 30px ;
+    max-width: 100%;
+}
+
+.activitytitle{
+    color: black;
+    font-size: 20;
+    margin-bottom: 5;
+    margin-left: 5px;
+}
+
+.linechartdash{
+    background-color: white;
+    box-shadow: 1px 1px 3px 1px #C7C9C6;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    align-self: center;
+    border-radius: 20;
+    padding-top: 8px;
+}
+

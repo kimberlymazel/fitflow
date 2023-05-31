@@ -16,7 +16,7 @@ function Navigation() {
 
   const toDashboard = (e) => {
     e.preventDefault();
-    navigate("/dashboard");
+    navigate("/");
   }
   const toTracker = (e) => {
     e.preventDefault();
@@ -64,15 +64,16 @@ function Navigation() {
                   startIcon={<GridViewOutlinedIcon style={{fontSize:"40px"}}/>} 
                   style={{
                     overflow:"hidden",
-                    marginLeft:"-22px", 
+                    marginLeft:"0px", 
                     color: "white", 
                     marginTop:"20%",
                     marginRight:"0", 
                     fontFamily:"Quicksand", 
                     textTransform:"none", 
                     fontSize:"170%", 
-                    maxWidth:340,
-                    paddingRight:"65px",
+                    maxWidth:"80%",
+                    textAlign:"left",
+                    // paddingRight:"65px",
                     borderRadius:"18px",
                     backgroundColor: currentRoute.pathname.includes("dashboard") ? "white" : "transparent",
                     color: currentRoute.pathname.includes("dashboard") ? "#5E19BA" : "white"
@@ -86,15 +87,16 @@ function Navigation() {
                   startIcon={<AlignVerticalBottomOutlinedIcon style={{fontSize:"40px"}}/>}
                   style={{
                     overflow:"hidden",
-                    marginLeft:"-22px", 
+                    marginLeft:"0px", 
                     marginTop:"20%",
                     marginRight:"0", 
                     fontFamily:"Quicksand", 
                     textTransform:"none", 
                     fontSize:"170%",
-                    maxWidth:340,
-                    paddingRight:"112px",
+                    maxWidth:"80%",
+                    paddingRight:"40px",
                     borderRadius:"18px",
+                    textAlign:"left",
                     backgroundColor: currentRoute.pathname.includes("tracker") ? "white" : "transparent",
                     color: currentRoute.pathname.includes("tracker") ? "#5E19BA" : "white"
                   }}
@@ -108,14 +110,14 @@ function Navigation() {
                   startIcon={<RestaurantOutlinedIcon style={{fontSize:"40px"}}/>} 
                   style={{
                     overflow:"hidden",
-                    marginLeft:"-22px",
+                    marginLeft:"0px",
                     marginTop:"20%",
                     marginRight:"0", 
                     fontFamily:"Quicksand",
                     textTransform:"none",
                     fontSize:"170%",
-                    maxWidth:340,
-                    paddingRight:"82px",
+                    maxWidth:"80%",
+                    // paddingRight:"82px",
                     borderRadius:"18px",
                     backgroundColor: currentRoute.pathname.includes("meal-plan") ? "white" : "transparent",
                     color: currentRoute.pathname.includes("meal-plan") ? "#5E19BA" : "white"
@@ -129,14 +131,14 @@ function Navigation() {
                   startIcon={<FitnessCenterOutlinedIcon style={{fontSize:"40px"}}/>} 
                   style={{
                     overflow:"hidden",
-                    marginLeft:"-22px",
+                    marginLeft:"0px",
                     marginTop:"20%",
                     marginRight:"-10%",
                     fontFamily:"Quicksand",
                     textTransform:"none",
                     fontSize:"170%",
-                    maxWidth:340,
-                    paddingRight:"82px",
+                    maxWidth:"80%",
+                    // paddingRight:"82px",
                     borderRadius:"18px",
                     backgroundColor: currentRoute.pathname.includes("workouts") ? "white" : "transparent",
                     color: currentRoute.pathname.includes("workouts") ? "#5E19BA" : "white"
@@ -151,14 +153,14 @@ function Navigation() {
                   startIcon={<CallOutlinedIcon style={{fontSize:"40px"}}/>} 
                   style={{
                     overflow:"hidden",
-                    marginLeft:"-22px",
+                    marginLeft:"0px",
                     marginTop:"20%",
                     marginRight:"-10%",
                     fontFamily:"Quicksand",
                     textTransform:"none",
                     fontSize:"170%",
-                    maxWidth:340,
-                    paddingRight:"60px",
+                    maxWidth:"80%",
+                    // paddingRight:"60px",
                     borderRadius:"18px",
                     backgroundColor: currentRoute.pathname.includes("contacts") ? "white" : "transparent",
                     color: currentRoute.pathname.includes("contacts") ? "#5E19BA" : "white"

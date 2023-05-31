@@ -1,0 +1,132 @@
+.checkinwhole{
+    height: 100%;
+    max-width: 100%;
+}
+
+.checkinform{
+    background-color: #FFFFFF;
+    border-color: #f6f6f4;
+    box-shadow:2px 2px 2px 3px rgba(199, 201, 198);
+    width: 70%;
+    max-height: 90%;
+    align-self: right;
+    align-items: center;
+    border-radius: 25px;
+    margin:5% 10% 5% 10%;
+    padding:5% 5% 10% 5%;
+    overflow:hidden;
+}
+
+.checkinformtitle{
+    color: #531EB7;
+    font-size: 160%;
+    padding-left: 10px;
+    margin-top: -2%;
+}
+
+.checkincategorytitle1{
+    color: #531EB7;
+    font-size: 120%;
+    padding-left: 10px;
+    margin-top: 1%;
+}
+
+.checkincategorytitle2{
+    color: #531EB7;
+    font-size: 120%;
+    padding-left: 10px;
+    margin-top: 5%;
+}
+
+.checkincategorytitle3{
+    color: #531EB7;
+    font-size: 120%;
+    padding-left: 10px;
+    margin-top: 8%;
+}
+
+.kcalburnt{
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1px;
+    margin-left: 10px;
+    margin-top: 0px;
+    box-shadow: 1px 1px 2px 2px rgb(208, 213, 221);
+    background-color: white;
+    border-radius: 10px;
+}
+
+.kcalconsume{
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1px;
+    margin-left: 10px;
+    margin-top: -5px;
+    box-shadow: 1px 1px 2px 2px rgb(208, 213, 221);
+    background-color: white;
+    border-radius: 10px;
+}
+
+.inkcal{
+    width: 25%;
+    height: 20px;
+    color:#E78203 ;
+    margin-top: 1px;
+    font-size: 17px;
+    overflow: hidden;
+    padding: 5px 5px 5px 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mood{
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1px;
+    margin-left: 10px;
+    margin-top: -5px;
+    box-shadow: 1px 1px 2px 2px rgb(208, 213, 221);
+    background-color: white;
+    border-radius: 10px;
+}
+
+.slidercheckinitem{
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1px;
+    margin-left: 10px;
+    margin-top: -5px ;
+    box-shadow: 1px 1px 2px 2px rgb(208, 213, 221);
+    background-color: white;
+    border-radius: 10px;
+}
+
+.sliderdatatext{
+    color: black;
+    font-size: 15;
+    padding-left: 5px;
+    padding-right: 10px;
+    margin-top: 15px;
+}
+
+.coachtitle{
+    color: #531EB7;
+    font-size: 160%;
+    margin-left: 10px;
+    margin-top: 40px;
+}
+
+.coachdesc{
+    color: black;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-top: -10px;
+}

@@ -1,0 +1,52 @@
+.menuwhole{
+    max-width: 100%;
+}
+
+.slider{
+    margin-left: 30px;
+    display: grid;
+    grid-auto-flow: column;
+    width: 93%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.menuitem1{
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 2px lightgrey;
+    width: 400px;
+    margin:10px 15px 10px 0px;
+    height: 80%;
+    background: linear-gradient(to right, #E78403, #F9D601);
+    padding: 10px 10px 10px 10px;
+}
+.menuitem2{
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 2px lightgrey;
+    width: 400px;
+    margin:10px 15px 10px 0px;
+    height: 80%;
+    background: linear-gradient(to right, #2EDED4, #1B8ABA);
+    padding: 10px 10px 10px 10px;
+}
+.menuitem3{
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 2px lightgrey;
+    width: 400px;
+    margin:10px 15px 10px 0px;
+    height: 80%;
+    background: linear-gradient(to right, #712DDF, #871BBA);
+    padding: 10px 10px 10px 10px;
+}
+
+.menuimage{
+    height: 110px;
+    padding:5px 30px 0px 20px ;
+}
+
+.menuitemtitle{
+    color: white;
+    padding: 0px 30px 0px 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}

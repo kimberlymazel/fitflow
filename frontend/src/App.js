@@ -12,6 +12,7 @@ import { Register } from "./components/auth/Register";
 import { Authenticated } from "./components/auth/Authenticated";
 import { PublicRoute } from "./components/auth/PublicRoute";
 import { AuthConsumer, AuthProvider } from "./context/JWTAuthContext";
+import { Contact } from './pages/Contact';
 
 function App() {
     return (
@@ -63,35 +64,45 @@ function App() {
                         }
                       />
                       <Route 
-                        path="/dashboard"
+                        path="/"
                         element={
-                          <Authenticated>
+                          // <Authenticated>
                             <Dashboard />
-                          </Authenticated>
+                          // </Authenticated>
                         }
                       />
                       <Route
                         path="/tracker"
                         element={
-                          <Authenticated>
+                          // <Authenticated>
                             <Tracker />
-                          </Authenticated>
+                          // </Authenticated>
                         }
                       />
                       <Route
                         path="/meal-plan"
                         element={
-                          <Authenticated>
+                          // <Authenticated>
                             <MealPlan />
-                          </Authenticated>
+                          // </Authenticated>
                         }
                       />
                       <Route
                         path="/workouts"
                         element={
-                          <Authenticated>
+                          // <Authenticated>
                             <WorkoutGen />
-                          </Authenticated>
+                          
+                          // </Authenticated>
+                        }
+                      />
+                      <Route
+                        path="/contacts"
+                        element={
+                          // <Authenticated>
+                            <Contact />
+                          
+                          // </Authenticated>
                         }
                       />
                     </Routes>

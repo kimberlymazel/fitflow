@@ -1,0 +1,177 @@
+.profilewholecont{
+    height: 100%;
+    max-width: 100%;
+}
+
+.profilewhole{
+    background: #FFFFFF;
+    border-color:#F6F6F4;
+    box-shadow:2px 2px 2px 3px rgba(199, 201, 198);
+    width: 70%;
+    max-height: 90%;
+    align-self: right;
+    align-items: center;
+    border-radius: 20px;
+    margin:5% 10% 5% 10%;
+    padding:5% 5% 10% 5%;
+    overflow:hidden;
+}
+
+.profilepicsetupcont{
+    display: flex;
+}
+
+.profsetuph2-prof{
+    color:#531EB7 ;
+    font-size: 130%;
+    padding-left: 10;
+    margin-top: -2%;
+    width: 80%;
+}
+
+.uploadprofpicbtncontainer{
+    margin-top: -2%;
+}
+
+.uploadprofpicbtn{
+    background-color:#531EB7 ;
+    color: white;
+    font-size: 13px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 2px 1px 1px lightgrey;
+    padding: 5px 20px 5px 20px;
+}
+
+.userfirstlastname{
+    text-align: center;
+    color: black;
+    font-size: 160%;
+    padding-left: 10;
+    margin-top: -3%;
+}
+
+.user-username{
+    text-align: center;
+    color: #E78203;
+    font-size: 120%;
+    padding-left: 10;
+    margin-top: -15px;
+}
+
+.line{
+    background-color:#B2BBAA ;
+    width: 100%;
+    height: 1px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.personalinfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.unitpurpletitle{
+    color: #531EB7;
+    font-size: 140%;
+    margin-top: 0%;
+}
+
+.infoitemdesc{
+    color: black;
+    font-size: 100%;
+    margin-top: -10px;
+}
+
+.divline{
+    background-color:#B2BBAA ;
+    width: 1px;
+    height: 60px;
+}
+
+.infoitem{
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.profpic{
+    margin-top: -20px;
+    margin-bottom: 26px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+}
+
+.profsetuph2{
+    color:#531EB7 ;
+    font-size: 130%;
+    padding-left: 10;
+    margin-top: 6%;
+    margin-bottom: -10px;
+}
+
+.calendar{
+    margin-left: 0px;
+    margin-right: 20px;
+    color: black;
+    margin-bottom: -40px;
+}
+
+.scheduleitem1{
+    width: 95%;
+    margin: 20px 10px 10px 0px;
+    background-color:#F2ECFF ;
+    border-radius: 10px;
+    padding: 10px 0px 20px 25px;
+}
+
+.scheduleitem2{
+    width: 95%;
+    margin: 20px 10px 0px 0px;
+    background-color:#F2ECFF ;
+    border-radius: 10px;
+    padding: 10px 0px 20px 25px;
+}
+
+.bottomtitle{
+    display: flex;
+}
+
+.tripledotcont{
+    display: flex;
+}
+
+.scheduleitemtitle{
+    color: black;
+    font-size: 120%;
+    padding-left: 10;
+    margin-top: 0px;
+    width: 85%;
+    margin-bottom: -10px;
+}
+
+.scheditemcategory{
+    color: #E78203;
+    font-size: 110%;
+    width: 72%;
+    margin-top: 5px;
+    margin-bottom: -10px;
+}
+
+.scheditemdate{
+    color: #E78203;
+    font-size: 110%;
+    padding-left: 10;
+    margin-top: 5px;
+    margin-bottom: -10px;
+}

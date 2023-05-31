@@ -1,0 +1,147 @@
+.formpagecontainer{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.contactustitle{
+    font-size: 300%;
+    margin:2% 0px 8px 0px
+}
+
+.contactusdesc{
+    font-size: 140%;
+    margin:0px 0px 40px 0px
+}
+
+.formcontainer{
+    background-color: white;
+    border-radius: 20px;
+    width: 70%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 2px 2px 19px 2px grey;
+    overflow: hidden;
+}
+
+.contactinfoleft{
+    background:linear-gradient(to bottom, #9801CC, #5A1BB9);
+    border-radius: 20px;
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.letusknow{
+    font-size: 240%;
+    color: white;
+    margin: 40px 10px 10px 40px;
+    font-weight: 500;
+    width: 70%;
+}
+
+.letusknowdesc{
+    font-size: 100%;
+    color: white;
+    margin: 8px 10px 10px 40px ;
+    font-weight: 400;
+    width: 80%;
+}
+
+.contactinforight{
+    background: white;
+    border-radius: 20px;
+    width: 60%;
+    height: 100%;
+    margin: 0px 20px 20px 10px;
+    overflow: hidden;
+}
+
+.contactform{
+    display: flex;
+    align-items:flex-start;
+    flex-direction: column;
+    width: 100%;
+    font-size: 20px;
+    margin-top: 8%;
+    padding-left: 60px;
+}
+
+.contactinfoinputlabel1{
+    color:#761BA0 ;
+    font-size: 140%;
+    font-weight: 600;
+}
+
+.contactinfoinputlabel2{
+    color:#761BA0 ;
+    font-size: 140%;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.inputnameemail{
+    font-size: 110%;
+    border-radius: 5px;
+    border-width: 2.5px;
+    border-color: #761BA0;
+    width: 70%;
+    padding: 5px 5px 5px 10px;
+    margin: 10px 0px 10px 0px;
+}
+
+.messagetextarea{
+    font-size: 110%;
+    border-radius: 5px;
+    border-width: 2.5px;
+    border-color: #761BA0;
+    width: 70%;
+    height: 220px;
+    padding: 5px 5px 5px 10px;
+    margin: 5px 0px 10px 0px;
+}
+
+.btnpositioncenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 73%;
+    background-color: white;
+}
+
+.sendmsgbtn{
+    width: 100%;
+    font-size: 20px;
+    background-color: #971BC2;
+    color: white;
+    box-shadow: 2px 3px 2px 2px lightgrey;
+    border-radius: 10px;
+    border-color: #971BC2;
+    padding:10px 5px 10px 5px;
+    margin-top: 20px;
+}
+
+.wholecontact{
+    height: 110vh;
+}
+
+.maincontact{
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    background:linear-gradient(to bottom, white, #D3BEFB) ;
+}
+
+.leftcontact{
+    width: 20vw;
+}
+
+.rightcontact{
+    width: 80%;
+    height: 100vh;
+    overflow: auto;
+}

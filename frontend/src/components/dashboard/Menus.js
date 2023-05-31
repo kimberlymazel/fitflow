@@ -2,9 +2,9 @@ import React from 'react'
 import '../../style/App.css'
 import exercise from '../../icons/dailyexercise.png'
 import intake from '../../icons/calorieintake.png'
-import water from '../../icons/waterintake.png'
 import progress from '../../icons/progresstracker.png'
 import {useNavigate } from "react-router-dom";
+import '../../style/dashboard/menu.css'
 
 
 function Menu() {
@@ -22,19 +22,19 @@ function Menu() {
     navigate("/meal-plan");
     }
   return (
-    <div style={{maxWidth:"100%"}}>
-        <div className='slider' style={{marginLeft:"30px",display:"grid",gridAutoFlow:"column", width:'93%', overflowX:"auto", overflowY:"hidden"}}>
-            <div onClick={toWorkout}  id="dailyexercise" className='menu item' style={{borderRadius:"20px",boxShadow:"2px 2px 2px 2px lightgrey",width:"400px",margin:"10px 15px 10px 0px", padding:"10px 10px 10px 10px", height:"80%", background: 'linear-gradient(to right, #E78403, #F9D601)'}}>
-                <img src={exercise} height={"110px"} style={{padding:"5px 30px 0px 20px"}}></img>
-                <h2 style={{color:"white", padding:"0px 30px 0px 20px", marginTop:"5px", marginBottom:"10px"}}>Daily Exercises</h2>
+    <div className="menuwhole">
+        <div className='slider'>
+            <div onClick={toWorkout}  id="dailyexercise" className='menuitem1'>
+                <img className="menuimage" src={exercise}></img>
+                <h2 className="menuitemtitle">Daily Exercises</h2>
             </div>
-            <div onClick={toMealPlan} id="caloriesintake" className='menu item' style={{borderRadius:"20px",boxShadow:"2px 2px 2px 2px lightgrey",width:"400px",margin:"10px 15px 10px 0px", padding:"10px 10px 10px 10px", height:"80%", background: 'linear-gradient(to right, #2EDED4, #1B8ABA)'}}>
-                <img src={intake} height={"110px"} style={{padding:"5px 30px 0px 20px"}}></img>
-                <h2 style={{color:"white", padding:"0px 30px 0px 20px", marginTop:"5px", marginBottom:"10px"}}>Your Meals</h2>
+            <div onClick={toMealPlan} id="caloriesintake" className='menuitem2'>
+                <img className="menuimage" src={intake}></img>
+                <h2 className="menuitemtitle">Your Meals</h2>
             </div>
-            <div onClick={toTracker} id="prorgesstrack" className='menu item' style={{borderRadius:"20px",boxShadow:"2px 2px 2px 2px lightgrey",width:"400px",margin:"10px 15px 10px 0px", padding:"10px 10px 10px 10px", height:"80%", background: 'linear-gradient(to right, #712DDF, #871BBA)'}}>
-                <img src={progress} height={"110px"} style={{padding:"5px 30px 0px 20px"}}></img>
-                <h2 style={{color:"white", padding:"0px 30px 0px 20px", marginTop:"5px", marginBottom:"10px"}}>Progress Track</h2>
+            <div onClick={toTracker} id="prorgesstrack" className='menuitem3'>
+                <img className="menuimage" src={progress}></img>
+                <h2 className="menuitemtitle">Progress Track</h2>
             </div>
         </div>
 
