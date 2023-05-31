@@ -63,7 +63,7 @@ function App() {
                         }
                       />
                       <Route 
-                        path="/"
+                        path="/dashboard"
                         element={
                           <Authenticated>
                             <Dashboard />
@@ -87,10 +87,10 @@ function App() {
                         }
                       />
                       <Route
-                        path="/workout-generator"
+                        path="/workouts"
                         element={
                           <Authenticated>
-                            <WorkoutGenerator />
+                            <WorkoutGen />
                           </Authenticated>
                         }
                       />

@@ -89,7 +89,8 @@ function WOGenerator() {
               value="gym" 
               sx={{
                 height: '5vh',
-                width: '10vw'
+                width: '10vw', 
+                textTransform:"none"
               }}
             >
               <h2>Gym</h2>
@@ -99,7 +100,8 @@ function WOGenerator() {
               value="home"
               sx={{
                 height: '5vh',
-                width: '10vw'
+                width: '10vw',
+                textTransform:"none"
               }}
             >
               <h2>At Home</h2>
@@ -297,7 +299,11 @@ function WOGenerator() {
                 variant="contained" 
                 onClick={getWorkoutData}
                 style={{
-                    backgroundColor: "#EA9C39"
+                    backgroundColor: "#EA9C39",
+                    textTransform:"none",
+                    padding:"10px 40px 10px 40px",
+                    fontSize:"20px",
+                    borderRadius:"10px"
                 }}
                 sx={{
                   height: '4.5vh'
@@ -309,8 +315,10 @@ function WOGenerator() {
       </div>
 
       <div className="generated-wo">
-        <h2>Generated Workout</h2>
-        {workoutData && <WorkoutList workoutData={workoutData}/>}
+        <div className='generated-wobackground'>
+          <h2>Generated Workout</h2>
+          {workoutData && <WorkoutList workoutData={workoutData}/>}
+        </div>
       </div>
     </div>
   )

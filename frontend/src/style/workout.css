@@ -1,15 +1,20 @@
 .workout {
-    height: 100vh;
+    height: 110vh;
     overflow: hidden;
+
 }
 
+.main{
+    display: flex;
+    height: 120%;
+    overflow: hidden;
+
+}
 .workout .left {
-    float: left;
     width: 20vw;
 }
 
 .workout .right {
-    float: left;
     width: 80%;  
     height: 100vh;
     overflow: auto;
@@ -45,24 +50,32 @@
 
 .generated-wo {
     margin-top: 2%;
-    border-radius: 20px;
-    width: 45%;
-    height: 70vh;
+    margin-left: 2%;
+    margin-right: 2%;
+    border-radius: 60px;
+    width: 40%;
+    height: 80vh;
     float: left;
     background-image: linear-gradient(to bottom, rgba(241,158,41), rgba(145,10,154));
-    box-shadow:2px 2px 2px 3px rgba(199, 201, 198);
+    box-shadow:2px 2px 2px 3px lightgrey;
 }
 
 .generated-wo h2 {
     color: white;
     font-size: 200%;
-    padding-top: 2%;
-    padding-left: 5%;
+    padding-top: 5%;
+    padding-left: 6%;
 }
-
+.generated-wobackground{
+    background: linear-gradient(to bottom, rgba(167, 98, 2, 0.466), rgba(122, 0, 131, 0.595));
+    height: 85%;
+    margin:40px 40px 40px 40px;
+    border-radius: 40px;
+    box-shadow:2px 2px 2px grey ;
+}
 .list h3 {
     color: white;
-    padding-left: 5%;
+    padding-left: 6%;
 }
 
 .header img {

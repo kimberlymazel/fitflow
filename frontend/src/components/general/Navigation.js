@@ -4,10 +4,8 @@ import '../../style/general.css'
 import { Button } from '@mui/material';
 import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
 import AlignVerticalBottomOutlinedIcon from '@mui/icons-material/AlignVerticalBottomOutlined';
-import CalculateOutlinedIcon from '@mui/icons-material/CalculateOutlined';
 import RestaurantOutlinedIcon from '@mui/icons-material/RestaurantOutlined';
 import FitnessCenterOutlinedIcon from '@mui/icons-material/FitnessCenterOutlined';
-import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
 import {useNavigate, useLocation } from "react-router-dom";
 
@@ -18,16 +16,16 @@ function Navigation() {
 
   const toDashboard = (e) => {
     e.preventDefault();
-    navigate("/");
+    navigate("/dashboard");
   }
   const toTracker = (e) => {
     e.preventDefault();
     navigate("/tracker");
   }
-  const toCalculator = (e) => {
-    e.preventDefault();
-    navigate("/calculator");
-  }
+  // const toCalculator = (e) => {
+  //   e.preventDefault();
+  //   navigate("/calculator");
+  // }
   const toMealPlan = (e) => {
     e.preventDefault();
     navigate("/meal-plan");
@@ -36,10 +34,10 @@ function Navigation() {
     e.preventDefault();
     navigate("/workouts");
   }
-  const toSchedule = (e) => {
-    e.preventDefault();
-    navigate("/schedule");
-  }
+  // const toSchedule = (e) => {
+  //   e.preventDefault();
+  //   navigate("/schedule");
+  // }
   const toContacts = (e) => {
     e.preventDefault();
     navigate("/contacts");
@@ -66,13 +64,18 @@ function Navigation() {
                   startIcon={<GridViewOutlinedIcon style={{fontSize:"40px"}}/>} 
                   style={{
                     overflow:"hidden",
+                    marginLeft:"-22px", 
                     color: "white", 
                     marginTop:"20%",
-                    marginRight:"-10%", 
+                    marginRight:"0", 
                     fontFamily:"Quicksand", 
                     textTransform:"none", 
                     fontSize:"170%", 
-                    maxWidth:240,
+                    maxWidth:340,
+                    paddingRight:"65px",
+                    borderRadius:"18px",
+                    backgroundColor: currentRoute.pathname.includes("dashboard") ? "white" : "transparent",
+                    color: currentRoute.pathname.includes("dashboard") ? "#5E19BA" : "white"
                   }}
                 >
                       Dashboard
@@ -85,11 +88,13 @@ function Navigation() {
                     overflow:"hidden",
                     marginLeft:"-22px", 
                     marginTop:"20%",
-                    marginRight:"-10%", 
+                    marginRight:"0", 
                     fontFamily:"Quicksand", 
                     textTransform:"none", 
                     fontSize:"170%",
-                    maxWidth:240,
+                    maxWidth:340,
+                    paddingRight:"112px",
+                    borderRadius:"18px",
                     backgroundColor: currentRoute.pathname.includes("tracker") ? "white" : "transparent",
                     color: currentRoute.pathname.includes("tracker") ? "#5E19BA" : "white"
                   }}
@@ -103,13 +108,15 @@ function Navigation() {
                   startIcon={<RestaurantOutlinedIcon style={{fontSize:"40px"}}/>} 
                   style={{
                     overflow:"hidden",
-                    marginLeft:"-10px",
+                    marginLeft:"-22px",
                     marginTop:"20%",
-                    marginRight:"-10%", 
+                    marginRight:"0", 
                     fontFamily:"Quicksand",
                     textTransform:"none",
                     fontSize:"170%",
-                    maxWidth:240,
+                    maxWidth:340,
+                    paddingRight:"82px",
+                    borderRadius:"18px",
                     backgroundColor: currentRoute.pathname.includes("meal-plan") ? "white" : "transparent",
                     color: currentRoute.pathname.includes("meal-plan") ? "#5E19BA" : "white"
                     }}
@@ -122,13 +129,15 @@ function Navigation() {
                   startIcon={<FitnessCenterOutlinedIcon style={{fontSize:"40px"}}/>} 
                   style={{
                     overflow:"hidden",
-                    marginLeft:"-10px",
+                    marginLeft:"-22px",
                     marginTop:"20%",
                     marginRight:"-10%",
                     fontFamily:"Quicksand",
                     textTransform:"none",
                     fontSize:"170%",
-                    maxWidth:240,
+                    maxWidth:340,
+                    paddingRight:"82px",
+                    borderRadius:"18px",
                     backgroundColor: currentRoute.pathname.includes("workouts") ? "white" : "transparent",
                     color: currentRoute.pathname.includes("workouts") ? "#5E19BA" : "white"
                     }}
@@ -142,13 +151,15 @@ function Navigation() {
                   startIcon={<CallOutlinedIcon style={{fontSize:"40px"}}/>} 
                   style={{
                     overflow:"hidden",
-                    marginLeft:"5px",
+                    marginLeft:"-22px",
                     marginTop:"20%",
                     marginRight:"-10%",
                     fontFamily:"Quicksand",
                     textTransform:"none",
                     fontSize:"170%",
-                    maxWidth:240,
+                    maxWidth:340,
+                    paddingRight:"60px",
+                    borderRadius:"18px",
                     backgroundColor: currentRoute.pathname.includes("contacts") ? "white" : "transparent",
                     color: currentRoute.pathname.includes("contacts") ? "#5E19BA" : "white"
                   }}

@@ -85,8 +85,13 @@ function Profile() {
                 padding:"5% 5% 10% 5%",
                 overflow:"hidden"
             }}
-        >
-            <h2 style={{color: '#531EB7', fontSize:'130%', paddingLeft:10 ,marginTop:'-2%'}}>Profile</h2> 
+        >   
+            <div style={{display:"flex", gap:"space-between" }}>
+                <h2 style={{color: '#531EB7', fontSize:'130%', paddingLeft:10 ,marginTop:'-2%', width:"80%"}}>Profile</h2> 
+                <div className='uploadprofpicbtncontainer' style={{marginTop:'-2%'}}>
+                        <button className='uploadprofpicbtn' style={{backgroundColor:"#531EB7", color:"white",fontSize:"13px", border:"none", borderRadius:"5px", boxShadow:"1px 2px 1px 1px lightgrey", padding:"5px 20px 5px 20px"}} onClick={handleProfilePictureUpload}>Upload</button>
+                </div>
+            </div>
             
             {/* profile pic */}
             <div>
@@ -118,7 +123,6 @@ function Profile() {
                         alt="Profile" 
                     />
                 </div>
-                <button onClick={handleProfilePictureUpload}>Upload</button>
             </div>
             
             <h2 style={{textAlign:"center",color: 'black', fontSize:"160%", paddingLeft:10 ,marginTop:'-3%'}}> {userData.first_name} {userData.last_name}</h2> 
@@ -168,11 +172,6 @@ function Profile() {
                     <h2 style={{color: '#E78203', fontSize:'110%', paddingLeft:10 ,marginTop:'5px' , marginBottom:"-10px"}}>16 June</h2>                 
                 </div>           
              </div>
-
-            
-            
-           
-         
         </div>
         
         

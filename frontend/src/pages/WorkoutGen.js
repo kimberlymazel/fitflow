@@ -9,13 +9,16 @@ export const WorkoutGen = () => {
         <div className="workout">
             <Header></Header>
 
-            <div class="left">
-                <Navigation></Navigation>
-            </div>
+            <div class="main">
+                <div class="left">
+                    <Navigation></Navigation>
+                </div>
 
-            <div class="right">
-                <WOGenerator></WOGenerator>
+                <div class="right">
+                    <WOGenerator></WOGenerator>
+                </div>
             </div>
+           
         </div>
     )
 }
