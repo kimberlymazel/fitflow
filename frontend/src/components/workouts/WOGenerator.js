@@ -16,6 +16,8 @@ function WOGenerator() {
   const [location, setLocation] = useState('');
   const [selectedEquipments, setSelectedEquipments] = useState([]);
   const [selectedMuscles, setSelectedMuscles] = useState([]);
+  const [isActive, setIsActive] = useState(false);
+  const [isActive2, setIsActive2] = useState(false);
 
   function handleTime(e){
     setTime(e.target.value);
@@ -23,6 +25,16 @@ function WOGenerator() {
 
   const handleLocation = (event, newSelect) => {
     setLocation(newSelect);
+  };
+
+  const handleClick = (event, newSelect) => {
+    setIsActive(current => !current);
+    setIsActive2(false);
+  };
+
+  const handleClick2 = (event, newSelect) => {
+    setIsActive2(current => !current);
+    setIsActive(false);
   };
 
   const handleCheck = (event, setFunction) => {
@@ -87,24 +99,41 @@ function WOGenerator() {
           >
             <ToggleButton 
               value="gym" 
+              onClick={handleClick}
               sx={{
                 height: '5vh',
                 width: '10vw', 
                 textTransform:"none"
               }}
+              style={{
+                backgroundColor: isActive ? '#EA9C39' : ''
+              }}
             >
-              <h2>Gym</h2>
+              <h2
+                style={{
+                  color: isActive ? 'white' : '#7248C3'
+                }}
+              >
+                Gym</h2>
             </ToggleButton>
 
             <ToggleButton 
               value="home"
+              onClick={handleClick2}
               sx={{
                 height: '5vh',
                 width: '10vw',
                 textTransform:"none"
               }}
+              style={{
+                backgroundColor: isActive2 ? '#EA9C39' : ''
+              }}
             >
-              <h2>At Home</h2>
+              <h2
+                style={{
+                  color: isActive2 ? 'white' : '#7248C3'
+                }}
+              >At Home</h2>
             </ToggleButton>        
           </ToggleButtonGroup>
         </div>

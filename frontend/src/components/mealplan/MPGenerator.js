@@ -19,6 +19,51 @@ function MPGenerator() {
     const [selectedDiet, setSelectedDiet] = useState('anything');
     const [mealData, setMealData] = useState(null);
     const [calories, setCalories] = useState(2000);
+    const [isActive, setIsActive] = useState(false);
+    const [isActive2, setIsActive2] = useState(false);
+    const [isActive3, setIsActive3] = useState(false);
+    const [isActive4, setIsActive4] = useState(false);
+    const [isActive5, setIsActive5] = useState(false);
+    
+    const handleClick = (event, newSelect) => {
+        setIsActive(current => !current);
+        setIsActive2(false);
+        setIsActive3(false);
+        setIsActive4(false);
+        setIsActive5(false);
+    };
+    
+    const handleClick2 = (event, newSelect) => {
+        setIsActive2(current => !current);
+        setIsActive(false);
+        setIsActive3(false);
+        setIsActive4(false);
+        setIsActive5(false);
+    };
+
+    const handleClick3 = (event, newSelect) => {
+        setIsActive3(current => !current);
+        setIsActive(false);
+        setIsActive2(false);
+        setIsActive4(false);
+        setIsActive5(false);
+    };
+
+    const handleClick4 = (event, newSelect) => {
+        setIsActive4(current => !current);
+        setIsActive(false);
+        setIsActive2(false);
+        setIsActive3(false);
+        setIsActive5(false);
+    };
+
+    const handleClick5 = (event, newSelect) => {
+        setIsActive5(current => !current);
+        setIsActive(false);
+        setIsActive2(false);
+        setIsActive3(false);
+        setIsActive4(false);
+    };
     
     const handleDiet = (event, newSelect) => {
         setSelectedDiet(newSelect);
@@ -55,7 +100,11 @@ function MPGenerator() {
                     onChange={handleDiet}
                 >
                     <ToggleButton 
-                        value="anything" 
+                        value="anything"
+                        onClick={handleClick}
+                        style={{
+                            backgroundColor: isActive ? 'lightgrey' : ''
+                        }}
                     >
                         <Small
                             style={{
@@ -70,6 +119,10 @@ function MPGenerator() {
 
                     <ToggleButton 
                         value="paleo"
+                        onClick={handleClick2}
+                        style={{
+                            backgroundColor: isActive2 ? 'lightgrey' : ''
+                        }}
                     >
                         <Small
                             style={{
@@ -81,7 +134,13 @@ function MPGenerator() {
                         </Small>
                     </ToggleButton>
 
-                    <ToggleButton value="vegetarian">
+                    <ToggleButton 
+                        value="vegetarian"
+                        onClick={handleClick3}
+                        style={{
+                            backgroundColor: isActive3 ? 'lightgrey' : ''
+                        }}
+                    >
                         <Small
                             style={{
                                 background: '#996CF0'
@@ -92,7 +151,13 @@ function MPGenerator() {
                         </Small>
                     </ToggleButton>
 
-                    <ToggleButton value="vegan"> 
+                    <ToggleButton
+                        value="vegan"
+                        onClick={handleClick4}
+                        style={{
+                            backgroundColor: isActive4 ? 'lightgrey' : ''
+                        }}
+                    > 
                         <Small
                             style={{
                                 background: '#8D5AF0'
@@ -103,7 +168,13 @@ function MPGenerator() {
                         </Small>
                     </ToggleButton>
 
-                    <ToggleButton value="keto">
+                    <ToggleButton 
+                        value="keto"
+                        onClick={handleClick5}
+                        style={{
+                            backgroundColor: isActive5 ? 'lightgrey' : ''
+                        }}
+                    >
                         <Small
                             style={{
                                 background: '#7E44EE'

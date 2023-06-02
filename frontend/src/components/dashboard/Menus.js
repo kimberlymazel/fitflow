@@ -6,7 +6,6 @@ import progress from '../../icons/progresstracker.png'
 import {useNavigate } from "react-router-dom";
 import '../../style/dashboard/menu.css'
 
-
 function Menu() {
     const navigate= useNavigate();
     const toWorkout = (e) => {
