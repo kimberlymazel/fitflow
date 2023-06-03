@@ -40,9 +40,34 @@ export const Register = () => {
             <div className="regisbox">
               <h3 className="regisboxtitle">Sign up</h3>
 
+
+              <form onSubmit={handleSubmit(onSubmit)}>
+              {/*==========Firstname Regis===========*/}
+              <h3 className="firstnameregisinputtitle">First Name</h3>
+                <div className={errors.email ? 'form-control error' : 'form-control'} style={{display:"flex", flexDirection:"column"}}>
+                  <input
+                    className="firstnameinputfieldregis"
+                    type="email"
+                    placeholder="Enter first name" 
+                    {...register('email', { required: '*This is a required field' })}
+                  />
+                  {errors.email && <span className="error-message" style={{color:"#D30000", fontWeight:600,fontSize:"16px"}}>{errors.email.message}</span>}
+                </div>
+
+              {/*==========Lastname Regis===========*/}
+              <h3 className="lastnameregisinputtitle">Last Name</h3>
+                <div className={errors.email ? 'form-control error' : 'form-control'} style={{display:"flex", flexDirection:"column"}}>
+                  <input
+                    className="lastnameinputfieldregis"
+                    type="email"
+                    placeholder="Enter last name" 
+                    {...register('email', { required: '*This is a required field' })}
+                  />
+                  {errors.email && <span className="error-message" style={{color:"#D30000", fontWeight:600,fontSize:"16px"}}>{errors.email.message}</span>}
+                </div>
+
               {/*==========Email Regis===========*/}
               <h3 className="emailregisinputtitle">Email</h3>
-              <form onSubmit={handleSubmit(onSubmit)}>
                 <div className={errors.email ? 'form-control error' : 'form-control'} style={{display:"flex", flexDirection:"column"}}>
                   <input
                     className="emailinputfieldregis"

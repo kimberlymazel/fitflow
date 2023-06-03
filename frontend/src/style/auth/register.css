@@ -12,7 +12,7 @@
 }
 
 .regiscontainer{
-    margin:70px 20px 20px 20px;
+    margin:30px 20px 20px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,7 +27,21 @@
     color:#531EB7;
     font-size: 140%;
     font-weight: 600;
-    margin-top: -25px;
+    margin-top: 10px;
+    margin-bottom: 9px;
+}
+.firstnameregisinputtitle{
+    color:#531EB7;
+    font-size: 140%;
+    font-weight: 600;
+    margin-top:-25px;
+    margin-bottom: 9px;
+}
+.lastnameregisinputtitle{
+    color:#531EB7;
+    font-size: 140%;
+    font-weight: 600;
+    margin-top:10px;
     margin-bottom: 9px;
 }
 .emailinputfieldregis{
@@ -38,12 +52,30 @@
     padding: 5px 5px 5px 5px;
     margin-bottom: 6px;
 }
+.firstnameinputfieldregis{
+    width: 400px;
+    font-size: 20px;
+    border-radius: 5px;
+    border-color: #AAAAAA;
+    padding: 5px 5px 5px 5px;
+    margin-bottom: 6px;
+}
+
+.lastnameinputfieldregis{
+    width: 400px;
+    font-size: 20px;
+    border-radius: 5px;
+    border-color: #AAAAAA;
+    padding: 5px 5px 5px 5px;
+    margin-bottom: 6px;
+}
+
 .usernameregisinputtitle{
     color: #531EB7;
     font-size: 140%;
     font-weight: 600;
     margin-top: 10px;
-    margin-bottom: 9px;
+    margin-bottom: 10px;
 }
 .usernameinputfieldregis{
     width: 400px;
