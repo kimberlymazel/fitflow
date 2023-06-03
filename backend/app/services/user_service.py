@@ -17,6 +17,8 @@ class UserService:
             username=user.username,
             email=user.email,
             hashed_password=get_password(user.password),
+            first_name=user.first_name,
+            last_name=user.last_name,
             age=user.age,
             weight=user.weight,
             height=user.height,

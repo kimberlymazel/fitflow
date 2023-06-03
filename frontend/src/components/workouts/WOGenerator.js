@@ -72,7 +72,7 @@ function WOGenerator() {
   return (
     <div className="wo-generator">
       <div className="header">
-        <img src={workout}></img>
+        <img src={workout} alt="Logo"></img>
       </div>
       
       <div className="input">

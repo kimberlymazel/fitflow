@@ -4,7 +4,6 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 import '../../style/dashboard/profile.css'
-import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 
 import axiosInstance from "../../services/axios";
@@ -15,10 +14,7 @@ function Profile() {
     const [selectedImage, setSelectedImage] = useState(null);
     const [image, setImage] = useState(null);
     const inputRef = useRef(null);
-    const [isHovered, setIsHovered] = useState(false);
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+    // const [open, setOpen] = React.useState(false);
     const [stretchData, setStretchData] = useState([]);
     const [openModal, setOpenModal] = useState(null);
 

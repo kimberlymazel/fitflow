@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import axiosInstance from "../../services/axios";
 import loginillustration from '../../icons/loginillustration.svg'
 import logo from '../../icons/logo.png'
 import '../../style/auth/register.css'
@@ -22,6 +21,8 @@ export const Register = () => {
             email: values.email,
             username: values.username,
             password: values.password,
+            first_name: values.first_name,
+            last_name: values.last_name
           },
           replace: true,
         });
@@ -35,7 +36,7 @@ export const Register = () => {
     return (
       <div className="register">
         <div className="leftregister">
-          <img src={logo} height={60}></img>
+          <img src={logo} height={60} alt="background"></img>
           <div className="regiscontainer">
             <div className="regisbox">
               <h3 className="regisboxtitle">Sign up</h3>
@@ -44,26 +45,26 @@ export const Register = () => {
               <form onSubmit={handleSubmit(onSubmit)}>
               {/*==========Firstname Regis===========*/}
               <h3 className="firstnameregisinputtitle">First Name</h3>
-                <div className={errors.email ? 'form-control error' : 'form-control'} style={{display:"flex", flexDirection:"column"}}>
+                <div className={errors.first_name ? 'form-control error' : 'form-control'} style={{display:"flex", flexDirection:"column"}}>
                   <input
                     className="firstnameinputfieldregis"
-                    type="email"
+                    type="text"
                     placeholder="Enter first name" 
-                    {...register('email', { required: '*This is a required field' })}
+                    {...register('first_name', { required: '*This is a required field' })}
                   />
-                  {errors.email && <span className="error-message" style={{color:"#D30000", fontWeight:600,fontSize:"16px"}}>{errors.email.message}</span>}
+                  {errors.first_name && <span className="error-message" style={{color:"#D30000", fontWeight:600,fontSize:"16px"}}>{errors.first_name.message}</span>}
                 </div>
 
               {/*==========Lastname Regis===========*/}
               <h3 className="lastnameregisinputtitle">Last Name</h3>
-                <div className={errors.email ? 'form-control error' : 'form-control'} style={{display:"flex", flexDirection:"column"}}>
+                <div className={errors.last_name ? 'form-control error' : 'form-control'} style={{display:"flex", flexDirection:"column"}}>
                   <input
                     className="lastnameinputfieldregis"
-                    type="email"
+                    type="text"
                     placeholder="Enter last name" 
-                    {...register('email', { required: '*This is a required field' })}
+                    {...register('last_name', { required: '*This is a required field' })}
                   />
-                  {errors.email && <span className="error-message" style={{color:"#D30000", fontWeight:600,fontSize:"16px"}}>{errors.email.message}</span>}
+                  {errors.last_name && <span className="error-message" style={{color:"#D30000", fontWeight:600,fontSize:"16px"}}>{errors.last_name.message}</span>}
                 </div>
 
               {/*==========Email Regis===========*/}
@@ -139,7 +140,7 @@ export const Register = () => {
             <h2 className="illusregiswelcome">Welcome!</h2> 
             <h2 className="illusregisready">Ready to get fit?</h2> 
             <div className="illusimagediv">
-              <img src={loginillustration} width={"650px"} ></img>
+              <img src={loginillustration} width={"650px"} alt="background"></img>
             </div>
             <div className="regishalfcircledeco"></div>
         </div>

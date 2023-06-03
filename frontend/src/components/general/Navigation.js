@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Box from '@mui/material/Box'
 import '../../style/general.css'
 import { Button } from '@mui/material';
@@ -64,8 +64,7 @@ function Navigation() {
                   startIcon={<GridViewOutlinedIcon style={{fontSize:"40px"}}/>} 
                   style={{
                     overflow:"hidden",
-                    marginLeft:"0px", 
-                    color: "white", 
+                    marginLeft:"0px",
                     marginTop:"20%",
                     marginRight:"0", 
                     fontFamily:"Quicksand", 

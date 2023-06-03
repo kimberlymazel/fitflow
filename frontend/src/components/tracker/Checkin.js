@@ -20,7 +20,7 @@ export const Checkin = ({
         handleSubmit,
         register,
         reset,
-        formState: { errors, isSubmitting },
+        formState: { isSubmitting },
       } = useForm({
         defaultValues: { ...defaultValues },
       });

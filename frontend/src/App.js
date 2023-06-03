@@ -1,6 +1,5 @@
 import './style/App.css'
 import { MealPlan } from './pages/MealPlan';
-import { WorkoutGenerator } from './pages/WorkoutGenerator';
 import { WorkoutGen } from './pages/WorkoutGen';
 import { Dashboard } from './pages/Dashboard';
 import { Tracker } from './pages/Tracker';

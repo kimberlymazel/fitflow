@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import logoright from '../../icons/logoright.svg'
 import halfcircle from '../../icons/halfcircle.svg'
 import '../../style/auth/info.css'
@@ -13,16 +13,20 @@ export const Info = () => {
     const {
         handleSubmit,
         register,
-        formState: { errors, isSubmitting },
+        formState: { isSubmitting },
     } = useForm();
     const navigate = useNavigate();
 
     const onSubmit = async (values) => {
+        console.log('Submitting form:', values);
+        
         try {
-            const { email, username, password } = location.state;
+            const { first_name, last_name, email, username, password } = location.state;
 
             await axiosInstance.post("/users/create", {
                 ...values,
+                first_name,
+                last_name,
                 email,
                 username,
                 password
@@ -38,13 +42,18 @@ export const Info = () => {
 
         {/*=========UI Background decor==========*/}
         <div className="halfcircledecoinfo">
-            <img src={halfcircle}></img>
+            <img src={halfcircle} alt="background"></img>
         </div>
 
         {/*==========Personal Info section==========*/}
-        <div className='infobox' onSubmit={handleSubmit(onSubmit)}>
+        <form className='infobox' onSubmit={handleSubmit(onSubmit)}>
             <h2 className='infoboxtitledesc'>You're almost ready!</h2> 
             <h2 className="infoboxtitle">Fill in your data:</h2> 
+            {/*========Age Input=========*/}
+            <div className='indivinfobox'>
+                <h2 className="personalinputtitle">Weight:</h2> 
+                <input className='weightinfoinput' type="number"  {...register('age', { required: '*This is a required field' })} placeholder=' Enter age'></input>
+            </div>
             {/*========Weight Input=========*/}
             <div className='indivinfobox'>
                 <h2 className="personalinputtitle">Weight:</h2> 
@@ -73,9 +82,9 @@ export const Info = () => {
 
             {/*=========UI Background decor==========*/}
             <div className="logodeco">
-                <img src={logoright} width={"500px"}></img>
+                <img src={logoright} width={"500px"} alt="background"></img>
             </div>
-        </div>
+        </form>
     </div>
   )
 }

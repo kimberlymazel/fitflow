@@ -1,7 +1,6 @@
 import Header from '../components/general/Header'
 import Navigation from '../components/general/Navigation'
 import Agenda from '../components/dashboard/Agenda'
-import Carousel from '../components/dashboard/Carousel'
 import Today from '../components/dashboard/Today'
 import Profile from '../components/dashboard/Profile'
 import '../style/App.css'
@@ -14,28 +13,28 @@ export const Dashboard = () => {
     <div className="Dashboard">
       <Header></Header>
 
-      <div class="left">
+      <div className="left">
         <Navigation></Navigation>
       </div>
 
-      <div class="middle">
+      <div className="middle">
         <Agenda></Agenda>
         
-        <div class="under">
+        <div className="under">
           <Menu></Menu>
         </div>
 
-        <div class="under">
+        <div className="under">
             <LineGraph></LineGraph>
         </div>
 
-        <div class="under">
+        <div className="under">
           <Today></Today>
         </div>
       </div>
 
-      <div class="right">
-        <div class="heightadjust" style={{height:'120vh'}}>
+      <div className="right">
+        <div className="heightadjust" style={{height:'120vh'}}>
           <Profile></Profile>
           </div>
 

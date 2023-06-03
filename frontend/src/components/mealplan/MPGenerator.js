@@ -122,7 +122,7 @@ function MPGenerator() {
                                 background: '#B497ED'
                             }}
                         >
-                            <img src={anything} height={65}></img>
+                            <img src={anything} height={65} alt="Logo"></img>
                             <h5>Anything</h5>
                         </Small>
                     </ToggleButton>
@@ -140,7 +140,7 @@ function MPGenerator() {
                                 background: '#A781F0'
                             }}
                         >
-                            <img src={paleo} height={65}></img>
+                            <img src={paleo} height={65} alt="Logo"></img>
                             <h5>Paleo</h5>
                         </Small>
                     </ToggleButton>
@@ -157,7 +157,7 @@ function MPGenerator() {
                                 background: '#996CF0'
                             }}
                         >
-                            <img src={vegetarian} height={65}></img>
+                            <img src={vegetarian} height={65} alt="Logo"></img>
                             <h5>Vegetarian</h5>
                         </Small>
                     </ToggleButton>
@@ -174,7 +174,7 @@ function MPGenerator() {
                                 background: '#8D5AF0'
                             }}
                         >
-                            <img src={vegan} height={65}></img>
+                            <img src={vegan} height={65} alt="Logo"></img>
                             <h5>Vegan</h5>
                         </Small>
                     </ToggleButton>
@@ -191,7 +191,7 @@ function MPGenerator() {
                                 background: '#7E44EE'
                             }}
                         >
-                            <img src={keto} height={65}></img>
+                            <img src={keto} height={65} alt="Logo"></img>
                             <h5>Keto</h5>
                         </Small>
                     </ToggleButton>

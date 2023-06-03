@@ -24,15 +24,15 @@ function Menu() {
     <div className="menuwhole">
         <div className='slider'>
             <div onClick={toWorkout}  id="dailyexercise" className='menuitem1'>
-                <img className="menuimage" src={exercise}></img>
+                <img className="menuimage" src={exercise} alt="background"></img>
                 <h2 className="menuitemtitle">Daily Exercises</h2>
             </div>
             <div onClick={toMealPlan} id="caloriesintake" className='menuitem2'>
-                <img className="menuimage" src={intake}></img>
+                <img className="menuimage" src={intake} alt="background"></img>
                 <h2 className="menuitemtitle">Your Meals</h2>
             </div>
             <div onClick={toTracker} id="prorgesstrack" className='menuitem3'>
-                <img className="menuimage" src={progress}></img>
+                <img className="menuimage" src={progress} alt="background"></img>
                 <h2 className="menuitemtitle">Progress Track</h2>
             </div>
         </div>

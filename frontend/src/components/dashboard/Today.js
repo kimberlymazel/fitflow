@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import Box from '@mui/material/Box'
-import Grid from '@mui/material/Grid'
-import Standard from '../cards/Standard'
+// import Box from '@mui/material/Box'
+// import Grid from '@mui/material/Grid'
+// import Standard from '../cards/Standard'
 import '../../style/dashboard.css'
 import '../../style/dashboard/today.css'
 
@@ -15,8 +15,6 @@ function Today() {
 
     const [userData, setUserData] = useState([]);
     const [mealData, setMealData] = useState([]);
-    const [imageUrl, setImageUrl] = useState("");
-  
 
     useEffect(() => {
         const fetchData = async () => {
@@ -121,9 +119,9 @@ function Today() {
                       <div className="meal-generateditem" key={meal.id}>
                         <img
                           className="mealimage"
-                          // onClick={() => goToUrl(meal.sourceUrl)}
+                          onClick={() => goToUrl(meal.sourceUrl)}
                           src={meal.imageUrl}
-                          alt={meal.title}
+                          alt="food"
                         />
                         <div className="meal-gendetail">
                           <h2 className="mealitemtitle">{meal.title}</h2>

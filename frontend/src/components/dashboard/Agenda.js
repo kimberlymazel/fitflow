@@ -48,7 +48,7 @@ function Agenda() {
                 <Grid container spacing={1}>
                     <Grid item>
                         <Thin>
-                            <img src={calendar} width={40}></img>
+                            <img src={calendar} width={40} alt="background"></img>
                             <div>
                                 <h4>Day {weekSinceRegistration + 1}, Week {weekSinceRegistration + 1}</h4>
                                 <h4>{todayDate}</h4>
@@ -58,7 +58,7 @@ function Agenda() {
                     
                     <Grid item>
                         <Thin>
-                            <img src={activity} width={40}></img>
+                            <img src={activity} width={40} alt="background"></img>
                             <div>
                                 <h4>Goal</h4>
                                 <h4>Toned Abs</h4>

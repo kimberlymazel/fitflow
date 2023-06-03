@@ -24,6 +24,7 @@ function Header() {
           <img 
             src={logo}
             height={40}
+            alt="Logo"
           ></img>
         </div>
 
@@ -31,6 +32,7 @@ function Header() {
           <img 
             src={logoutlogo}
             height={40}
+            alt="Logo"
           ></img>
         </div>
         

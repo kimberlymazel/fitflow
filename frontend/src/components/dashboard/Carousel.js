@@ -23,7 +23,7 @@ function Carousel() {
                             background: 'linear-gradient(to right, #E78403, #F9D601)'
                         }}
                     >
-                        <img src={exercise} height={80}></img>
+                        <img src={exercise} height={80} alt="logo"/>
                         <div>
                             <h2>Daily Exercises</h2>
                         </div>
@@ -36,7 +36,7 @@ function Carousel() {
                             background: 'linear-gradient(to right, #2EDED4, #1B8ABA)'
                         }}
                     >
-                        <img src={intake} height={80}></img>
+                        <img src={intake} height={80} alt="logo"/>
                         <div>
                             <h2>Calories Intake</h2>
                         </div>
@@ -49,7 +49,7 @@ function Carousel() {
                             background: 'linear-gradient(to right, #EC4F73, #F272D1)'
                         }}
                     >
-                        <img src={water} height={80}></img>
+                        <img src={water} height={80} alt="logo"/>
                         <div>
                             <h2>Water Intake</h2>
                         </div>
@@ -62,7 +62,7 @@ function Carousel() {
                             background: 'linear-gradient(to right, #712DDF, #871BBA)'
                         }}
                     >
-                        <img src={progress} height={80}></img>
+                        <img src={progress} height={80} alt="logo" />
                         <div>
                             <h2>Progress Tracks</h2>
                         </div>

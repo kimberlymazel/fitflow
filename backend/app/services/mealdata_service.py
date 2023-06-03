@@ -22,6 +22,6 @@ class MealService:
             return await meal.insert()
 
     @staticmethod
-    async def retrieve_meal(current_user: User) -> MealData:
+    async def retrieve_meal(current_user: User) -> Optional[MealData]:
         meal = await MealData.find_one(MealData.owner.id == current_user.id)
         return meal
