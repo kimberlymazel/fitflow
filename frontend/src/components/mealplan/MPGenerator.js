@@ -85,7 +85,7 @@ function MPGenerator() {
     
     function getMealData(){
         fetch(
-            `https://api.spoonacular.com/mealplanner/generate?apiKey=d6ff71253b57408ba9d445343d1c9b7c&timeFrame=day&targetCalories=${calories}&diet=${selectedDiet}`
+            `https://api.spoonacular.com/mealplanner/generate?apiKey=8fb4b48ee9a644c3a9d374eb1bbc7cf7&timeFrame=day&targetCalories=${calories}&diet=${selectedDiet}`
         )
         .then((response) => response.json())
         .then((data) => {

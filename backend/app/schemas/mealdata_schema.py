@@ -8,7 +8,7 @@ class Meal(BaseModel):
     title: str
     readyInMinutes: int
     servings: int
-    # sourceUrl: str
+    sourceUrl: str
 
 class Nutrients(BaseModel):
     calories: float

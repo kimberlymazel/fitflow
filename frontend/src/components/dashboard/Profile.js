@@ -19,6 +19,16 @@ function Profile() {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    const [stretchData, setStretchData] = useState([]);
+    const [openModal, setOpenModal] = useState(null);
+
+    const handleOpenModal = (index) => {
+        setOpenModal(index);
+      };
+    
+      const handleCloseModal = () => {
+        setOpenModal(null);
+      };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -45,10 +55,35 @@ function Profile() {
                 console.error(error);
             })
           };
+
+          const fetchStretch = async () => {
+            fetch(
+              `https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?type=stretching`,
+              {
+                method: 'GET',
+                headers: {
+                  'X-RapidAPI-Key': '56c7c883b6mshb1c37cf73d9bda0p1b1d9fjsnf6f043ae789a',
+                  'X-RapidAPI-Host': 'exercises-by-api-ninjas.p.rapidapi.com'
+                }
+              }
+            )
+              .then((response) => response.json())
+              .then((data) => {
+                const firstThree = data.slice(0, 3);
+                setStretchData(firstThree);
+                console.log(firstThree);
+              })
+              .catch(() => {
+                console.log("error");
+              });
+        };
       
         fetchData();
         fetchImage();
+        fetchStretch();
       }, []);
+
+    
 
     const handleImageUpload = (event) => {
         const file = event.target.files[0];
@@ -135,159 +170,57 @@ function Profile() {
             </div>
 
             <h2  className='profsetuph2'>Daily Stretches</h2> 
-            <div className='stretchitem1'>
-                <div className='tripledotcont'>
-                    {/* the stretch item goes here vvv */}
-                    <h2 className="stretchitemtitle">Standing Bicep Stretches</h2> 
-                    <img src={threedots} onClick={handleOpen}></img>
-                    <Modal
-                        open={open}
-                        onClose={handleClose}
-                        aria-labelledby="modal-modal-title"
-                        aria-describedby="modal-modal-description"
-                        >
-                        {/* the stretch item detail goes here vvv */}
-                        <div className="modalwhole">
-                            <div className="modalwhiteframe">
-                                <h2 className="stretchtitle">Standing Bicep Stretches</h2>
-                                <div className="stretchdetails">
-                                    <div className="leftstretchmodaltop">
-                                        <div className="stretchdetailitemtop">
-                                            <h2 className="stretchdetailcat">Type: </h2>
-                                            <h2 className="stretchdetail-generated">Stretching</h2>
-                                        </div>
-                                        <div className="stretchdetailitembottom">
-                                            <h2 className="stretchdetailcat">Muscle: </h2>
-                                            <h2 className="stretchdetail-generated">Biceps</h2>
-                                        </div>
-                                    </div>
-                                    <div className="rightstretchmodaltop">
-                                        <div className="stretchdetailitemtop">
-                                            <h2 className="stretchdetailcat">Equipment: </h2>
-                                            <h2 className="stretchdetail-generated">Other</h2>
-                                        </div>
-                                        <div className="stretchdetailitembottom">
-                                            <h2 className="stretchdetailcat">Difficulty: </h2>
-                                            <h2 className="stretchdetail-generated">Beginner</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="instructioncont">
-                                    <h2 className='instructiondesc'>Instructions: </h2>
-                                    <h2 className='instruction-generated'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. </h2>
-                                </div>
+
+            {stretchData.map((stretch, index) => (
+            <div className="stretchitem1" key={index}>
+                <div className="tripledotcont">
+                <h2 className="stretchitemtitle">{stretch.name}</h2>
+                <img src={threedots} onClick={() => handleOpenModal(index)} alt="Three dots" />
+                <Modal
+                    open={openModal === index}
+                    onClose={() => handleCloseModal(index)}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                >
+                    <div className="modalwhole">
+                    <div className="modalwhiteframe">
+                        <h2 className="stretchtitle">{stretch.name}</h2>
+                        <div className="stretchdetails">
+                        <div className="leftstretchmodaltop">
+                            <div className="stretchdetailitemtop">
+                            <h2 className="stretchdetailcat">Type: </h2>
+                            <h2 className="stretchdetail-generated">Stretching</h2>
+                            </div>
+                            <div className="stretchdetailitembottom">
+                            <h2 className="stretchdetailcat">Muscle: </h2>
+                            <h2 className="stretchdetail-generated">{stretch.muscle}</h2>
                             </div>
                         </div>
-                    </Modal>
+                        <div className="rightstretchmodaltop">
+                            <div className="stretchdetailitemtop">
+                            <h2 className="stretchdetailcat">Equipment: </h2>
+                            <h2 className="stretchdetail-generated">{stretch.equipment}</h2>
+                            </div>
+                            <div className="stretchdetailitembottom">
+                            <h2 className="stretchdetailcat">Difficulty: </h2>
+                            <h2 className="stretchdetail-generated">{stretch.difficulty}</h2>
+                            </div>
+                        </div>
+                        </div>
+                        <div className="instructioncont">
+                        <h2 className="instructiondesc">Instructions: </h2>
+                        <h2 className="instruction-generated">{stretch.instructions}</h2>
+                        </div>
+                    </div>
+                    </div>
+                </Modal>
                 </div>
-                {/* stretch muscle and level */}
                 <div className='bottomtitle'>
-                    <h2 className="stretchmuscle">Bicep</h2>                 
-                    <h2 className='stretchlevel'>Beginner</h2>                 
+                    <h2 className="stretchmuscle">{stretch.muscle}</h2>                 
+                    <h2 className='stretchlevel'>{stretch.difficulty}</h2>                 
                 </div>
             </div>
-            <div className='stretchitem2'>
-                <div className='tripledotcont'>
-                    {/* the stretch item goes here vvv */}
-                    <h2 className="stretchitemtitle">Standing Bicep Stretches</h2> 
-                    <img src={threedots} onClick={handleOpen}></img>
-                    <Modal
-                        open={open}
-                        onClose={handleClose}
-                        aria-labelledby="modal-modal-title"
-                        aria-describedby="modal-modal-description"
-                        >
-                        {/* the stretch item detail goes here vvv */}
-                        <div className="modalwhole">
-                            <div className="modalwhiteframe">
-                                <h2 className="stretchtitle">Standing Bicep Stretches</h2>
-                                <div className="stretchdetails">
-                                    <div className="leftstretchmodaltop">
-                                        <div className="stretchdetailitemtop">
-                                            <h2 className="stretchdetailcat">Type: </h2>
-                                            <h2 className="stretchdetail-generated">Stretching</h2>
-                                        </div>
-                                        <div className="stretchdetailitembottom">
-                                            <h2 className="stretchdetailcat">Muscle: </h2>
-                                            <h2 className="stretchdetail-generated">Biceps</h2>
-                                        </div>
-                                    </div>
-                                    <div className="rightstretchmodaltop">
-                                        <div className="stretchdetailitemtop">
-                                            <h2 className="stretchdetailcat">Equipment: </h2>
-                                            <h2 className="stretchdetail-generated">Other</h2>
-                                        </div>
-                                        <div className="stretchdetailitembottom">
-                                            <h2 className="stretchdetailcat">Difficulty: </h2>
-                                            <h2 className="stretchdetail-generated">Beginner</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="instructioncont">
-                                    <h2 className='instructiondesc'>Instructions: </h2>
-                                    <h2 className='instruction-generated'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. </h2>
-                                </div>
-                            </div>
-                        </div>
-                    </Modal>
-                </div>
-                {/* stretch muscle and level */}
-                <div className='bottomtitle'>
-                <h2 className="stretchmuscle">Bicep</h2>                 
-                    <h2 className='stretchlevel'>Beginner</h2>          
-                </div>           
-             </div>
-             <div className='stretchitem2'>
-                <div className='tripledotcont'>
-                    {/* the stretch item goes here vvv */}
-                    <h2 className="stretchitemtitle">Standing Bicep Stretches</h2> 
-                    <img src={threedots} onClick={handleOpen}></img>
-                    <Modal
-                        open={open}
-                        onClose={handleClose}
-                        aria-labelledby="modal-modal-title"
-                        aria-describedby="modal-modal-description"
-                        >
-                        {/* the stretch item detail goes here vvv */}
-                        <div className="modalwhole">
-                            <div className="modalwhiteframe">
-                                <h2 className="stretchtitle">Standing Bicep Stretches</h2>
-                                <div className="stretchdetails">
-                                    <div className="leftstretchmodaltop">
-                                        <div className="stretchdetailitemtop">
-                                            <h2 className="stretchdetailcat">Type: </h2>
-                                            <h2 className="stretchdetail-generated">Stretching</h2>
-                                        </div>
-                                        <div className="stretchdetailitembottom">
-                                            <h2 className="stretchdetailcat">Muscle: </h2>
-                                            <h2 className="stretchdetail-generated">Biceps</h2>
-                                        </div>
-                                    </div>
-                                    <div className="rightstretchmodaltop">
-                                        <div className="stretchdetailitemtop">
-                                            <h2 className="stretchdetailcat">Equipment: </h2>
-                                            <h2 className="stretchdetail-generated">Other</h2>
-                                        </div>
-                                        <div className="stretchdetailitembottom">
-                                            <h2 className="stretchdetailcat">Difficulty: </h2>
-                                            <h2 className="stretchdetail-generated">Beginner</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="instructioncont">
-                                    <h2 className='instructiondesc'>Instructions: </h2>
-                                    <h2 className='instruction-generated'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. </h2>
-                                </div>
-                            </div>
-                        </div>
-                    </Modal>
-                </div>
-                {/* stretch muscle and level */}
-                <div className='bottomtitle'>
-                <h2 className="stretchmuscle">Bicep</h2>                 
-                    <h2 className='stretchlevel'>Beginner</h2>          
-                </div>           
-             </div>
+            ))}
 
         </div>
         

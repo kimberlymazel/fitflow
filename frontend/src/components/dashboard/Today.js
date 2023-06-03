@@ -14,41 +14,15 @@ function Today() {
     // const [weight, setWeight] = useState('');
 
     const [userData, setUserData] = useState([]);
+    const [mealData, setMealData] = useState([]);
+    const [imageUrl, setImageUrl] = useState("");
   
-    // const handleEditClick = () => {
-    //   setShowPopup(true);
-    // };
-  
-    // const handleSaveBMI = () => {
-    //   const parsedHeight = parseFloat(height);
-    //   const parsedWeight = parseFloat(weight);
-  
-    //   const bmiValue = (parsedWeight / (parsedHeight/100 * parsedHeight/100)).toFixed(1);
-    //   setBMI(bmiValue);
-    //   setShowPopup(false);
-    // };
-  
-    // const handleClosePopup = () => {
-    //   setShowPopup(false);
-    // };
-
-    // let bmiCategory = '';
-    // if (bmi !== null) {
-    //   if (bmi < 18.5) {
-    //     bmiCategory = 'Underweight';
-    //   } else if (bmi >= 18.5 && bmi <= 25) {
-    //     bmiCategory = 'Normal';
-    //   } else if (bmi>25) {
-    //     bmiCategory = 'Overweight';
-    //   }
-    // }
 
     useEffect(() => {
         const fetchData = async () => {
           try {
             const response = await axiosInstance.get('/users/me');
             setUserData(response.data);
-            console.log(response.data);
     
             // Call the fetchBMI function here
             fetchBMI(response.data);
@@ -56,15 +30,31 @@ function Today() {
             console.error(error);
           }
         };
+
+        const fetchMealData = async () => {
+          try {
+            const response = await axiosInstance.get('/mealdata/get-meal-plan');
+            setMealData(response.data);
+            console.log(response.data);
+
+            // Fetch the image URL for each meal
+            response.data.meals.forEach((meal) => {
+              fetchImageUrl(meal.id);
+            });
+          } catch (error) {
+            console.error(error);
+          }
+        };
     
         fetchData();
+        fetchMealData();
       }, []);
 
-      function goToUrl(){
-        window.open('https://spoonacular.com/recipes/moroccan-lemon-shish-kebabs-652433', '_blank');
-      }
+    function goToUrl(meal){
+        window.open(meal.sourceUrl, '_blank');
+    }
     
-      const fetchBMI = async (userData) => {
+    const fetchBMI = async (userData) => {
         const { age, weight, height } = userData;
     
         fetch(
@@ -80,12 +70,39 @@ function Today() {
           .then((response) => response.json())
           .then((data) => {
             setBMI(data);
-            console.log(data);
           })
           .catch(() => {
             console.log("error");
           });
-      };
+    };
+
+    const fetchImageUrl = async (mealId) => {
+      fetch(
+        `https://api.spoonacular.com/recipes/${mealId}/information?apiKey=8fb4b48ee9a644c3a9d374eb1bbc7cf7&includeNutrition=false`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          // Update the mealData state to include the image URL for the specific meal
+          setMealData((prevMealData) => {
+            const updatedMeals = prevMealData.meals.map((meal) => {
+              if (meal.id === mealId) {
+                return {
+                  ...meal,
+                  imageUrl: data.image,
+                };
+              }
+              return meal;
+            });
+            return {
+              ...prevMealData,
+              meals: updatedMeals,
+            };
+          });
+        })
+        .catch(() => {
+          console.log('error');
+        });
+    };
 
     return (
         <div class="today">
@@ -95,67 +112,26 @@ function Today() {
                     <div>
                         <button className="bmidisplay">{bmi.data?.bmi} (kg/m^2)</button>
                         <p className="bmihealthdata">{bmi.data?.health}</p>
-                        {/* {bmi && (
-                            <div>
-                                <p style={{fontSize:"20px",marginLeft:"auto",marginRight:"auto", textAlign:"center",  marginTop:"5px", color:"#531EB7", fontWeight:"800", border:"none"}}>{bmi.health}</p>
-                            </div>
-                        )} */}
-                        {/* {showPopup && (
-                        <div className="popup" style={{margin:"10px auto 10px auto", display:"flex",alignItems:"center", justifyContent:"center"}}>
-                            <input
-                            type="text"
-                            placeholder="Height (cm)"
-                            value={height}
-                            onChange={(e) => setHeight(e.target.value)}
-                            style={{width:"100px", fontSize:"16px",borderColor:"grey" }}
-                            />
-                            <input
-                            type="text"
-                            placeholder="Weight (kg)"
-                            value={weight}
-                            onChange={(e) => setWeight(e.target.value)}
-                            style={{width:"100px", fontSize:"16px", borderColor:"grey" }}
-                            />
-                            <button onClick={handleSaveBMI} 
-                                style={{ fontSize:"16px", backgroundColor:"#C4B2E8"}}
-                            >Save</button>
-                            <button onClick={handleClosePopup}
-                                style={{ fontSize:"16px", backgroundColor:"#C4B2E8"}}
-                            >Exit</button>
-                        </div>
-                        )} */}
                     </div>
                 </div>
                 <div className='mealscontainer' >
                     <h3 className='todaysmeals'>Today's Meals</h3>
                     <div className='mealscont'>
-                      <div className='meal-generateditem'>
-                        {/* dont forget to alter the goToUrl function also its above <3 */}
-                        <img className="mealimage" onClick={goToUrl}src="https://cdn.discordapp.com/attachments/794551109523341353/1114538767190085703/Greek-Chicken-Skewers-8-500x500.png"></img>
-                        <div className='meal-gendetail'>
-                          <h2 className='mealitemtitle'>Morroccan Lemon Shish Kebab</h2>
-                          <h2 className='mealitempreptime'>45 minutes</h2>
-                          <h2 className='mealitemservingsize'>8 servings</h2>
+                    {mealData.meals && mealData.meals?.map((meal) => (
+                      <div className="meal-generateditem" key={meal.id}>
+                        <img
+                          className="mealimage"
+                          // onClick={() => goToUrl(meal.sourceUrl)}
+                          src={meal.imageUrl}
+                          alt={meal.title}
+                        />
+                        <div className="meal-gendetail">
+                          <h2 className="mealitemtitle">{meal.title}</h2>
+                          <h2 className="mealitempreptime">{meal.readyInMinutes} minutes</h2>
+                          <h2 className="mealitemservingsize">{meal.servings} servings</h2>
                         </div>
                       </div>
-
-                      <div className='meal-generateditem'>
-                        <img className="mealimage" onClick={goToUrl}src="https://cdn.discordapp.com/attachments/794551109523341353/1114538767190085703/Greek-Chicken-Skewers-8-500x500.png"></img>
-                        <div className='meal-gendetail'>
-                          <h2 className='mealitemtitle'>Morroccan Lemon Shish Kebab</h2>
-                          <h2 className='mealitempreptime'>45 minutes</h2>
-                          <h2 className='mealitemservingsize'>8 servings</h2>
-                        </div>
-                      </div>
-
-                      <div className='meal-generateditem'>
-                        <img className="mealimage" onClick={goToUrl}src="https://cdn.discordapp.com/attachments/794551109523341353/1114538767190085703/Greek-Chicken-Skewers-8-500x500.png"></img>
-                        <div className='meal-gendetail'>
-                          <h2 className='mealitemtitle'>Morroccan Lemon Shish Kebab</h2>
-                          <h2 className='mealitempreptime'>45 minutes</h2>
-                          <h2 className='mealitemservingsize'>8 servings</h2>
-                        </div>
-                      </div>
+                    ))}
 
                     </div>
                 </div>
