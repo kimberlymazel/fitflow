@@ -7,6 +7,7 @@ from app.api.router import router
 from app.core.config import settings
 from app.models.user_model import User
 from app.models.tracker_model import Tracker
+from app.models.mealdata_model import MealData
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -33,7 +34,8 @@ async def app_init():
         database=db_client,
         document_models= [
             User,
-            Tracker
+            Tracker,
+            MealData
         ]
     )
     

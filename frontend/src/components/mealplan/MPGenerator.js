@@ -9,6 +9,7 @@ import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import MealList from "./MealList"
 
+import axiosInstance from "../../services/axios";
 import anything from '../../icons/anything.png'
 import paleo from '../../icons/paleo.png'
 import vegetarian from '../../icons/vegetarian.png'
@@ -72,6 +73,15 @@ function MPGenerator() {
     function handleCalorie(e){
         setCalories(e.target.value);
     }
+
+    const saveMealDataToBackend = async (mealData) => {
+        try {
+            await axiosInstance.post('/mealdata/save-meal-plan', mealData);
+            console.log('Meal data saved to backend successfully.');
+        } catch (err) {
+            console.error(err);
+        }
+    };
     
     function getMealData(){
         fetch(
@@ -80,6 +90,7 @@ function MPGenerator() {
         .then((response) => response.json())
         .then((data) => {
             setMealData(data);
+            saveMealDataToBackend(data);
         })
         .catch(() => {
             console.log("error");

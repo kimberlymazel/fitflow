@@ -65,43 +65,42 @@ function App() {
                       <Route 
                         path="/"
                         element={
-                          // <Authenticated>
+                          <Authenticated>
                             <Dashboard />
-                          // </Authenticated>
+                          </Authenticated>
                         }
                       />
                       <Route
                         path="/tracker"
                         element={
-                          // <Authenticated>
+                          <Authenticated>
                             <Tracker />
-                          // </Authenticated>
+                          </Authenticated>
                         }
                       />
                       <Route
                         path="/meal-plan"
                         element={
-                          // <Authenticated>
+                          <Authenticated>
                             <MealPlan />
-                          // </Authenticated>
+                          </Authenticated>
                         }
                       />
                       <Route
                         path="/workouts"
                         element={
-                          // <Authenticated>
+                          <Authenticated>
                             <WorkoutGen />
                           
-                          // </Authenticated>
+                          </Authenticated>
                         }
                       />
                       <Route
                         path="/contacts"
                         element={
-                          // <Authenticated>
+                          <Authenticated>
                             <Contact />
-                          
-                          // </Authenticated>
+                          </Authenticated>
                         }
                       />
                     </Routes>
