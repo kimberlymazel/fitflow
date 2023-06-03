@@ -4,15 +4,21 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 import '../../style/dashboard/profile.css'
+import Button from '@mui/material/Button';
+import Modal from '@mui/material/Modal';
 
 import axiosInstance from "../../services/axios";
 
+  
 function Profile() {
     const [userData, setUserData] = useState([]);
     const [selectedImage, setSelectedImage] = useState(null);
     const [image, setImage] = useState(null);
     const inputRef = useRef(null);
     const [isHovered, setIsHovered] = useState(false);
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -128,27 +134,161 @@ function Profile() {
                 </LocalizationProvider>
             </div>
 
-            <h2  className='profsetuph2'>Schedules</h2> 
-            <div className='scheduleitem1'>
+            <h2  className='profsetuph2'>Daily Stretches</h2> 
+            <div className='stretchitem1'>
                 <div className='tripledotcont'>
-                    <h2 className="scheduleitemtitle">Beginners Yoga Class</h2> 
-                    <img src={threedots}></img>
+                    {/* the stretch item goes here vvv */}
+                    <h2 className="stretchitemtitle">Standing Bicep Stretches</h2> 
+                    <img src={threedots} onClick={handleOpen}></img>
+                    <Modal
+                        open={open}
+                        onClose={handleClose}
+                        aria-labelledby="modal-modal-title"
+                        aria-describedby="modal-modal-description"
+                        >
+                        {/* the stretch item detail goes here vvv */}
+                        <div className="modalwhole">
+                            <div className="modalwhiteframe">
+                                <h2 className="stretchtitle">Standing Bicep Stretches</h2>
+                                <div className="stretchdetails">
+                                    <div className="leftstretchmodaltop">
+                                        <div className="stretchdetailitemtop">
+                                            <h2 className="stretchdetailcat">Type: </h2>
+                                            <h2 className="stretchdetail-generated">Stretching</h2>
+                                        </div>
+                                        <div className="stretchdetailitembottom">
+                                            <h2 className="stretchdetailcat">Muscle: </h2>
+                                            <h2 className="stretchdetail-generated">Biceps</h2>
+                                        </div>
+                                    </div>
+                                    <div className="rightstretchmodaltop">
+                                        <div className="stretchdetailitemtop">
+                                            <h2 className="stretchdetailcat">Equipment: </h2>
+                                            <h2 className="stretchdetail-generated">Other</h2>
+                                        </div>
+                                        <div className="stretchdetailitembottom">
+                                            <h2 className="stretchdetailcat">Difficulty: </h2>
+                                            <h2 className="stretchdetail-generated">Beginner</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="instructioncont">
+                                    <h2 className='instructiondesc'>Instructions: </h2>
+                                    <h2 className='instruction-generated'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </Modal>
                 </div>
+                {/* stretch muscle and level */}
                 <div className='bottomtitle'>
-                    <h2 className="scheditemcategory">Fitness</h2>                 
-                    <h2 className='scheditemdate'>13 June</h2>                 
+                    <h2 className="stretchmuscle">Bicep</h2>                 
+                    <h2 className='stretchlevel'>Beginner</h2>                 
                 </div>
             </div>
-            <div className='scheduleitem2'>
+            <div className='stretchitem2'>
                 <div className='tripledotcont'>
-                    <h2 className="scheduleitemtitle">At Home Workouts</h2> 
-                    <img src={threedots}></img>
+                    {/* the stretch item goes here vvv */}
+                    <h2 className="stretchitemtitle">Standing Bicep Stretches</h2> 
+                    <img src={threedots} onClick={handleOpen}></img>
+                    <Modal
+                        open={open}
+                        onClose={handleClose}
+                        aria-labelledby="modal-modal-title"
+                        aria-describedby="modal-modal-description"
+                        >
+                        {/* the stretch item detail goes here vvv */}
+                        <div className="modalwhole">
+                            <div className="modalwhiteframe">
+                                <h2 className="stretchtitle">Standing Bicep Stretches</h2>
+                                <div className="stretchdetails">
+                                    <div className="leftstretchmodaltop">
+                                        <div className="stretchdetailitemtop">
+                                            <h2 className="stretchdetailcat">Type: </h2>
+                                            <h2 className="stretchdetail-generated">Stretching</h2>
+                                        </div>
+                                        <div className="stretchdetailitembottom">
+                                            <h2 className="stretchdetailcat">Muscle: </h2>
+                                            <h2 className="stretchdetail-generated">Biceps</h2>
+                                        </div>
+                                    </div>
+                                    <div className="rightstretchmodaltop">
+                                        <div className="stretchdetailitemtop">
+                                            <h2 className="stretchdetailcat">Equipment: </h2>
+                                            <h2 className="stretchdetail-generated">Other</h2>
+                                        </div>
+                                        <div className="stretchdetailitembottom">
+                                            <h2 className="stretchdetailcat">Difficulty: </h2>
+                                            <h2 className="stretchdetail-generated">Beginner</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="instructioncont">
+                                    <h2 className='instructiondesc'>Instructions: </h2>
+                                    <h2 className='instruction-generated'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </Modal>
                 </div>
+                {/* stretch muscle and level */}
                 <div className='bottomtitle'>
-                    <h2 className="scheditemcategory">Fitness</h2>                 
-                    <h2 className='scheditemdate'>16 June</h2>                 
+                <h2 className="stretchmuscle">Bicep</h2>                 
+                    <h2 className='stretchlevel'>Beginner</h2>          
                 </div>           
              </div>
+             <div className='stretchitem2'>
+                <div className='tripledotcont'>
+                    {/* the stretch item goes here vvv */}
+                    <h2 className="stretchitemtitle">Standing Bicep Stretches</h2> 
+                    <img src={threedots} onClick={handleOpen}></img>
+                    <Modal
+                        open={open}
+                        onClose={handleClose}
+                        aria-labelledby="modal-modal-title"
+                        aria-describedby="modal-modal-description"
+                        >
+                        {/* the stretch item detail goes here vvv */}
+                        <div className="modalwhole">
+                            <div className="modalwhiteframe">
+                                <h2 className="stretchtitle">Standing Bicep Stretches</h2>
+                                <div className="stretchdetails">
+                                    <div className="leftstretchmodaltop">
+                                        <div className="stretchdetailitemtop">
+                                            <h2 className="stretchdetailcat">Type: </h2>
+                                            <h2 className="stretchdetail-generated">Stretching</h2>
+                                        </div>
+                                        <div className="stretchdetailitembottom">
+                                            <h2 className="stretchdetailcat">Muscle: </h2>
+                                            <h2 className="stretchdetail-generated">Biceps</h2>
+                                        </div>
+                                    </div>
+                                    <div className="rightstretchmodaltop">
+                                        <div className="stretchdetailitemtop">
+                                            <h2 className="stretchdetailcat">Equipment: </h2>
+                                            <h2 className="stretchdetail-generated">Other</h2>
+                                        </div>
+                                        <div className="stretchdetailitembottom">
+                                            <h2 className="stretchdetailcat">Difficulty: </h2>
+                                            <h2 className="stretchdetail-generated">Beginner</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="instructioncont">
+                                    <h2 className='instructiondesc'>Instructions: </h2>
+                                    <h2 className='instruction-generated'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </Modal>
+                </div>
+                {/* stretch muscle and level */}
+                <div className='bottomtitle'>
+                <h2 className="stretchmuscle">Bicep</h2>                 
+                    <h2 className='stretchlevel'>Beginner</h2>          
+                </div>           
+             </div>
+
         </div>
         
         

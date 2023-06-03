@@ -3,7 +3,11 @@ import Stretch from '../cards/Stretch'
 
 export default function Meal({ meal }) {
   const [imageUrl, setImageUrl] = useState("");
-
+  
+  function goToUrl(){
+    window.open(meal.sourceUrl, '_blank');
+  }
+  
   useEffect(() => {
     fetch(
       `https://api.spoonacular.com/recipes/${meal.id}/information?apiKey=d6ff71253b57408ba9d445343d1c9b7c&includeNutrition=false`
@@ -19,7 +23,7 @@ export default function Meal({ meal }) {
 
   return (
     <article>
-      <Stretch
+      <Stretch onClick={goToUrl}
         style={{
           backgroundImage: `url(${imageUrl})`,
           backgroundRepeat: 'no-repeat',
@@ -33,7 +37,7 @@ export default function Meal({ meal }) {
           <ul>
             <li>Preparation time: {meal.readyInMinutes} minutes</li>
             <li>Number of servings: {meal.servings}</li>
-            <a href={meal.sourceUrl}>Go to recipe</a>
+            {/* <a href={meal.sourceUrl}>Go to recipe</a> */}
           </ul>
         </div>
       </Stretch>

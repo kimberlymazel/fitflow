@@ -3,6 +3,7 @@ import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Standard from '../cards/Standard'
 import '../../style/dashboard.css'
+import '../../style/dashboard/today.css'
 
 import axiosInstance from "../../services/axios";
 
@@ -58,6 +59,10 @@ function Today() {
     
         fetchData();
       }, []);
+
+      function goToUrl(){
+        window.open('https://spoonacular.com/recipes/moroccan-lemon-shish-kebabs-652433', '_blank');
+      }
     
       const fetchBMI = async (userData) => {
         const { age, weight, height } = userData;
@@ -83,27 +88,13 @@ function Today() {
       };
 
     return (
-        <div class="today" style={{ maxWidth:"100%", height:"100%"}}>
-            <div style={{display:"flex"}}>
-                <div 
-                    style={{
-                        background: '#F2ECFF',
-                        boxShadow:"2px 2px 2px 2px lightgrey",
-                        borderRadius:"10px",
-                        padding:"30px 10px 40px 10px",
-                        margin:"10px 20px 10px 30px",
-                        display:"flex",
-                        flexDirection:"column",
-                        justifyContent:"center",
-                        alignItems:"center",
-                        width:"50%",
-                        height:"100px"
-                    }}
-                >
-                    <h3 style={{marginBottom:"5px",marginTop:"20px", fontSize:"20px"}}>Your BMI</h3>
+        <div class="today">
+            <div className="bottomportiontoday">
+                <div className='bmicontainer'>
+                    <h3 className="yourbmititle">Your BMI</h3>
                     <div>
-                        <button style={{background:"none",width:"100%",fontSize:"40px", color:"#531EB7", fontWeight:"800", border:"none"}}>{bmi.data?.bmi} (kg/m^2)</button>
-                        <p style={{fontSize:"20px",marginLeft:"auto",marginRight:"auto", textAlign:"center",  marginTop:"5px", color:"#531EB7", fontWeight:"800", border:"none"}}>{bmi.data?.health}</p>
+                        <button className="bmidisplay">{bmi.data?.bmi} (kg/m^2)</button>
+                        <p className="bmihealthdata">{bmi.data?.health}</p>
                         {/* {bmi && (
                             <div>
                                 <p style={{fontSize:"20px",marginLeft:"auto",marginRight:"auto", textAlign:"center",  marginTop:"5px", color:"#531EB7", fontWeight:"800", border:"none"}}>{bmi.health}</p>
@@ -135,22 +126,38 @@ function Today() {
                         )} */}
                     </div>
                 </div>
-                <div
-                    style={{
-                        background: '#F2ECFF',
-                        boxShadow:"2px 2px 2px 2px lightgrey",
-                        borderRadius:"10px",
-                        padding:"30px 10px 40px 10px",
-                        margin:"10px 20px 10px 30px",
-                        display:"flex",
-                        flexDirection:"column",
-                        justifyContent:"center",
-                        alignItems:"center",
-                        width:"50%",
-                        height:"100px"
-                    }}
-                >
-                    <h3>Today's lunch</h3>
+                <div className='mealscontainer' >
+                    <h3 className='todaysmeals'>Today's Meals</h3>
+                    <div className='mealscont'>
+                      <div className='meal-generateditem'>
+                        {/* dont forget to alter the goToUrl function also its above <3 */}
+                        <img className="mealimage" onClick={goToUrl}src="https://cdn.discordapp.com/attachments/794551109523341353/1114538767190085703/Greek-Chicken-Skewers-8-500x500.png"></img>
+                        <div className='meal-gendetail'>
+                          <h2 className='mealitemtitle'>Morroccan Lemon Shish Kebab</h2>
+                          <h2 className='mealitempreptime'>45 minutes</h2>
+                          <h2 className='mealitemservingsize'>8 servings</h2>
+                        </div>
+                      </div>
+
+                      <div className='meal-generateditem'>
+                        <img className="mealimage" onClick={goToUrl}src="https://cdn.discordapp.com/attachments/794551109523341353/1114538767190085703/Greek-Chicken-Skewers-8-500x500.png"></img>
+                        <div className='meal-gendetail'>
+                          <h2 className='mealitemtitle'>Morroccan Lemon Shish Kebab</h2>
+                          <h2 className='mealitempreptime'>45 minutes</h2>
+                          <h2 className='mealitemservingsize'>8 servings</h2>
+                        </div>
+                      </div>
+
+                      <div className='meal-generateditem'>
+                        <img className="mealimage" onClick={goToUrl}src="https://cdn.discordapp.com/attachments/794551109523341353/1114538767190085703/Greek-Chicken-Skewers-8-500x500.png"></img>
+                        <div className='meal-gendetail'>
+                          <h2 className='mealitemtitle'>Morroccan Lemon Shish Kebab</h2>
+                          <h2 className='mealitempreptime'>45 minutes</h2>
+                          <h2 className='mealitemservingsize'>8 servings</h2>
+                        </div>
+                      </div>
+
+                    </div>
                 </div>
             </div>
         </div>

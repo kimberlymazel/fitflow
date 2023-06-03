@@ -1,0 +1,113 @@
+.todaysmeals{
+    margin: 5px 0px 5px 0px;
+    font-size: 17px;
+}
+
+.mealscontainer{
+    background-color: #F2ECFF;
+    box-shadow: 2px 2px 2px 2px lightgrey;
+    border-radius: 10px;
+    margin: 10px 20px 10px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 53%;
+    height: 200px;
+}
+
+.mealscont{
+    width: 400px;
+    background: none;
+    height: 80%;
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.meal-generateditem{
+    width: 400px;
+    height: 80%;
+    display: flex;
+}
+
+.mealimage{
+    width: 40%;
+    height: 85%;
+    object-fit: cover;
+    border-radius: 20%;
+    margin: 7px 20px 0px 20px;
+    box-shadow: 2px 2px 2px 2px lightgrey;
+}
+
+.meal-gendetail{
+    margin-top: 10px;
+}
+
+.mealitemtitle{
+    margin: 5px 0px 5px 0px;
+    color: black;
+    font-size: 18px;
+}
+
+.mealitempreptime{
+    margin: 5px 0px 5px 0px;
+    color: #531EB7;
+    font-size: 15px;
+}
+
+.mealitemservingsize{
+    margin: 5px 0px 5px 0px;
+    color: #531EB7;
+    font-size: 15px;
+}
+
+.bmidisplay{
+    background:none;
+    width: 100%;
+    font-size: 40px;
+    color: #531EB7;
+    font-weight: 800;
+    border: none;
+}
+
+.bmihealthdata{
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 5px;
+    color: #531EB7;
+    font-weight: 800;
+    border: none;
+}
+
+.yourbmititle{
+    margin-bottom: 5px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.bmicontainer{
+    background-color: #F2ECFF;
+    box-shadow: 2px 2px 2px 2px lightgrey;
+    border-radius: 10px;
+    padding:30px 10px 40px 10px;
+    margin: 10px 20px 10px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 131px;
+}
+
+.bottomportiontoday{
+    display: flex;
+}
+
+.today{
+    max-width: 100%;
+    height: 100%;
+}
