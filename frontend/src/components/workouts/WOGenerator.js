@@ -97,7 +97,7 @@ function WOGenerator() {
             exclusive="true"
             onChange={handleLocation}
           >
-            <ToggleButton 
+            <ToggleButton  
               value="gym" 
               onClick={handleClick}
               sx={{
