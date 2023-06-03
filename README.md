@@ -27,13 +27,18 @@ fitflow is a web-application that aims to guide and encourage users in their hea
 * JWT
 * MongoDB Atlas
 * MaterialUI
+* Vercel
+* DigitalOcean
 * GitHub
 * Figma
 * Virtual Studio Code
-* 
-* 
+
 
 ## Integrated APIs
-* Spooncular Food and Recipe API
-* 
-* 
+* JWT Authentication
+* AdaptDayJS
+* Chart2JS
+* Spoonacular Food and Recipe API
+* Workout Planner RapidAPI
+* EmailJS
+
