@@ -31,6 +31,52 @@ export const Checkin = ({
     const [waterData, setWaterData]=useState(0)
     const [stepsData, setStepsData]=useState(0)
 
+    const [isActive, setIsActive] = useState(false);
+    const [isActive2, setIsActive2] = useState(false);
+    const [isActive3, setIsActive3] = useState(false);
+    const [isActive4, setIsActive4] = useState(false);
+    const [isActive5, setIsActive5] = useState(false);
+    
+    const handleClick = (event, newSelect) => {
+        setIsActive(current => !current);
+        setIsActive2(false);
+        setIsActive3(false);
+        setIsActive4(false);
+        setIsActive5(false);
+    };
+    
+    const handleClick2 = (event, newSelect) => {
+        setIsActive2(current => !current);
+        setIsActive(false);
+        setIsActive3(false);
+        setIsActive4(false);
+        setIsActive5(false);
+    };
+
+    const handleClick3 = (event, newSelect) => {
+        setIsActive3(current => !current);
+        setIsActive(false);
+        setIsActive2(false);
+        setIsActive4(false);
+        setIsActive5(false);
+    };
+
+    const handleClick4 = (event, newSelect) => {
+        setIsActive4(current => !current);
+        setIsActive(false);
+        setIsActive2(false);
+        setIsActive3(false);
+        setIsActive5(false);
+    };
+
+    const handleClick5 = (event, newSelect) => {
+        setIsActive5(current => !current);
+        setIsActive(false);
+        setIsActive2(false);
+        setIsActive3(false);
+        setIsActive4(false);
+    };
+
     // const handleMoodClick = (moodValue) => {
     //     setSelectedMood(moodValue);
     //   };
@@ -76,11 +122,51 @@ export const Checkin = ({
             {/* moods */}
             <h2 className='checkincategorytitle3'>My current mood</h2> 
             <div className='mood'>
-                <Button startIcon={<MoodIcon style={{fontSize:"170%"}}/>} style={{color:"#2A8C33", marginRight:"-10%"} }></Button>
-                <Button startIcon={<SentimentSatisfiedAltIcon style={{fontSize:"170%"}}/>} style={{color:"#28A21D", marginRight:"-10%"}}></Button>
-                <Button startIcon={<SentimentSatisfiedIcon style={{fontSize:"170%"}}/>} style={{color:"#E8AE1A", marginRight:"-10%"}}></Button>
-                <Button startIcon={<SentimentDissatisfiedIcon style={{fontSize:"170%"}}/>} style={{color:"#AD5210", marginRight:"-10%"}}></Button>
-                <Button startIcon={<SentimentVeryDissatisfiedIcon style={{fontSize:"170%"}}/>} style={{color:"#9A0505"}}></Button>
+                <Button 
+                    startIcon={<MoodIcon style={{fontSize:"170%"}}/>} 
+                    style={{
+                        color: isActive ? "white" : "#2A8C33", 
+                        marginRight:"-10%",
+                        backgroundColor: isActive ? '#2A8C33' : '',
+                    }}
+                    onClick={handleClick}
+                ></Button>
+
+                <Button 
+                    startIcon={<SentimentSatisfiedAltIcon style={{fontSize:"170%"}}/>} 
+                    style={{
+                        color: isActive2 ? "white" : "#28A21D", 
+                        marginRight:"-10%",
+                        backgroundColor: isActive2 ? '#28A21D' : ''
+                    }}
+                    onClick={handleClick2}
+                ></Button>
+                <Button 
+                    startIcon={<SentimentSatisfiedIcon style={{fontSize:"170%"}}/>} 
+                    style={{
+                        color: isActive3 ? "white" : "#E8AE1A", 
+                        marginRight:"-10%",
+                        backgroundColor: isActive3 ? "#E8AE1A" : ""
+                    }}
+                    onClick={handleClick3}
+                ></Button>
+                <Button 
+                    startIcon={<SentimentDissatisfiedIcon style={{fontSize:"170%"}}/>} 
+                    style={{
+                        color: isActive4 ? "white" : "#FD6C00", 
+                        marginRight:"-10%",
+                        backgroundColor: isActive4 ? "#FD6C00" : "", 
+                    }}
+                    onClick={handleClick4}
+                ></Button>
+                <Button 
+                    startIcon={<SentimentVeryDissatisfiedIcon style={{fontSize:"170%"}}/>} 
+                    style={{
+                        color: isActive5 ? "white" : "#9A0505", 
+                        backgroundColor: isActive5 ? "#9A0505" : ""
+                    }}
+                    onClick={handleClick5}
+                ></Button>
             </div>
 
             {/* hours */}
