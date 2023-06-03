@@ -10,6 +10,7 @@ fitflow is a web-application that aims to guide and encourage users in their hea
 
 ## Documentation 
 * Video Demonstration :
+* Presentation Link :
 * Documentation Report :
 * Website Link:
 
