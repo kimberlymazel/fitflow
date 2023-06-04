@@ -55,7 +55,7 @@ function WOGenerator() {
     fetch(`https://workout-planner1.p.rapidapi.com/?time=${time}&muscle=${selectedMuscles}&location=${location}&equipment=${selectedEquipments}`, {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '6c1a7f9eb4msh17aa6ace300ca74p1e406cjsn50d074622f24',
+            'X-RapidAPI-Key': 'e39c6884afmsh5da1a719306a27dp18107fjsna3af94cde058',
             'X-RapidAPI-Host': 'workout-planner1.p.rapidapi.com'
         }
     })
@@ -256,7 +256,7 @@ function WOGenerator() {
                 value="biceps and triceps"
                 control={<Checkbox checked={selectedMuscles.includes('biceps', 'triceps')} />}
                 onChange={(event) => handleCheck(event, setSelectedMuscles)}
-                label="Biceps & Triceps"
+                label="Biceps and Triceps"
                 labelPlacement="end"
                 sx={{
                   width: '10vw'
@@ -291,7 +291,7 @@ function WOGenerator() {
                 value="legs and knees"
                 control={<Checkbox checked={selectedMuscles.includes('legs', 'knees')} />}
                 onChange={(event) => handleCheck(event, setSelectedMuscles)}
-                label="Legs & Knees"
+                label="Legs and Knees"
                 labelPlacement="end"
                 sx={{
                   width: '10vw'
@@ -302,7 +302,7 @@ function WOGenerator() {
                 value="glutes and thighs"
                 control={<Checkbox checked={selectedMuscles.includes('glutes', 'thighs')} />}
                 onChange={(event) => handleCheck(event, setSelectedMuscles)}
-                label="Glutes & Thighs"
+                label="Glutes and Thighs"
                 labelPlacement="end"
                 sx={{
                   width: '10vw'
@@ -313,7 +313,7 @@ function WOGenerator() {
               value="upper and lower back"
               control={<Checkbox checked={selectedMuscles.includes('upper back', 'lower back')} />}
               onChange={(event) => handleCheck(event, setSelectedMuscles)}
-              label="Upper & Lower Back"
+              label="Upper and Lower Back"
               labelPlacement="end"
               sx={{
                 width: '12vw'

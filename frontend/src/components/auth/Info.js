@@ -51,7 +51,7 @@ export const Info = () => {
             <h2 className="infoboxtitle">Fill in your data:</h2> 
             {/*========Age Input=========*/}
             <div className='indivinfobox'>
-                <h2 className="personalinputtitle">Weight:</h2> 
+                <h2 className="personalinputtitle">Age:</h2> 
                 <input className='weightinfoinput' type="number"  {...register('age', { required: '*This is a required field' })} placeholder=' Enter age'></input>
             </div>
             {/*========Weight Input=========*/}

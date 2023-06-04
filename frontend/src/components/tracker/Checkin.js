@@ -179,14 +179,14 @@ export const Checkin = ({
             {/* water */}
             <h2 className='checkincategorytitle3'>Water drank</h2> 
             <div className='slidercheckinitem'>
-                <input type='range' min="0" max="100" step={1} {...register("water_drank")} value={waterData} onChange={(e)=>setWaterData(e.target.value)} style={{outline: 'none',overflow: 'hidden' , width:"100%",marginLeft:"10px", marginRight:"auto"}}></input>
+                <input type='range' min="0" max="3000" step={1} {...register("water_drank")} value={waterData} onChange={(e)=>setWaterData(e.target.value)} style={{outline: 'none',overflow: 'hidden' , width:"100%",marginLeft:"10px", marginRight:"auto"}}></input>
                 <h2 className="sliderdatatext">{waterData}</h2> 
             </div>
 
             {/* steps */}
             <h2 className='checkincategorytitle3'>Steps taken</h2> 
             <div className='slidercheckinitem'>
-                <input type='range' min="0" max="50000" step={1} {...register("steps_taken")} value={stepsData} onChange={(e)=>setStepsData(e.target.value)} style={{outline: 'none',overflow: 'hidden' , width:"100%",marginLeft:"10px", marginRight:"auto"}}></input>
+                <input type='range' min="0" max="2000" step={1} {...register("steps_taken")} value={stepsData} onChange={(e)=>setStepsData(e.target.value)} style={{outline: 'none',overflow: 'hidden' , width:"100%",marginLeft:"10px", marginRight:"auto"}}></input>
                 <h2 className="sliderdatatext">{stepsData}</h2> 
             </div>
             <Button type="submit" disabled={isSubmitting}

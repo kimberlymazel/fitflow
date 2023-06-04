@@ -34,7 +34,7 @@ export const WorkoutGenerator = () => {
         fetch(`https://workout-planner1.p.rapidapi.com/?time=${time}&muscle=${selectedMuscles}&location=${location}&equipment=${selectedEquipments}`, {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': '6c1a7f9eb4msh17aa6ace300ca74p1e406cjsn50d074622f24',
+                'X-RapidAPI-Key': 'e39c6884afmsh5da1a719306a27dp18107fjsna3af94cde058',
                 'X-RapidAPI-Host': 'workout-planner1.p.rapidapi.com'
             }
         })
