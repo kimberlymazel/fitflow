@@ -1,7 +1,6 @@
 from typing import Optional, List
 from uuid import UUID
 from datetime import datetime
-from bson import DBRef
 from app.schemas.mealdata_schema import MealDataOut
 from app.models.mealdata_model import MealData
 from app.models.user_model import User
