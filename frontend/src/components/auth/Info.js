@@ -52,7 +52,7 @@ export const Info = () => {
             {/*========Age Input=========*/}
             <div className='indivinfobox'>
                 <h2 className="personalinputtitle">Age:</h2> 
-                <input className='weightinfoinput' type="number"  {...register('age', { required: '*This is a required field' })} placeholder=' Enter age'></input>
+                <input className='weightinfoinput' type="number" style={{width: "63.5%"}} {...register('age', { required: '*This is a required field' })} placeholder=' Enter age'></input>
             </div>
             {/*========Weight Input=========*/}
             <div className='indivinfobox'>
