@@ -16,6 +16,7 @@ import { Contact } from './pages/Contact';
 function App() {
     return (
       <div className="App">
+        {/*
         <>
         <AuthProvider>
           <BrowserRouter>
@@ -110,8 +111,8 @@ function App() {
           </BrowserRouter>
         </AuthProvider>
         </>
+        */}
         
-        {/*
          <BrowserRouter>
           <Routes>
             <Route path="/login" element={<Login />}/>
@@ -121,10 +122,9 @@ function App() {
             <Route path="/tracker" element={<Tracker />} />
             <Route exact path="/meal-plan" element={<MealPlan />} />
             <Route exact path="/workouts" element={<WorkoutGen />} />
-            <Route exact path="/workout-generator" element={<WorkoutGenerator />} />
           </Routes>
         </BrowserRouter> 
-        */}
+        
 
       </div>
     );

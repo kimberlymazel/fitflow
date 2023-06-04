@@ -254,7 +254,7 @@ function WOGenerator() {
             <div className="muscles-left">
               <FormControlLabel
                 value="biceps and triceps"
-                control={<Checkbox checked={selectedMuscles.includes('biceps', 'triceps')} />}
+                control={<Checkbox checked={selectedMuscles.includes('biceps and triceps')} />}
                 onChange={(event) => handleCheck(event, setSelectedMuscles)}
                 label="Biceps and Triceps"
                 labelPlacement="end"
@@ -289,7 +289,7 @@ function WOGenerator() {
             <div className="muscles-right">
               <FormControlLabel
                 value="legs and knees"
-                control={<Checkbox checked={selectedMuscles.includes('legs', 'knees')} />}
+                control={<Checkbox checked={selectedMuscles.includes('legs and knees')} />}
                 onChange={(event) => handleCheck(event, setSelectedMuscles)}
                 label="Legs and Knees"
                 labelPlacement="end"
@@ -300,7 +300,7 @@ function WOGenerator() {
 
               <FormControlLabel
                 value="glutes and thighs"
-                control={<Checkbox checked={selectedMuscles.includes('glutes', 'thighs')} />}
+                control={<Checkbox checked={selectedMuscles.includes('glutes and thighs')} />}
                 onChange={(event) => handleCheck(event, setSelectedMuscles)}
                 label="Glutes and Thighs"
                 labelPlacement="end"
@@ -311,7 +311,7 @@ function WOGenerator() {
 
               <FormControlLabel
               value="upper and lower back"
-              control={<Checkbox checked={selectedMuscles.includes('upper back', 'lower back')} />}
+              control={<Checkbox checked={selectedMuscles.includes('upper and lower back')} />}
               onChange={(event) => handleCheck(event, setSelectedMuscles)}
               label="Upper and Lower Back"
               labelPlacement="end"
