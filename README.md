@@ -1,6 +1,6 @@
-<img src="https://cdn.discordapp.com/attachments/794551109523341353/1114601374013997106/1.png" align="center">
-
-#### -- Project Status: [Active]
+<p align="center" width="100%">
+    <img src="https://cdn.discordapp.com/attachments/794551109523341353/1114601374013997106/1.png">
+</p>
 
 > **[Live link](https://fitflow.vercel.app/).**
 
