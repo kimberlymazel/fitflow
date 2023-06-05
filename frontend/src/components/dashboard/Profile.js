@@ -1,18 +1,19 @@
 import React, { useState, useEffect, useRef }  from 'react'
 ;import threedots from '../../icons/threedots.png'
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import { DateCalendar } from '@mui/x-date-pickers/DateCalendar'
 import '../../style/dashboard/profile.css'
-import Modal from '@mui/material/Modal';
+import Modal from '@mui/material/Modal'
+import placeholder from '../../icons/placeholder.png'
 
-import axiosInstance from "../../services/axios";
+import axiosInstance from "../../services/axios"
 
   
 function Profile() {
     const [userData, setUserData] = useState([]);
     const [selectedImage, setSelectedImage] = useState(null);
-    const [image, setImage] = useState(null);
+    const [image, setImage] = useState(placeholder);
     const inputRef = useRef(null);
     // const [open, setOpen] = React.useState(false);
     const [stretchData, setStretchData] = useState([]);
