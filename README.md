@@ -11,7 +11,7 @@ fitflow is a web-application that aims to guide and encourage users in their hea
 [![PPT](https://img.shields.io/static/v1.svg?label=Project&message=PPT&logo=microsoft-powerpoint&color=blue)](https://1drv.ms/b/s!Al-UqYhUbVOsgS0k0TOFU170dTIN?e=oIxPYB)
 [![report](https://img.shields.io/static/v1.svg?label=Project&message=Report&logo=microsoft-word&color=bluel)](https://1drv.ms/b/s!Al-UqYhUbVOsgS0k0TOFU170dTIN?e=JL7tlY)
 
-### 🧑‍💻 Contributors
+#### Contributors
 * Alysha Puti Maulidina (2502005906) - L4BC
 * Kimberly Mazel (2502022250) - L4BC
 * Maria Clarin (2501990331) - L4AC
