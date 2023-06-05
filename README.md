@@ -1,4 +1,4 @@
-<img src="https://cdn.discordapp.com/attachments/794551109523341353/1114601374013997106/1.png">
+<img src="https://cdn.discordapp.com/attachments/794551109523341353/1114601374013997106/1.png" align="centre">
 
 #### -- Project Status: [Active]
 
