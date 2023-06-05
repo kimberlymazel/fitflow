@@ -89,8 +89,7 @@ function App() {
                         path="/workouts"
                         element={
                           <Authenticated>
-                            <WorkoutGen />
-                          
+                            <WorkoutGen />  
                           </Authenticated>
                         }
                       />

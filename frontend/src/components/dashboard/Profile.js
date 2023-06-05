@@ -13,7 +13,7 @@ import axiosInstance from "../../services/axios"
 function Profile() {
     const [userData, setUserData] = useState([]);
     const [selectedImage, setSelectedImage] = useState(null);
-    const [image, setImage] = useState(placeholder);
+    const [image, setImage] = useState(null);
     const inputRef = useRef(null);
     // const [open, setOpen] = React.useState(false);
     const [stretchData, setStretchData] = useState([]);
@@ -45,8 +45,14 @@ function Profile() {
                 responseType: "blob",
             })
             .then((response) => {
+              if(response.data.size == 0){
+                setImage(placeholder)
+              }
+
+              else{
                 setImage(URL.createObjectURL(response.data));
                 console.log(response.data)
+              }
             })
             .catch((error) => {
                 console.error(error);
