@@ -4,7 +4,7 @@
 
 > **[Live link](https://fitflow.vercel.app/).**
 
-## 💪 App descrption
+## 💪 App Description
 fitflow is a web-application that aims to guide and encourage users in their health journey. It offers a comprehensive solution for those who want to improve their physical fitness nutrition habits and keep track of their progress! Take the first step towards a healthier you, with fitflow.
 
 [![Video](https://img.shields.io/static/v1?label=documenation&message=video&color=blue)](https://1drv.ms/v/s!Al-UqYhUbVOsgSvlB3jLD4-cQeIS?e=rpCXvC)
@@ -44,7 +44,7 @@ fitflow is a web-application that aims to guide and encourage users in their hea
 * Workout Planner RapidAPI
 * EmailJS
 
-## 📥 Run locally
+## 📥 Run Locally
 
 To run this app on your local machine, you must have Node.js and React installed.
 
